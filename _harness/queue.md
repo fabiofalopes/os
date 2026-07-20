@@ -21,6 +21,15 @@
 ## Value groundwork (Quant)
 - [ ] [Quant] Create wiki/value/ledger.md: the ranked hypothesis ledger (thesis, capital required, time-to-evidence, result, risk-adjusted score, status). Seed it with 3 candidate hypotheses from [[Bootstrap to Self-Funding — The Agent Life Arc]] Stage 1, ranked. No capital, ideas only.
 
+## Trading-agents ongoing sweep (Scout/Critic) — see [[learning-path]] + [[legitimacy-ledger]]
+> NOTE: WebSearch is broken this session — use WebFetch / GitHub API (curl) / old.reddit.com .json / web.archive.org directly. Judge code-not-personality; verdict every source; no capital.
+- [ ] [Scout] FORK RECENCY: via GitHub API, enumerate forks of moondevonyt/moon-dev-ai-agents, sort by pushed_at, find any fork NEWER than our Dec-2025 snapshot. Also resolve the to-verify recency (pushed_at) for vectorbt, backtesting.py, Jesse, NirDiamant, Lean. Update [[legitimacy-ledger]] with real dates.
+- [ ] [Scout] PHASE-0 STUDY: fetch + fully read The Alpha Illusion (arXiv:2605.16895); distill into wiki/research/trading/the-alpha-illusion.md — key claims + how it anchors our FOMO-filter. Advances [[learning-path]] Phase 0.
+- [ ] [Scout] REDDIT MINE: fetch top practitioner threads from r/algotrading + r/quant on "AI trading agent"/"LLM backtest"/"freqtrade ml" (old.reddit.com or .json API). Capture the QUESTIONS people ask + vetted answers → wiki/research/trading/reddit-crowd-wisdom.md.
+- [ ] [Scout] ARXIV TRACK: fetch recent q-fin + cs.MA papers on LLM trading agents (The Alpha Illusion follow-ups, TradingAgents lineage). Clip 2-3 with verdicts → wiki/research/trading/.
+- [ ] [Scout] WAYBACK RECOVER: fetch historical algotradecamp.com + moondev.com from web.archive.org; recover any free curriculum/resources public before paywalling; verdict each → projects/trading-agents/wayback-recovery.md.
+- [ ] [Critic] Adversarial pass over the "substantive" verdicts in [[legitimacy-ledger]] (top 5 resources): try to refute each before it's treated as trusted. Default to skepticism. Record outcomes in the ledger.
+
 ## Self-evaluation (recurring — the parent watching the child)
 - [ ] [Steward] META-REVIEW: Read LOG.md since the last review. Answer: is the 20-min interval too fast/slow? Are sessions producing durable artifacts or burning tokens? What job types recur as failures? Then append 3-5 tuned jobs to this queue and adjust MAX_SESSIONS_PER_DAY in config.env if warranted. Write the review to journal/sessions/meta-review-$(date).md.
 
