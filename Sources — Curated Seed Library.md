@@ -41,9 +41,9 @@ This is how the mind "keeps harnessing itself." Highest priority.
 | Source | What it gives us | Pri |
 |---|---|---|
 | **Quantpedia** ✓ | 1000+ academic trading systems, a Screener (style/market), Python out-of-sample implementations, an API "alternative dataset." **The Scout's #1 alpha-idea mine.** | ★★★ |
-| **Marcos López de Prado — *Advances in Financial ML* + *ML for Asset Managers*** | The rigorous ML-finance bible: labeling, fractional differentiation, backtest overfitting, meta-labeling. Prevents us from fooling ourselves. | ★★★ |
+| **Marcos López de Prado — *Advances in Financial ML* + *ML for Asset Managers*** ✓ | The rigorous ML-finance bible: labeling, fractional differentiation, backtest overfitting, meta-labeling. Prevents us from fooling ourselves. Overfitting paper cluster (PBO/CSCV, DSR, Pseudo-Mathematics) fetched & verified from SSRN/davidhbailey.com; AFML book itself still unfetched (paywalled). Clipped → [[López de Prado — Backtest Overfitting Guards]]. | ★★★ |
 | **Ernest Chan — *Algorithmic/Quantitative Trading*** | Practical mean-reversion/momentum strategy engineering, retail-feasible. | ★★☆ |
-| **Kelly Criterion (Thorpe) + *The Kelly Capital Growth Investment Criterion*** | Position sizing = how not to go bust. Non-negotiable before any live capital. | ★★★ |
+| **Kelly Criterion (Thorpe) + *The Kelly Capital Growth Investment Criterion*** ✓ | Position sizing = how not to go bust. Non-negotiable before any live capital. Wikipedia + Thorp's book page fetched & verified; Thorp 2006 paper PDF mirrors are dead (logged in the note's evidence ledger). Clipped → [[Kelly Criterion — Position Sizing]]. | ★★★ |
 | **QuantConnect / Lean** (open engine) | Free backtesting + paper + live execution infra. Where paper-traded strategies actually run. | ★★☆ |
 | **yfinance / Alpha Vantage** | Free market data to backtest with. | ★★☆ |
 | ***The Man Who Solved the Market* (Simons/Renaissance)** | Narrative of what compounding edge looks like at the extreme. Mindset, not method. | ★☆☆ |

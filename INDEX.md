@@ -14,6 +14,7 @@ status: living — Curator maintains this
 - [[The Forge — OpenCode Knowledge Governance Design]] — DESIGN v2 for the capture→consolidate→forge loop making the vault the durable "brain"; governance architecture (build deferred).
 
 ## Harness & Operations (the cron swarm)
+- [[the-forge-synthesis]] — One-page Scribe synthesis (`wiki/concepts/`): links Master Plan, Roles, Life Arc, Operating Principle, Skills Harvest, and Sources into a single picture (arc/engine/cast/method/material/fuel). Draft, Z2.
 - [[Daily Cron Sessions — Swarm Harness Master Plan]] — Master plan for the self-compounding "child brain" run by a daily cron swarm; pulls in SkillOpt + HF skills.
 - [[Agent Roles & Orchestrator — The Moat]] — Defines the role cast (Scout/Scribe/Curator/…) + orchestrator; the orchestration layer is the moat.
 - [[Bootstrap to Self-Funding — The Agent Life Arc]] — Staged, gated arc: map → prove-one-thing → earn-a-little → cover-own-cost → compound.
@@ -27,6 +28,10 @@ status: living — Curator maintains this
 - [[Voyager — Open-Ended Embodied Agent]] — arXiv:2305.16291. Auto-curriculum + executable skill library + env-feedback refinement; the blueprint for our growing `.forge/skills/` loop.
 - [[Reflexion — Verbal Reinforcement Learning]] — arXiv:2303.11366. Verbal self-reflection in an episodic memory buffer, no weight change; cheap self-improvement = session-digest → next-session recall.
 - [[ADAS — Automated Design of Agentic Systems]] — arXiv:2408.08435. Meta-agent searches over agent designs in code, keeps the best; formalizes "the harness improves the harness," informs the orchestrator/moat.
+
+## Quant / Finance Research (`wiki/research/finance/`)
+- [[López de Prado — Backtest Overfitting Guards]] — SSRN-verified paper cluster (PBO/CSCV, Deflated Sharpe Ratio, Pseudo-Mathematics): why backtests lie and the guards (report N, deflate the SR, PBO < 0.5, holdout is not a guard). The anti-fooling-yourself foundation for the money mission.
+- [[Kelly Criterion — Position Sizing]] — Kelly 1956 + Thorp: maximize geometric growth; f* = p/l − q/g; fractional Kelly + garbage-in-garbage-out caveats. How not to go bust; inseparable from the overfitting guards.
 
 ## AI Tooling & Proxy Setups (this RPi)
 - [[Claude Code Proxy Pattern — Master Reference]] — Canonical pattern: local proxy translating Anthropic Messages API to any OpenAI-compatible provider.

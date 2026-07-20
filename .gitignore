@@ -7,6 +7,9 @@ _harness/state/
 _harness/*.lock
 _harness/secrets.env
 
+# Large pulled snapshots/repos — reproducible from source (e.g. Software Heritage), not git-tracked
+projects/trading-agents/repos/
+
 # OS cruft
 .DS_Store
 Thumbs.db
