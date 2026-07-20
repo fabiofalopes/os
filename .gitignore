@@ -1,0 +1,11 @@
+# Obsidian workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Harness runtime state (not version-controlled)
+_harness/state/
+_harness/*.lock
+
+# OS cruft
+.DS_Store
+Thumbs.db
