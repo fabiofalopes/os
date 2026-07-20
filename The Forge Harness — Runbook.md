@@ -15,7 +15,7 @@ related:
 A cron job fires every 20 min → `_harness/runner.sh` → picks the top unchecked job from `_harness/queue.md` → runs **one bounded headless Claude session** (`claude -p`) against the vault → logs the result to `LOG.md` → checks the job off. Governed by `CLAUDE.md`. See `_harness/schedule.md` for cadence rationale.
 
 ## Observe it (the three dials)
-1. **`LOG.md`** — one line per session: `date time | duration | verdict | job | one-line summary`. This is the pulse. `verdict=ok` + a named artifact path = healthy.
+1. **`LOG.md`** — one line per session: `date time | duration | verdict | model | job | one-line summary`. This is the pulse. `verdict=ok` + a named artifact path = healthy. The `model` field shows which fallback served it; `ROUTING_FAIL` means the whole chain is down.
 2. **`_harness/queue.md`** — what's queued vs. done. If it's all `[x]` and no new jobs appear, the META-REVIEW isn't firing or the engine is idle.
 3. **`git log`** — the vault is a repo; every artifact is a reviewable commit. `git log --oneline` = the growth ring.
 
@@ -28,6 +28,7 @@ cd ~/obsidian-vault-kali && git log --oneline | head       # growth
 ## Tune it
 - **Interval:** edit the crontab (`crontab -e`) — the `*/20` field. Or let the META-REVIEW job recommend it.
 - **Spend ceiling / turns / timeout / model:** `_harness/config.env`.
+- **Routing/auth:** `_harness/secrets.env` (git-ignored, mode 600) holds `ANTHROPIC_BASE_URL` + `ANTHROPIC_AUTH_TOKEN` so cron's bare env can route claude through the proxy. If the token rotates, regenerate it from a working session (capture the two vars into that file).
 - **What it works on:** `_harness/queue.md` — just add `- [ ] [Role] …` lines. Order = priority.
 - **The rules it plays by:** `CLAUDE.md` (human-governed; the agent can't edit it).
 

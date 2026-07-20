@@ -5,6 +5,7 @@
 # Harness runtime state (not version-controlled)
 _harness/state/
 _harness/*.lock
+_harness/secrets.env
 
 # OS cruft
 .DS_Store

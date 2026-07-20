@@ -16,12 +16,12 @@ This is how the mind "keeps harnessing itself." Highest priority.
 
 | Source | What it gives us | Pri |
 |---|---|---|
-| **SEAL — Self-Adapting Language Models** ✓ (arXiv:2506.10943, MIT) | Model writes its own "self-edit" → SFT → **persistent weight updates**; RL loop rewards *downstream performance of the updated model*. The purest "learning-to-learn" reference. We can't fine-tune closed models, but the *pattern* (generate adaptation → measure → keep if better) is exactly SkillOpt-in-text. | ★★★ |
+| **SEAL — Self-Adapting Language Models** ✓ (arXiv:2506.10943, MIT) | Model writes its own "self-edit" → SFT → **persistent weight updates**; RL loop rewards *downstream performance of the updated model*. The purest "learning-to-learn" reference. We can't fine-tune closed models, but the *pattern* (generate adaptation → measure → keep if better) is exactly SkillOpt-in-text. Clipped → [[SEAL — Self-Adapting Language Models]]. | ★★★ |
 | **microsoft/SkillOpt** ✓ | Validation-gated text-space skill optimizer + `SkillOpt-Sleep` overnight self-evolution. Our **Smith** engine. | ★★★ |
-| **Voyager** (arXiv:2305.16291 `to-verify`) | Auto-curriculum + **skill library** + iterative prompting w/ env feedback. The blueprint for "agent builds its own growing skill library." | ★★★ |
-| **Reflexion** (arXiv:2303.11366 `to-verify`) | Verbal self-reflection stored in memory → better next attempt, no weight change. Cheap self-improvement we can run today. | ★★☆ |
+| **Voyager** ✓ (arXiv:2305.16291) | Auto-curriculum + **skill library** + iterative prompting w/ env feedback. The blueprint for "agent builds its own growing skill library." Clipped → [[Voyager — Open-Ended Embodied Agent]]. | ★★★ |
+| **Reflexion** ✓ (arXiv:2303.11366) | Verbal self-reflection stored in memory → better next attempt, no weight change. Cheap self-improvement we can run today. Clipped → [[Reflexion — Verbal Reinforcement Learning]]. | ★★☆ |
 | **Self-Refine** (arXiv:2303.17651 `to-verify`) | Same model generates → critiques → refines. The inner loop of every writer/distiller role. | ★★☆ |
-| **ADAS — Automated Design of Agentic Systems** (arXiv:2408.08435 `to-verify`) | A meta-agent *searches over agent designs* and keeps the best. The "harness improves the harness" idea, formalized. Directly informs our orchestrator. | ★★★ |
+| **ADAS — Automated Design of Agentic Systems** ✓ (arXiv:2408.08435) | A meta-agent *searches over agent designs* and keeps the best. The "harness improves the harness" idea, formalized. Directly informs our orchestrator. Clipped → [[ADAS — Automated Design of Agentic Systems]]. | ★★★ |
 | **Gödel Agent** (arXiv:2502.14854 `to-verify`) | Self-referential agent that rewrites its own policy given a reward. Theoretical ceiling of self-improvement; read for the safety/governance lessons. | ★☆☆ |
 | **Generative Agents** (arXiv:2304.03442) | Memory stream + reflection + planning; importance scoring (recency×.5+relevance×3+importance×2). Already cited in Forge — the memory model. | ★★☆ |
 | **Letta / MemGPT** | Tiered memory (core ↔ archival), git-backed. Forge's memory ancestor. | ★★☆ |

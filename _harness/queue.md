@@ -6,11 +6,11 @@
 
 ## Standing up the substrate (do first)
 - [x] [Curator] Create INDEX.md at the vault root: catalog every existing .md note as a wikilink + one-line summary. This is the map every future session consults.
-- [ ] [Steward] Create MEMORY.md at the vault root (≤2000 chars): the always-in-context working memory. Seed it with the mission, the vault layout, and the current top priority. Keep it char-bounded.
+- [x] [Steward] Create MEMORY.md at the vault root (≤2000 chars): the always-in-context working memory. Seed it with the mission, the vault layout, and the current top priority. Keep it char-bounded.
 - [ ] [Janitor] Create inbox/, journal/sessions/, wiki/{concepts,research,value}/, projects/, .forge/skills/ per CLAUDE.md. Do not move existing notes yet — just scaffold empty dirs with a one-line README each.
 
 ## Knowledge harvest (Scout/Scribe)
-- [ ] [Scout] Work the ★★★ tier of [[Sources — Curated Seed Library]] §A (self-improving agents). Clip SEAL, Voyager, Reflexion, ADAS into wiki/research/ai-ml/ as atomic notes, each with a one-line "what it gives the harness" verdict. Confirm the to-verify arXiv ids as you fetch.
+- [x] [Scout] Work the ★★★ tier of [[Sources — Curated Seed Library]] §A (self-improving agents). Clip SEAL, Voyager, Reflexion, ADAS into wiki/research/ai-ml/ as atomic notes, each with a one-line "what it gives the harness" verdict. Confirm the to-verify arXiv ids as you fetch.
 - [ ] [Scout] Work [[Sources — Curated Seed Library]] §C (quant/finance). Clip the López de Prado overfitting guards + Kelly criterion into wiki/research/finance/ with verdicts. This is the anti-fooling-yourself foundation for the money mission.
 - [ ] [Scribe] Read the five 2026-07-20 planning notes (Master Plan, Roles & Orchestrator, Life Arc, Operating Principle, Skills Harvest, Sources) and write wiki/concepts/the-forge-synthesis.md: one tight page linking them into a single coherent picture.
 

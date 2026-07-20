@@ -22,6 +22,12 @@ status: living — Curator maintains this
 - [[Agent Loop Skill — Iterate-Until Pattern]] — Design proposal (not yet a SKILL.md) for the bounded iterate-until agentic loop: success check, attempt cap, retry strategy.
 - [[Sources — Curated Seed Library]] — Scout's pre-evaluated reading list (self-improving agents, SkillOpt, SEAL); the fetch-and-curate queue.
 
+## AI/ML Research — self-improving agents (`wiki/research/ai-ml/`)
+- [[SEAL — Self-Adapting Language Models]] — arXiv:2506.10943 (MIT). Model writes self-edits → SFT → persistent weight updates; RL rewards downstream performance. The generate→measure→keep north star we realize in text via SkillOpt.
+- [[Voyager — Open-Ended Embodied Agent]] — arXiv:2305.16291. Auto-curriculum + executable skill library + env-feedback refinement; the blueprint for our growing `.forge/skills/` loop.
+- [[Reflexion — Verbal Reinforcement Learning]] — arXiv:2303.11366. Verbal self-reflection in an episodic memory buffer, no weight change; cheap self-improvement = session-digest → next-session recall.
+- [[ADAS — Automated Design of Agentic Systems]] — arXiv:2408.08435. Meta-agent searches over agent designs in code, keeps the best; formalizes "the harness improves the harness," informs the orchestrator/moat.
+
 ## AI Tooling & Proxy Setups (this RPi)
 - [[Claude Code Proxy Pattern — Master Reference]] — Canonical pattern: local proxy translating Anthropic Messages API to any OpenAI-compatible provider.
 - [[Claude Code Proxy Pattern — Ollama Cloud]] — Proxy instance routing Claude Code → Universal Provider Bridge → ollama.com/v1.
