@@ -23,24 +23,9 @@ date: 2026-09-02
 | pi-glm / pi-spot-watch | `/home/fabio/projects/pi-glm`, `pi-spot-watch` | — |
 | tartarus | `/home/fabio/projects/tartarus` | Fork of opencode (branch `2.0`), binary `~/.local/bin/tartarus` v0.0.0-2.0-202609030411 |
 
-## ⚠️ Missing on disk (INDEX links here, files deleted)
+## ✅ Formerly-missing notes — HEALED via live mirror (2026-09-03)
 
-These 6 vault notes show in [[INDEX]] but are **gone from disk** (unstaged deletes):
-
-- `projects/trading-agents/learning-path.md`
-- `projects/trading-agents/legitimacy-ledger.md`
-- `projects/trading-agents/curriculum-draft.md`
-- `projects/trading-agents/snapshot-survey.md`
-- `projects/trading-agents/Moon Dev — Research Brief & Leads.md`
-- `projects/README.md`
-
-Restore (only if you want them back — ask first, it rewrites the working tree):
-
-```bash
-git checkout -- projects/
-```
-
-Or accept the delete and I’ll drop the dead INDEX entries.
+The 6 dead links above now resolve: the notes had **moved** to `~/projects/trading-agents-research-notes/` — which is now a live two-way mirror pair (`research-notes` in `_sync/pairs.conf`) into `wiki/import/research-notes/`. [[learning-path]] · [[legitimacy-ledger]] · [[curriculum-draft]] · [[snapshot-survey]] · [[Moon Dev — Research Brief & Leads]] all resolve again. Edits on either side sync (bisync, anti-resurrection flags, 20-delete fuse); `projects/README.md` remains gone, superseded by this hub.
 
 ## Nearby but NOT vault notes (do not symlink in)
 

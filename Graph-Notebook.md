@@ -7,13 +7,108 @@ cssclasses:
 
 # Graph Notebook — Vault as Jupyter Lab
 
-> Every block below is a **live cell** — edit a note, the table re-runs (like Jupyter). `dataview` = code cell, `base` embed = interactive table, `Map.canvas` = figure. Start at the picture, drill with the cells. See [[Map]] · [[Dashboard]] · [[INDEX]] · [[_meta/graph-groups-proposal|graph colors patch]].
+> Every block below is a **live cell** — edit a note, the table re-runs (like Jupyter). `dataview` = code cell, `base` embed = interactive table, `dataviewjs` = live force-graph, `Map.canvas` = figure. Start at the picture, drill with the cells. See [[Map]] · [[Dashboard]] · [[INDEX]] · [[_meta/graph-groups-proposal|graph colors patch]].
 
 ## Figure — Curated Story Graph
 
 > Drag nodes, it autosaves. Global Graph = truth, this Canvas = story. The 4 MOCs break the old mega-hub hairball.
 
 ![[Map.canvas]]
+
+---
+
+## 0 · Live Force Graph — the actual graph, in the note
+
+*Real D3 physics: every note is a node, every wikilink an edge, rendered live inside this cell. Works offline (D3 v7 vendored at `_meta/vendor/d3.v7.min.js`).*
+**One-time human toggle:** Settings → Community plugins → Dataview (gear) → **Enable JavaScript Queries** → ON.
+
+```dataviewjs
+// CELL 0 - live vault force-graph (D3 v7, vendored offline)
+if (!window.__d3v7) {
+  window.eval(await app.vault.adapter.read('_meta/vendor/d3.v7.min.js'));
+  window.__d3v7 = window.d3;
+}
+const d3 = window.__d3v7;
+
+const pages = dv.pages()
+  .where(p => !p.file.path.startsWith('_sync/')
+           && !p.file.path.startsWith('.obsidian/')
+           && p.file.name !== 'LOG.md')
+  .array();
+
+const nodes = pages.map(p => ({
+  id: p.file.path,
+  name: p.file.name,
+  folder: p.file.folder || '(root)',
+  deg: 0
+}));
+const byPath = new Map(nodes.map(n => [n.id, n]));
+
+const seen = new Set();
+const links = [];
+for (const p of pages) {
+  for (const l of p.file.outlinks ?? []) {
+    const t = l.path;
+    if (t === p.file.path || !byPath.has(t)) continue;
+    const key = p.file.path + ' -> ' + t;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    links.push({ source: p.file.path, target: t });
+    byPath.get(t).deg++;
+  }
+}
+
+const colorFor = f =>
+  f.startsWith('wiki/value')    ? '#4ade80' :
+  f.startsWith('quant')         ? '#fb923c' :
+  f.startsWith('wiki/research') ? '#60a5fa' :
+  f.startsWith('_harness')      ? '#f87171' :
+  f.startsWith('inbox')         ? '#9ca3af' :
+  f.startsWith('journal')       ? '#a3a3a3' :
+  f.startsWith('wiki/concepts') ? '#facc15' :
+  f.startsWith('wiki')          ? '#818cf8' :
+  f.startsWith('_meta')         ? '#525252' : '#2dd4bf';
+
+const W = dv.container.clientWidth || 900, H = 540;
+const svg = d3.select(dv.container).append('svg')
+  .attr('viewBox', [0, 0, W, H])
+  .style('width', '100%').style('height', H + 'px')
+  .style('background', '#0b0e14').style('border-radius', '10px');
+
+const g = svg.append('g');
+svg.call(d3.zoom().scaleExtent([0.2, 4]).on('zoom', e => g.attr('transform', e.transform)));
+
+const sim = d3.forceSimulation(nodes)
+  .force('link', d3.forceLink(links).id(d => d.id).distance(70).strength(0.3))
+  .force('charge', d3.forceManyBody().strength(-120))
+  .force('center', d3.forceCenter(W / 2, H / 2))
+  .force('collide', d3.forceCollide().radius(d => 7 + Math.sqrt(d.deg) * 2));
+
+const link = g.append('g').selectAll('line').data(links).join('line')
+  .attr('stroke', '#334155').attr('stroke-opacity', 0.35);
+
+const node = g.append('g').selectAll('circle').data(nodes).join('circle')
+  .attr('r', d => 4 + Math.sqrt(d.deg) * 2)
+  .attr('fill', d => colorFor(d.folder))
+  .attr('stroke', '#0b0e14')
+  .style('cursor', 'pointer');
+
+node.append('title').text(d => d.name + '  [' + d.folder + ']  in:' + d.deg);
+
+node.call(d3.drag()
+    .on('start', (e, d) => { if (!e.active) sim.alphaTarget(0.25).restart(); d.fx = d.x; d.fy = d.y; })
+    .on('drag',  (e, d) => { d.fx = e.x; d.fy = e.y; })
+    .on('end',   (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }))
+  .on('click', (e, d) => app.workspace.openLinkText(d.id, ''));
+
+sim.on('tick', () => {
+  link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+  node.attr('cx', d => d.x).attr('cy', d => d.y);
+});
+
+dv.paragraph('*drag = pin · scroll = zoom · click = open note · size = in-links · colors = zone (same palette as [[_meta/graph-groups-proposal]])*');
+```
 
 ---
 

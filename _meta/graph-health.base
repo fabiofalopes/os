@@ -1,11 +1,10 @@
 filters:
   and:
     - file.ext == "md"
-    - 'file.name != "LOG.md"'
+    - file.name != "LOG.md"
 views:
   - type: table
     name: RootFlat
-    limit: 30
     filters:
       and:
         - file.inFolder("/")
@@ -15,9 +14,9 @@ views:
     sort:
       - property: file.mtime
         direction: DESC
+    limit: 30
   - type: table
     name: InboxTransient
-    limit: 30
     filters:
       and:
         - file.inFolder("inbox")
@@ -27,9 +26,9 @@ views:
     sort:
       - property: file.mtime
         direction: DESC
+    limit: 30
   - type: table
     name: MOCs
-    limit: 20
     filters:
       and:
         - or:
@@ -41,12 +40,13 @@ views:
       - file.name
       - file.folder
       - file.mtime
+    limit: 20
   - type: table
     name: MetaProposals
-    limit: 20
     filters:
       and:
         - file.inFolder("_meta")
     order:
       - file.name
       - file.mtime
+    limit: 20

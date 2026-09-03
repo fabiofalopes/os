@@ -2,6 +2,8 @@
 # pairs-sync.sh — Ordo layer: rclone bisync vault <-> system folders/cloud remotes
 # Robust anti-resurrection set per rclone docs (2026-07): --resilient --recover
 # --max-lock 2m --conflict-resolve newer. --resync is HUMAN-ONLY (init verb).
+# NOTE: --max-delete is an absolute COUNT fuse on rclone v1.75.0 (percent not
+# accepted by this binary despite docs) — 20 deletions/run max, else abort.
 set -euo pipefail
 
 VAULT="/home/fabio/obsidian-vault-kali"
@@ -18,7 +20,7 @@ mkdir -p "$STATE_DIR" "$BACKUPS"
 need_rclone() { command -v rclone >/dev/null || { echo "FAIL: rclone not installed — sudo apt install rclone, then rclone config"; exit 1; }; }
 
 flags_for() { # $1 = pair name → robust flag set + per-side backups + filters
-  printf -- '--resilient --recover --max-lock 2m --conflict-resolve newer --max-delete 20%% --filters-file %s --backup-dir1 %s/%s/path1-backup --backup-dir2 %s/%s/path2-backup --workdir %s' \
+    printf -- '--resilient --recover --max-lock 2m --conflict-resolve newer --max-delete 20 --filters-file %s --backup-dir1 %s/%s/path1-backup --backup-dir2 %s/%s/path2-backup --workdir %s' \
     "$FILTERS" "$BACKUPS" "$1" "$BACKUPS" "$1" "$WORKDIR"
 }
 

@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "",
+  "search": "tag:#quant/strategy",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
@@ -95,6 +95,6 @@
   "repelStrength": 13.5548172757475,
   "linkStrength": 0.648838358872961,
   "linkDistance": 382,
-  "scale": 0.09218924505043498,
+  "scale": 0.1932757774922256,
   "close": true
 }

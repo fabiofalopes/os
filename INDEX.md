@@ -110,6 +110,10 @@ status: living — Curator maintains this
 ## Session Records & Plans (transient)
 - [[alibaba-token-plan-20-07-2026]] — Clipping of the Alibaba ModelStudio Pro token-plan console (active, 30 days remaining).
 
+## Imports (mirrored / copied in)
+- `wiki/import/research-notes/` — LIVE two-way mirror of `~/projects/trading-agents-research-notes` (bisync, 9 notes incl. [[learning-path]], [[legitimacy-ledger]], [[curriculum-draft]], [[snapshot-survey]]) — heals the old dead links; edits sync both ways.
+- [[cecil-taylor-unit-structures]] · [[miles-davis-kind-of-blue]] · [[quincy-jones-walking-in-space]] — music essays, copied in from `~/` strays (2026-09-03).
+
 ## Harness Config (`_harness/`)
 - [[_sync/README]] — Mirror & sync engine (`_sync/`): GitHub layer (`vault-sync.sh`) + Ordo-style rclone-bisync folder pairs (`pairs-sync.sh`, robust anti-resurrection flags, human-only `--resync`) + the agent write-back contract.
 - [[queue]] — Session queue: runner picks the top unchecked job each tick; role-tagged, order = priority.
@@ -126,7 +130,7 @@ status: living — Curator maintains this
 - [[_meta/graph-health-queries]] — Dataview orphan/stub/hub/unresolved queries (Bases can't filter inlinks).
 - [[Map.canvas]] — curated story-graph: 5-pin cockpit + INDEX + 4 MOCs + CANON.
 - [[_meta/graph-health.base]] — Base views: RootFlat / InboxTransient / MOCs / MetaProposals.
-- [[Graph-Notebook]] — Jupyter-style vault lab: `Map.canvas` figure + 9 live Dataview/Bases cells (galaxy/hubs/orphans/stubs/recent/MOCs/ledger/harness) + native `query` cells.
+- [[Graph-Notebook]] — Jupyter-style vault lab: `Map.canvas` figure + **live D3 force-graph cell** (Cell 0; D3 v7 vendored at `_meta/vendor/d3.v7.min.js`, works offline, needs Dataview JS Queries ON) + 9 live Dataview/Bases cells (galaxy/hubs/orphans/stubs/recent/MOCs/ledger/harness) + native `query` cells.
 
 ---
 **Note:** [[LOG]] (audit trail) and [[MEMORY]] (working memory) are root operational files, not catalogued as knowledge notes. MEMORY.md is live (Steward-maintained, ≤2000 chars).
