@@ -22,6 +22,7 @@ cssclasses:
 *Real D3 physics: every note is a node, every wikilink an edge, rendered live inside this cell. Works offline (D3 v7 vendored at `_meta/vendor/d3.v7.min.js`).*
 **One-time human toggle:** Settings → Community plugins → Dataview (gear) → **Enable JavaScript Queries** → ON.
 
+
 ```dataviewjs
 // CELL 0 - live vault force-graph (D3 v7, vendored offline)
 if (!window.__d3v7) {
