@@ -17,7 +17,11 @@ VERB="${1:-status}"
 
 mkdir -p "$STATE_DIR" "$BACKUPS"
 
-need_rclone() { command -v rclone >/dev/null || { echo "FAIL: rclone not installed — sudo apt install rclone, then rclone config"; exit 1; }; }
+need_rclone() { # resolve rclone even under cron/systemd (their PATH lacks ~/bin)
+  RCLONE="$(command -v rclone 2>/dev/null || true)"
+  [[ -z "$RCLONE" && -x "$HOME/bin/rclone" ]] && RCLONE="$HOME/bin/rclone"
+  [[ -n "$RCLONE" ]] || { echo "FAIL: rclone not found (PATH or ~/bin/rclone) — install first"; exit 1; }
+}
 
 flags_for() { # $1 = pair name → robust flag set + per-side backups + filters
     printf -- '--resilient --recover --max-lock 2m --conflict-resolve newer --max-delete 20 --filters-file %s --backup-dir1 %s/%s/path1-backup --backup-dir2 %s/%s/path2-backup --workdir %s' \
@@ -58,7 +62,7 @@ case "$VERB" in
       [[ "$name" == "$want" ]] || continue
       echo "INIT $name (resync, interactive — check the dry-run output!)"
       # shellcheck disable=SC2086
-      rclone bisync --resync --resync-mode newer $(flags_for "$name") "$p1" "$p2" -v || exit 1
+      "$RCLONE" bisync --resync --resync-mode newer $(flags_for "$name") "$p1" "$p2" -v || exit 1
       status_mark "$name" "initialized" "resync done"
       exit 0
     done < <(grep -vE '^\s*(#|$)' "$CONF")
@@ -72,7 +76,7 @@ case "$VERB" in
       if ! flock -n 8; then echo "SKIP $name (locked)"; continue; fi
       log="$STATE_DIR/pair-$name.log"
       # shellcheck disable=SC2086
-      if rclone bisync $(flags_for "$name") "$p1" "$p2" $extra >>"$log" 2>&1; then
+      if "$RCLONE" bisync $(flags_for "$name") "$p1" "$p2" $extra >>"$log" 2>&1; then
         status_mark "$name" "ok" "synced"; echo "OK $name"
       else
         rc=$?
@@ -85,10 +89,10 @@ case "$VERB" in
         fi
       fi
     done < <(pairs)
-    [[ $n -eq 0 ]] && echo "no enabled pairs in pairs.conf — nothing to do"
-    ;;
+    if [[ $n -eq 0 ]]; then echo "no enabled pairs in pairs.conf — nothing to do"; fi
+    exit 0 ;;
   status)
     [[ -f "$STATUS" ]] && grep -E "^pair_" "$STATUS" || echo "pairs: never run"
-    command -v rclone >/dev/null && echo "rclone: $(rclone version | head -n1)" || echo "rclone: NOT INSTALLED" ;;
+    need_rclone && echo "rclone: $("$RCLONE" version | head -n1)" ;;
   *) echo "usage: pairs-sync.sh list|init <pair>|run|status"; exit 2 ;;
 esac

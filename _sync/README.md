@@ -25,7 +25,7 @@ bash _sync/pairs-sync.sh status   # per-pair last result (also in _sync/STATUS.m
 
 1. **Never auto-`--resync`.** Resync is human-only (`init` verb, interactive).
 2. Robust set on every run: `--resilient --recover --max-lock 2m --conflict-resolve newer` (official rclone set-and-forget recommendation).
-3. `--max-delete 20%` + `--backup-dir` per side → deleted/lost files land in `_sync/backups/`, never gone.
+3. `--max-delete 20` (absolute count fuse — v1.75.0 takes an int, not a percent) + `--backup-dir` per side → deleted/lost files land in `_sync/backups/`, never gone.
 4. Filters exclude `.git`, `.obsidian/`, `_harness/state`, `.trash` — no sync loops with Obsidian state.
 5. `flock` per pair — no concurrent bisync state corruption.
 6. Aggressive 100s interval was Ordo's amplifier — default cadence here is **cron 10 min** (opt-in), inotify daemon optional.
