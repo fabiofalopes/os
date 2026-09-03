@@ -111,7 +111,8 @@ status: living — Curator maintains this
 - [[alibaba-token-plan-20-07-2026]] — Clipping of the Alibaba ModelStudio Pro token-plan console (active, 30 days remaining).
 
 ## Imports (mirrored / copied in)
-- `wiki/import/` — SIX live two-way mirrors (bisync, 10-min timer): [[learning-path]]+trading research (`research-notes/`), `agent-knowledge/` (POP fleet forensics, harness architecture), `agent-wealth/` (REVENUE-IDEAS, STRATEGIES — agentkit code filtered out), `breaking-claude/` (campaign vault), `foundry/` (vaultcraft instance), `hub-notes/` (provider-bridge, modelos-endpoint). Edits sync both ways.
+- `wiki/import/` — FIVE live two-way mirrors (bisync, 10-min timer, `.env`-class excluded, secret-gated before every push): [[learning-path]]+trading research (`research-notes/`), `agent-wealth/` (REVENUE-IDEAS, STRATEGIES — agentkit code + .env filtered out), `breaking-claude/` (campaign vault), `foundry/` (vaultcraft instance), `hub-notes/` (provider-bridge, modelos-endpoint). Edits sync both ways.
+- `agent-knowledge` — **permanently excluded** (secret-saturated; see [[Projects]]). Local only at `~/agent-knowledge/`.
 - [[cecil-taylor-unit-structures]] · [[miles-davis-kind-of-blue]] · [[quincy-jones-walking-in-space]] — music essays, copied in from `~/` strays (2026-09-03).
 
 ## Harness Config (`_harness/`)

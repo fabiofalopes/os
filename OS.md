@@ -21,7 +21,7 @@ date: 2026-09-03
 ## Filesystem map (discovered, keep current)
 
 - `~/projects/` — real code: `trading-agents`, `forecast-scorer`, `agent-wealth` (mirrored, filtered), `tartarus`, `tinygrad*`, `upb`, `runpod-kit`, `wifi-defense-lab`, `sinte01-raylib`. Hub note: [[Projects]].
-- `~/agent-knowledge/` (24M) — **MIRRORED** → `wiki/import/agent-knowledge/`: POP-GPU-FLEET forensics, 00-MASTER-harness-architecture, claude-code-forensic-audit, skills index.
+- `~/agent-knowledge/` (24M) — **EXCLUDED from repo**: saturated with live secrets (Groq/HF/LiteLLM/Coinbase/Lusófona keys in `.env` + notes). Pair OFF, dir purged, gitignored. Local knowledge stays at source.
 - `~/breaking-claude/` — campaign (1.4G artifacts stay out); `vault/` subdir **MIRRORED** → `wiki/import/breaking-claude/`.
 - `~/foundry/` — vaultcraft foundry instance, **MIRRORED** → `wiki/import/foundry/`.
 - `~/shared-local/hub/notes/` — infra notes **MIRRORED** → `wiki/import/hub-notes/`.

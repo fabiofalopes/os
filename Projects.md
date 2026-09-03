@@ -26,7 +26,7 @@ date: 2026-09-02
 | research | `/home/fabio/research/claude-code-original` | Leaked-source reference material (47M) — see [[Breaking Claude — The Landscape 2026 (Research Synthesis)]] |
 | campaigns | `/home/fabio/campaigns` | RETROSPECTIVE.md + cron.txt |
 | breaking-claude (vault) | `/home/fabio/breaking-claude/vault` | **MIRRORED** → `wiki/import/breaking-claude/` (1M; the 1.4G artifacts stay out) |
-| agent-knowledge | `/home/fabio/agent-knowledge` | **MIRRORED** → `wiki/import/agent-knowledge/` (24M, POP fleet forensics, harness architecture, skills index) |
+| agent-knowledge | `/home/fabio/agent-knowledge` | **EXCLUDED from repo** — tree saturated with live secrets (Groq/HF/LiteLLM/Coinbase/Lusófona). Pair OFF; never sync infra-config folders without a secret audit. |
 | foundry | `/home/fabio/foundry` | **MIRRORED** → `wiki/import/foundry/` — vaultcraft foundry instance (00-manifest DECISIONS, 10-canon, 90-sessions) |
 | hub notes | `/home/fabio/shared-local/hub/notes` | **MIRRORED** → `wiki/import/hub-notes/` — provider-bridge-architecture, modelos-endpoint, upb fixes |
 | tartarus | `/home/fabio/projects/tartarus` | Fork of opencode (branch `2.0`), binary `~/.local/bin/tartarus` v0.0.0-2.0-202609030411 |
