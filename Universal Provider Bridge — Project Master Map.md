@@ -209,6 +209,7 @@ Returns: 5h token window %, monthly MCP calls, plan level.
 
 | Date | Event |
 |---|---|
+| 2026-09-03 | **Deep-investigation + fixes** ([[upb-launcher-investigation-2026-09-03]]): alibaba expired → `:8705` repointed to opencode-go (`glm-5.2`/`glm-5.3-flash`); reasoning-content leak removed (translate.ts/stream.ts, live+repo); streaming `pendingData` bug fixed; `upb sync` guarded against clobbering a repointed env; default route moved off 429'd zai; `claude-health` pre-flight gate added + hooked into wrapper; stale pre-fix proxies killed; session-binding cleared. |
 | ~2026-06 | UPB proxy built (Anthropic↔OpenAI translation, the hard 90%) |
 | 2026-07-12 | Ollama Cloud integration, zen free-tier routes |
 | 2026-07-20 | alibaba-token-plan note created ([[alibaba-token-plan-20-07-2026]]) |
@@ -265,14 +266,14 @@ Returns: 5h token window %, monthly MCP calls, plan level.
 
 ## 10. Open Items & Future Work
 
-1. **Alibaba plan expires 2026-08-20** — auto-renewal OFF. Renew → bump `active_until`; or let it lapse → default falls to zai.
+1. **Alibaba plan expired (2026-08-20) — already lapsed.** `:8705` repointed 2026-09-03 to opencode-go (see [[upb-launcher-investigation-2026-09-03]]). If renewed, revert `router-alibaba.env` + `routes.yaml` `active_until`.
 2. **Cookie-based usage fetch** — implement per [[SPEC-alibaba-cookie-usage]] (Phase 1: CLI script, Phase 2: `upb usage` subcommand).
 3. **`upb usage` subcommand** — unified usage query: zai via API, alibaba via cookies, others via local JSONL.
 4. **DeepSeek key** — restore to `~/.config/deepseek/api_key` to re-enable route.
 5. **pi-own** — re-enable after next gpu-deploy; fix model name to `qwen36-27b` (was misconfigured as 35b).
 6. **Alibaba anthropic-native route** — `token-plan.../apps/anthropic` endpoint exists; would eliminate proxy hop entirely.
 7. **End-state swap** — after 2026-08-20, if fleet healthy: `claude` alias → thin `upb` delegating wrapper.
-8. **Zen streaming garble** — one streamed reply came back as token-soup (pre-existing UPB/free-model issue). Verify before trusting zen with real work.
+8. **Zen streaming garble** — one streamed reply came back as token-soup (pre-existing UPB/free-model issue). Verify before trusting zen with real work. **RELATED (fixed 2026-09-03):** the deeper cause was a reasoning-content leak + streaming `pendingData` bug now patched (see [[upb-launcher-investigation-2026-09-03]]).
 9. **litellm `ornith-9b` serves `bonsai-27b-1bit`** — confirmed gateway-side aliasing on `modelos.ai.ulusofona.pt`, NOT an upb bug (upb sends `ornith-9b`; direct call echoes `ornith-9b`). Needs Lusófona gateway-admin confirmation of the `model_list` alias.
 10. **Repo published?** — `/home/fabio/projects/upb/` is local-only. GitHub remote deferred (no `gh` on box). Fresh-box E2E also pending (no container tooling).
 11. **Live ↔ repo CLI drift** — repo `cli/upb` is ahead of live `~/bin/upb` (`sync --full`, `find_router_service`, discovery). Reconcile before the next feature.
