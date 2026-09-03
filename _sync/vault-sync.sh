@@ -53,6 +53,16 @@ case "$VERB" in
     fi
     if [[ -n "$(git status --porcelain)" ]]; then
       git add -A
+      # SECRET GATE: never push credential-looking strings (learned 2026-09-03 —
+      # GitHub push protection blocked the agent-knowledge mirror). Scans the
+      # staged tree; abort before commit if anything matches.
+      if git grep --cached -I -qE "(gsk_[A-Za-z0-9]{20,}|hf_[A-Za-z0-9]{30,}|sk-[A-Za-z0-9]{24,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|xox[bap]-[A-Za-z0-9]{20,}|BEGIN [A-Z]+ PRIVATE KEY)" -- . 2>/dev/null; then
+        echo "ABORT: secret-pattern match in staged tree — run: git grep --cached -I -E '(gsk_|hf_|sk-|ghp_|AKIA|xox|PRIVATE KEY)' to locate"
+        git reset -q
+        mark_status "error" "secret gate tripped — nothing committed"
+        log "ABORT secret-gate"
+        exit 1
+      fi
       git commit -m "vault-sync: auto snapshot $(date -Iseconds)" --quiet || true
     fi
     if git push --quiet 2>/tmp/vault-push.out; then

@@ -111,7 +111,7 @@ status: living — Curator maintains this
 - [[alibaba-token-plan-20-07-2026]] — Clipping of the Alibaba ModelStudio Pro token-plan console (active, 30 days remaining).
 
 ## Imports (mirrored / copied in)
-- `wiki/import/research-notes/` — LIVE two-way mirror of `~/projects/trading-agents-research-notes` (bisync, 9 notes incl. [[learning-path]], [[legitimacy-ledger]], [[curriculum-draft]], [[snapshot-survey]]) — heals the old dead links; edits sync both ways.
+- `wiki/import/` — SIX live two-way mirrors (bisync, 10-min timer): [[learning-path]]+trading research (`research-notes/`), `agent-knowledge/` (POP fleet forensics, harness architecture), `agent-wealth/` (REVENUE-IDEAS, STRATEGIES — agentkit code filtered out), `breaking-claude/` (campaign vault), `foundry/` (vaultcraft instance), `hub-notes/` (provider-bridge, modelos-endpoint). Edits sync both ways.
 - [[cecil-taylor-unit-structures]] · [[miles-davis-kind-of-blue]] · [[quincy-jones-walking-in-space]] — music essays, copied in from `~/` strays (2026-09-03).
 
 ## Harness Config (`_harness/`)
@@ -130,7 +130,7 @@ status: living — Curator maintains this
 - [[_meta/graph-health-queries]] — Dataview orphan/stub/hub/unresolved queries (Bases can't filter inlinks).
 - [[Map.canvas]] — curated story-graph: 5-pin cockpit + INDEX + 4 MOCs + CANON.
 - [[_meta/graph-health.base]] — Base views: RootFlat / InboxTransient / MOCs / MetaProposals.
-- [[Graph-Notebook]] — Jupyter-style vault lab: `Map.canvas` figure + **live D3 force-graph cell** (Cell 0; D3 v7 vendored at `_meta/vendor/d3.v7.min.js`, works offline, needs Dataview JS Queries ON) + 9 live Dataview/Bases cells (galaxy/hubs/orphans/stubs/recent/MOCs/ledger/harness) + native `query` cells.
+- [[Graph-Notebook]] — Jupyter-style vault lab: `Map.canvas` figure + **live D3 force-graph cell** (Cell 0; D3 v7 vendored at `_meta/vendor/d3.v7.min.js`, works offline, needs Dataview JS Queries ON) + 9 live Dataview/Bases cells (galaxy/hubs/orphans/stubs/recent/MOCs/ledger/harness) + native `query` cells + **Plugin Lab** (InfraNodus gap-detection · Graph Analysis link-prediction · Juggl local graphs · ExcaliBrain hierarchy) with a weekly see→gap→link→garden→confirm loop.
 
 ---
 **Note:** [[LOG]] (audit trail) and [[MEMORY]] (working memory) are root operational files, not catalogued as knowledge notes. MEMORY.md is live (Steward-maintained, ≤2000 chars).

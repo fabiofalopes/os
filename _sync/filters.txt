@@ -8,3 +8,7 @@
 - Thumbs.db
 - *.zip
 - RCLONE_TEST
+# secrets never cross a pair boundary (GitHub push protection taught us this)
+- *.env
+- *secret*
+- *token*

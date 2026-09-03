@@ -1,0 +1,4 @@
+  5022 utils/hooks.ts
+   914 constants/prompts.ts
+   323 cost-tracker.ts
+  6259 total

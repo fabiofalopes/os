@@ -1,0 +1,2 @@
+10:    restrictions: z.record(z.string(), z.object({ allowed: z.boolean() })),
+23:  restrictions?: PolicyLimitsResponse['restrictions'] | null // null means 304 Not Modified (cache is valid)

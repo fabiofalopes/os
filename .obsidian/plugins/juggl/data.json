@@ -1,0 +1,430 @@
+{
+  "splitDirection": "vertical",
+  "typedLinkPrefix": "-",
+  "useImgServer": false,
+  "imgServerPort": 3837,
+  "debug": false,
+  "globalStyleGroups": [
+    {
+      "filter": "class:dangling",
+      "color": "rgb(102, 102, 102)",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "class:file -class:image",
+      "color": "rgb(179, 179, 179)",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#1",
+      "color": "#2C73D2",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#2",
+      "color": "#FF6F91",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#7",
+      "color": "#FF9671",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#9",
+      "color": "#9270D3",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#10",
+      "color": "#257A3E",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#12",
+      "color": "#2FAB63",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#13",
+      "color": "#4C9A52",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#19",
+      "color": "#B8E067",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#26",
+      "color": "#007F93",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#N",
+      "color": "#0089BA",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#1→",
+      "color": "#D65DB1",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#7-",
+      "color": "#FFC75F",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#2-",
+      "color": "#F9F871",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#1-",
+      "color": "#0082C1",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#2→",
+      "color": "#A36AAA",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#13-",
+      "color": "#6F7F22",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#12-",
+      "color": "#008E9B",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#9-",
+      "color": "#F27D88",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#2b",
+      "color": "#C3BB4E",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#497→516",
+      "color": "#E07250",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#19-fix",
+      "color": "#0081CF",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#26-",
+      "color": "#6967A9",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#19-specific",
+      "color": "#00855B",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#10-",
+      "color": "#008E63",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    },
+    {
+      "filter": "tag:#19-partially",
+      "color": "#008F7A",
+      "shape": "ellipse",
+      "icon": {
+        "name": "No icon",
+        "path": "",
+        "color": "white"
+      },
+      "showInPane": true,
+      "show": true,
+      "size": 1
+    }
+  ],
+  "globalGraphRibbon": true,
+  "graphSettings": {
+    "animateLayout": true,
+    "autoAddNodes": true,
+    "autoExpand": false,
+    "autoZoom": false,
+    "coreStore": "Obsidian",
+    "expandInitial": true,
+    "fdgdLayout": "cola",
+    "filter": "",
+    "height": "100%",
+    "hoverEdges": false,
+    "layout": "force-directed",
+    "limit": 10000,
+    "mergeEdges": true,
+    "mode": "local",
+    "navigator": true,
+    "openWithShift": false,
+    "readContent": true,
+    "styleGroups": [],
+    "toolbar": true,
+    "width": "100%",
+    "zoomSpeed": 1
+  },
+  "embedSettings": {
+    "animateLayout": true,
+    "autoAddNodes": false,
+    "autoExpand": false,
+    "autoZoom": false,
+    "coreStore": "Obsidian",
+    "expandInitial": true,
+    "fdgdLayout": "cola",
+    "filter": "",
+    "height": "400px",
+    "hoverEdges": false,
+    "layout": "force-directed",
+    "limit": 1000,
+    "mergeEdges": true,
+    "mode": "local",
+    "navigator": false,
+    "openWithShift": false,
+    "readContent": true,
+    "styleGroups": [],
+    "toolbar": false,
+    "width": "100%",
+    "zoomSpeed": 1
+  },
+  "globalGraphSettings": {
+    "animateLayout": true,
+    "autoAddNodes": true,
+    "autoExpand": false,
+    "autoZoom": false,
+    "coreStore": "Obsidian",
+    "expandInitial": false,
+    "fdgdLayout": "cola",
+    "filter": "-class:dangling -class:file",
+    "height": "100%",
+    "width": "100%",
+    "limit": 10000,
+    "hoverEdges": false,
+    "layout": "force-directed",
+    "mergeEdges": true,
+    "mode": "workspace",
+    "navigator": true,
+    "openWithShift": false,
+    "readContent": false,
+    "styleGroups": [],
+    "toolbar": true,
+    "zoomSpeed": 1
+  }
+}

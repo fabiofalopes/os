@@ -1,0 +1,5 @@
+buddy: 6
+coordinator: 1
+assistant: 1
+voice: 1
+dream: 0

@@ -1,0 +1,15 @@
+./services/api/claude.ts:339:    const smallFastModel = getSmallFastModel()
+./services/api/claude.ts:541:    const model = getSmallFastModel()
+./services/api/claude.ts:3278:          model: getSmallFastModel(),
+./services/api/client.ts:157:      model === getSmallFastModel() &&
+./services/awaySummary.ts:49:        model: getSmallFastModel(),
+./services/claudeAiLimits.ts:200:  const model = getSmallFastModel()
+./services/tokenEstimation.ts:261:    getVertexRegionForModel(getSmallFastModel()) === 'global'
+./services/tokenEstimation.ts:272:  // Use getSmallFastModel() to respect ANTHROPIC_SMALL_FAST_MODEL env var for Bedrock users
+./services/tokenEstimation.ts:277:      : getSmallFastModel()
+./tools/WebSearchTool/WebSearchTool.ts:280:        model: useHaiku ? getSmallFastModel() : context.options.mainLoopModel,
+./utils/agenticSessionSearch.ts:261:    const model = getSmallFastModel()
+./utils/hooks/execAgentHook.ts:118:      const model = hook.model ?? getSmallFastModel()
+./utils/hooks/execPromptHook.ts:79:          model: hook.model ?? getSmallFastModel(),
+./utils/hooks/skillImprovement.ts:241:      model: getSmallFastModel(),
+./utils/model/model.ts:36:export function getSmallFastModel(): ModelName {

@@ -15,12 +15,20 @@ date: 2026-09-02
 |---|---|---|
 | trading-agents | `/home/fabio/projects/trading-agents` | Quant pilots + `forecast-scorer/`; vault: [[ledger]], [[Value]] |
 | forecast-scorer | `/home/fabio/projects/forecast-scorer` | Row-1 verdict command `run_verdict.sh` |
-| agent-wealth | `/home/fabio/projects/agent-wealth` | — |
-| Ata | `/home/fabio/projects/Ata` | — |
-| tinygrad / tinygrad-bounty | `/home/fabio/projects/tinygrad*` | — |
-| teamwork-ops | `/home/fabio/projects/teamwork-ops` | Vault: [[Tmux Agent Orchestration — Teamwork & Swarm-Deploy Skills]] |
-| runpod-kit / llama.cpp | `/home/fabio/projects/runpod-kit`, `llama.cpp*` | Vault: [[Own-Instance GPU Harness — Deploy Playbook & Tight-Pack Doctrine]] |
-| pi-glm / pi-spot-watch | `/home/fabio/projects/pi-glm`, `pi-spot-watch` | — |
+| agent-wealth | `/home/fabio/projects/agent-wealth` | **MIRRORED** (filtered, no agentkit) → `wiki/import/agent-wealth/` — REVENUE-IDEAS, STRATEGIES, ROADMAP live in vault |
+| tartarus | `/home/fabio/projects/tartarus` | TUI project — DESIGN.md, RESUME.md, HANDOFF-* live with code |
+| tinygrad-bounty | `/home/fabio/projects/tinygrad-bounty` | Campaign: START-HERE, GOALS, PROGRESS, ORCHESTRATOR-STATE |
+| upb | `/home/fabio/projects/upb` | The routing proxy — vault: [[Claude Code Routes — upb CLI Decision & Runbook]], [[Universal Provider Bridge — Project Master Map]] |
+| runpod-kit | `/home/fabio/projects/runpod-kit` | GPU pod toolkit — runpod-playbook.md with code |
+| wifi-defense-lab | `/home/fabio/projects/wifi-defense-lab` | Wireless research — vault: [[Wireless Pentesting Infrastructure — Kali RPi]] |
+| sinte01-raylib | `/home/fabio/sinte01-raylib` | Raylib synth — DESIGN.md, HANDOFF.md, NEXT_PROMPT.md |
+| mcp-servers | `/home/fabio/mcp-servers` | simple-searxng |
+| research | `/home/fabio/research/claude-code-original` | Leaked-source reference material (47M) — see [[Breaking Claude — The Landscape 2026 (Research Synthesis)]] |
+| campaigns | `/home/fabio/campaigns` | RETROSPECTIVE.md + cron.txt |
+| breaking-claude (vault) | `/home/fabio/breaking-claude/vault` | **MIRRORED** → `wiki/import/breaking-claude/` (1M; the 1.4G artifacts stay out) |
+| agent-knowledge | `/home/fabio/agent-knowledge` | **MIRRORED** → `wiki/import/agent-knowledge/` (24M, POP fleet forensics, harness architecture, skills index) |
+| foundry | `/home/fabio/foundry` | **MIRRORED** → `wiki/import/foundry/` — vaultcraft foundry instance (00-manifest DECISIONS, 10-canon, 90-sessions) |
+| hub notes | `/home/fabio/shared-local/hub/notes` | **MIRRORED** → `wiki/import/hub-notes/` — provider-bridge-architecture, modelos-endpoint, upb fixes |
 | tartarus | `/home/fabio/projects/tartarus` | Fork of opencode (branch `2.0`), binary `~/.local/bin/tartarus` v0.0.0-2.0-202609030411 |
 
 ## ✅ Formerly-missing notes — HEALED via live mirror (2026-09-03)

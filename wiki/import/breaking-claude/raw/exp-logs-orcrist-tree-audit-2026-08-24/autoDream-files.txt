@@ -1,0 +1,5 @@
+autoDream.ts
+config.ts
+consolidationLock.ts
+consolidationPrompt.ts
+services/autoDream/autoDream.ts:230:        skipTranscript: true,

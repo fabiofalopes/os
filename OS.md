@@ -20,12 +20,16 @@ date: 2026-09-03
 
 ## Filesystem map (discovered, keep current)
 
-- `~/projects/` — real code: `trading-agents`, `forecast-scorer`, `agent-wealth`, `Ata`, `tinygrad*`, `teamwork-ops`, `runpod-kit`, `pi-glm`, `pi-spot-watch`. Hub note: [[Projects]].
-- `~/Documents/` — Ordo MIRROR target (onedrive). Not yet a vault pair.
+- `~/projects/` — real code: `trading-agents`, `forecast-scorer`, `agent-wealth` (mirrored, filtered), `tartarus`, `tinygrad*`, `upb`, `runpod-kit`, `wifi-defense-lab`, `sinte01-raylib`. Hub note: [[Projects]].
+- `~/agent-knowledge/` (24M) — **MIRRORED** → `wiki/import/agent-knowledge/`: POP-GPU-FLEET forensics, 00-MASTER-harness-architecture, claude-code-forensic-audit, skills index.
+- `~/breaking-claude/` — campaign (1.4G artifacts stay out); `vault/` subdir **MIRRORED** → `wiki/import/breaking-claude/`.
+- `~/foundry/` — vaultcraft foundry instance, **MIRRORED** → `wiki/import/foundry/`.
+- `~/shared-local/hub/notes/` — infra notes **MIRRORED** → `wiki/import/hub-notes/`.
+- `~/Documents/` — Ordo MIRROR target (onedrive; needs `rclone config` — human). Not yet a vault pair.
 - `~/obsidian-vault-orcrist/` — second vault. Open separately, never nest/symlink.
-- `~/shared-local/` — `hub/` (AGENTS.md, curated skills), `skills/`, `reports/`, `ledger/`.
 - `~/bin/`, `~/.myscripts/` — CLI tools, agent wrappers, `rclone` (installed 2026-09-03, no sudo).
-- Stray `~/ *.md` — `cecil-taylor-unit-structures.md`, `miles-davis-kind-of-blue.md`, `quincy-jones-walking-in-space.md`. Import copies into the vault if you want them queryable.
+- `~/research/claude-code-original/` — leaked-source reference (47M), hub row only. `~/campaigns/` — RETROSPECTIVE + cron.txt.
+- Stray `~/ *.md` — imported to `Clippings/` 2026-09-03 (Cecil Taylor, Miles Davis, Quincy Jones).
 
 ## The window (5 pins, how to open)
 

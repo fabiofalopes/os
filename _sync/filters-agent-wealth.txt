@@ -1,0 +1,20 @@
+# filters-agent-wealth.txt — global boundaries + agent-wealth specifics
+# (per-pair filters-file REPLACES the global one, so global rules are repeated here)
+- .git/**
+- .obsidian/**
+- _harness/state/**
+- _sync/**
+- .trash/**
+- .DS_Store
+- Thumbs.db
+- *.zip
+- RCLONE_TEST
+# secrets never cross a pair boundary
+- *.env
+- *secret*
+- *token*
+# agent-wealth specifics: code/SDK clone stays out of the vault mirror
+- agentkit/**
+- node_modules/**
+- .venv/**
+- __pycache__/**

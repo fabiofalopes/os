@@ -1,0 +1,3 @@
+isPolicyAllowed('allow_product_feedback'
+isPolicyAllowed('allow_remote_control'
+isPolicyAllowed('allow_remote_sessions'

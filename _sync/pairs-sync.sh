@@ -62,7 +62,7 @@ case "$VERB" in
       [[ "$name" == "$want" ]] || continue
       echo "INIT $name (resync, interactive — check the dry-run output!)"
       # shellcheck disable=SC2086
-      "$RCLONE" bisync --resync --resync-mode newer $(flags_for "$name") "$p1" "$p2" -v || exit 1
+      "$RCLONE" bisync --resync --resync-mode newer $(flags_for "$name") "$p1" "$p2" $extra -v || exit 1
       status_mark "$name" "initialized" "resync done"
       exit 0
     done < <(grep -vE '^\s*(#|$)' "$CONF")

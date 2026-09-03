@@ -16,6 +16,10 @@ _sync/backups/
 bees-backup-*.zip
 _harness/.gateway_*
 
+# Secrets never enter the repo (mirror lessons, 2026-09-03)
+*.env
+wiki/import/agent-knowledge/
+
 # Large pulled snapshots/repos — reproducible from source (e.g. Software Heritage), not git-tracked
 projects/trading-agents/repos/
 

@@ -250,6 +250,42 @@ tag:#quant -path:inbox
 
 ---
 
+## Plugin Lab — the four microscopes (installed 2026-09-03)
+
+*Global Graph = truth · `Map.canvas` = story · Cell 0 = live physics · these four = the microscopes.*
+
+### InfraNodus AI Graph View (`infranodus-graph-view` v0.10.0)
+
+- **Reveals:** communities + **structural gaps** — pairs of clusters that are never linked. The "what am I blind to" tool.
+- **Run:** Command palette → `InfraNodus` → open its Graph View → build from vault → check the **Gaps** panel.
+- **Vault ritual:** weekly. Expect a gap between the `trading` and `harness` clusters → bridge it with one note (e.g. a harness note applying [[the-alpha-illusion]]'s P-checklist to worker evals).
+
+### Knowledge Graph Analysis (`knowledge-graph-analysis` v0.6.7)
+
+- **Reveals:** ranked *hidden* connections — Co-Citations (notes cited together), Co-Tags, Link Prediction (Adamic-Adar / Common Neighbours). The best "what should I link next" list in the vault.
+- **Run:** Command palette → `Graph Analysis` → open the analysis pane → pick algorithm → scope to `wiki/research` or a MOC.
+- **Vault ritual:** feed the Orphan Garden (Cell 3) — run Adamic-Adar, add the top-3 suggested links, watch Cell 0 re-cluster.
+
+### Juggl (`juggl` v1.5.0)
+
+- **Reveals:** styled local graphs in a pane — per-note neighborhood with colors/icons, its own physics; works without the JS toggle.
+- **Run:** open a MOC ([[MOC-trading]] · [[MOC-ledger]] · [[MOC-ai-ml]] · [[MOC-harness]]) → palette → `Juggl: Open local graph of current note`.
+
+### ExcaliBrain (`excalibrain` v0.2.18 + Excalidraw v2.26.4)
+
+- **Reveals:** hierarchical parent/child/friend map built from links — the vault's org-chart view.
+- **Run:** open [[quant/CANON]] or any MOC → palette → `ExcaliBrain: Start ExcaliBrain` (or the brain ribbon icon).
+
+### The loop (all five surfaces, one habit)
+
+1. **See** — Cell 0 (or global graph `No-noise` filter)
+2. **Find the gap** — InfraNodus Gaps panel
+3. **Find the link** — Graph Analysis (Adamic-Adar / Co-Citations)
+4. **Garden** — add `[[MOC-*]]` + 2 links to an orphan (Cell 3)
+5. **Confirm** — re-render Cell 0; the gap should shrink
+
+---
+
 ## How to use this like Jupyter
 
 1. **Top → bottom**: Figure → Galaxy → Hubs → Garden. That's one sweep.

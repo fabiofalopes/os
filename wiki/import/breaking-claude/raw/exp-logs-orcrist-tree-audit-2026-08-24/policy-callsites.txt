@@ -1,0 +1,21 @@
+./bridge/initReplBridge.ts:155:  if (!isPolicyAllowed('allow_remote_control')) {
+./cli/print.ts:4991:      if (!isPolicyAllowed('allow_remote_sessions')) {
+./commands/feedback/index.ts:21:      !isPolicyAllowed('allow_product_feedback')
+./commands/remote-env/index.ts:10:    isClaudeAISubscriber() && isPolicyAllowed('allow_remote_sessions'),
+./commands/remote-env/index.ts:12:    return !isClaudeAISubscriber() || !isPolicyAllowed('allow_remote_sessions')
+./commands/remote-setup/index.ts:13:    isPolicyAllowed('allow_remote_sessions'),
+./commands/remote-setup/index.ts:15:    return !isPolicyAllowed('allow_remote_sessions')
+./services/policyLimits/index.ts:510:export function isPolicyAllowed(policy: string): boolean {
+./skills/bundled/scheduleRemoteAgents.ts:334:      isPolicyAllowed('allow_remote_sessions'),
+./tools/RemoteTriggerTool/RemoteTriggerTool.ts:60:      isPolicyAllowed('allow_remote_sessions')
+./utils/background/remote/remoteSession.ts:53:  if (!isPolicyAllowed('allow_remote_sessions')) {
+10:isPolicyAllowed('allow_remote_sessions'
+12:isPolicyAllowed('allow_remote_sessions'
+13:isPolicyAllowed('allow_remote_sessions'
+155:isPolicyAllowed('allow_remote_control'
+15:isPolicyAllowed('allow_remote_sessions'
+21:isPolicyAllowed('allow_product_feedback'
+334:isPolicyAllowed('allow_remote_sessions'
+4991:isPolicyAllowed('allow_remote_sessions'
+53:isPolicyAllowed('allow_remote_sessions'
+60:isPolicyAllowed('allow_remote_sessions'

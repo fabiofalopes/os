@@ -1,0 +1,41 @@
+    hoursTillReset,
+  })
+}
+
+async function makeTestQuery() {
+  const model = getSmallFastModel()
+  const anthropic = await getAnthropicClient({
+    maxRetries: 0,
+    model,
+    source: 'quota_check',
+  })
+  const messages: MessageParam[] = [{ role: 'user', content: 'quota' }]
+  const betas = getModelBetas(model)
+  // biome-ignore lint/plugin: quota check needs raw response access via asResponse()
+  return anthropic.beta.messages
+    .create({
+      model,
+      max_tokens: 1,
+      messages,
+      metadata: getAPIMetadata(),
+      ...(betas.length > 0 ? { betas } : {}),
+    })
+    .asResponse()
+}
+
+export async function checkQuotaStatus(): Promise<void> {
+  // Skip network requests if nonessential traffic is disabled
+  if (isEssentialTrafficOnly()) {
+    return
+  }
+
+  // Check if we should process rate limits (real subscriber or mock testing)
+  if (!shouldProcessRateLimits(isClaudeAISubscriber())) {
+    return
+  }
+
+  // In non-interactive mode (-p), the real query follows immediately and
+  // extractQuotaStatusFromHeaders() will update limits from its response
+  // headers (claude.ts), so skip this pre-check API call.
+  if (getIsNonInteractiveSession()) {
+    return

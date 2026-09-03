@@ -1,0 +1,15 @@
+./bridge/initReplBridge.ts:26:} from '../services/policyLimits/index.js'
+./cli/print.ts:136:import { isPolicyAllowed } from 'src/services/policyLimits/index.js'
+./commands/feedback/index.ts:2:import { isPolicyAllowed } from '../../services/policyLimits/index.js'
+./commands/remote-env/index.ts:2:import { isPolicyAllowed } from '../../services/policyLimits/index.js'
+./commands/remote-setup/index.ts:3:import { isPolicyAllowed } from '../../services/policyLimits/index.js'
+./constants/system.ts:50: * Enabled by default, can be disabled via env var or GrowthBook killswitch.
+./constants/system.ts:62: * Enabled by default, can be disabled via env var or GrowthBook killswitch.
+./entrypoints/agentSdkTypes.ts:432: * Skips the `tengu_ccr_bridge` gate and policy-limits check — @internal
+./entrypoints/init.ts:14:} from '../services/policyLimits/index.js'
+./hooks/useScheduledTasks.ts:59:    // so this guard alone is launch-grain. The mid-session killswitch is
+./services/analytics/firstPartyEventLoggingExporter.ts:105:      // Injected killswitch probe. Checked per-POST so that disabling the
+./services/analytics/firstPartyEventLoggingExporter.ts:535:      throw new Error('firstParty sink killswitch active')
+./services/analytics/sinkKillswitch.ts:3:// Mangled name: per-sink analytics killswitch
+./services/mcp/channelNotification.ts:209:  // this path. Before auth/policy so the killswitch works regardless of
+./services/policyLimits/index.ts:55:const CACHE_FILENAME = 'policy-limits.json'

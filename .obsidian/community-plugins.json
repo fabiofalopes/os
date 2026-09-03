@@ -1,5 +1,9 @@
 [
   "terminal",
   "table-editor-obsidian",
-  "dataview"
+  "dataview",
+  "juggl",
+  "obsidian-excalidraw-plugin",
+  "excalibrain",
+  "knowledge-graph-analysis"
 ]
