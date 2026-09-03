@@ -1,7 +1,7 @@
 ---
-github_last_run: "2026-09-03T10:19:13+01:00"
-github_result: "error"
-github_detail: "push failed (auth/network) — see _sync/state/vault-sync.log"
+github_last_run: "2026-09-03T10:26:41+01:00"
+github_result: "ok"
+github_detail: "pushed"
 pair_research-notes_last: "2026-09-03T10:23:41+01:00"
 pair_research-notes_result: "initialized"
 pair_research-notes_detail: "resync done"
