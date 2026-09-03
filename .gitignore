@@ -6,6 +6,15 @@
 _harness/state/
 _harness/*.lock
 _harness/secrets.env
+_harness/lusofona.env
+
+# Sync engine runtime state + bisync backups (not version-controlled)
+_sync/state/
+_sync/backups/
+
+# One-off large backup + gateway hold markers (runtime state)
+bees-backup-*.zip
+_harness/.gateway_*
 
 # Large pulled snapshots/repos — reproducible from source (e.g. Software Heritage), not git-tracked
 projects/trading-agents/repos/

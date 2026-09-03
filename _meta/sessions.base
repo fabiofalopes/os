@@ -1,0 +1,11 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.inFolder("journal/sessions")
+views:
+  - type: table
+    name: "Latest"
+    limit: 20
+    order:
+      - file.name
+      - file.mtime

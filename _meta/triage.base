@@ -1,0 +1,23 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.inFolder("inbox")
+views:
+  - type: table
+    name: Needs-review
+    order:
+      - file.name
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC
+    limit: 20
+  - type: table
+    name: By-week
+    groupBy:
+      property: file.mtime
+      direction: DESC
+    order:
+      - file.name
+      - file.mtime
+    limit: 20

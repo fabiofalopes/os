@@ -1,0 +1,9 @@
+[Unit]
+Description=Vault GitHub sync every 10 min (resource-light default)
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=10min
+
+[Install]
+WantedBy=timers.target

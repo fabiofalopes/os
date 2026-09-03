@@ -1,0 +1,9 @@
+
+# Fleet Optimizer — self-tuning agent loop
+0 * * * * /home/fabio/.config/opencode/agent-loops/fleet-optimizer/loop.sh > /dev/null 2>&1
+
+# The Forge — background cron-session engine (every 20 min, self-tuning)
+
+# The Forge watchdog — refresh health flag constantly (offset from runner)
+7-59/15 * * * * /home/fabio/obsidian-vault-kali/_harness/health.sh >/dev/null 2>&1
+*/15 * * * * /home/fabio/obsidian-vault-kali/_harness/runner.sh >/dev/null 2>&1

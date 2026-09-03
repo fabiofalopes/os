@@ -1,0 +1,10 @@
+# filters.txt — never cross these boundaries (rclone filters-file syntax)
+- .git/**
+- .obsidian/**
+- _harness/state/**
+- _sync/**
+- .trash/**
+- .DS_Store
+- Thumbs.db
+- *.zip
+- RCLONE_TEST

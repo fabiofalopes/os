@@ -1,0 +1,29 @@
+/* dashboard-dense: compact no-scroll dashboard layout */
+.dashboard-dense .markdown-preview-view {
+  max-width: 1100px;
+}
+
+.dashboard-dense .dataview.table-view-table {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.dashboard-dense .dataview.table-view-table th,
+.dashboard-dense .dataview.table-view-table td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 420px;
+}
+
+.dashboard-dense h2 {
+  margin-top: 14px;
+  margin-bottom: 4px;
+  font-size: 1.05em;
+}
+
+.dashboard-dense p > em,
+.dashboard-dense blockquote {
+  font-size: 13px;
+}

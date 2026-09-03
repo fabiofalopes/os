@@ -1,9 +1,9 @@
 # MEMORY — Forge Working Memory
 
-> Always in context; Steward keeps it ≤2000 chars. Map [[INDEX]] · Audit [[LOG]] · Constitution [[CLAUDE]].
+> Always in context; Steward keeps ≤2000 chars. Map [[INDEX]] · Audit [[LOG]] · Constitution [[CLAUDE]].
 
 ## Mission
-Generate wealth + professional autonomy by compounding knowledge, skills, and measurable value. Every session leaves the vault richer, skills sharper, or the path to revenue clearer.
+Generate wealth + professional autonomy by compounding knowledge, skills, measurable value. Every session leaves the vault richer, skills sharper, or the path to revenue clearer.
 
 ## Directives (short)
 1. Test, don't wonder — evidence, or label it aspiration.
@@ -13,20 +13,21 @@ Generate wealth + professional autonomy by compounding knowledge, skills, and me
 5. Compound — each session = a durable artifact or a clean negative result.
 
 ## Vault layout
-CLAUDE.md (constitution) · INDEX.md (map) · LOG.md (audit) · MEMORY.md (this) · _harness/ (cron engine) · inbox/ (raw) · journal/sessions/ (digests) · wiki/{concepts,research,value}/ (durable knowledge) · projects/ (campaigns) · .forge/skills/ (forged skills).
+CLAUDE.md (constitution) · INDEX.md (map) · LOG.md (audit) · _harness/ (cron engine) · inbox/ (raw) · journal/sessions/ (digests) · wiki/{concepts,research,value}/ (knowledge) · projects/ (campaigns) · .forge/skills/ (forged skills).
 
 ## Governance
 Z1 agent-owned: frontmatter, links, INDEX, LOG, triage · Z2 agent-drafts/human-approves: wiki synthesis, skill promotion, signals · Z4 human-only: CLAUDE.md, capital.
 
-## State (2026-07-20)
-- Engine up; cron swarm on 20-min cadence. Stage: map the child brain (pre-revenue).
-- INDEX catalogues 29 notes. wiki/research/ai-ml/ = SEAL, Voyager, Reflexion, ADAS (arXiv-verified).
+## State (2026-08-01)
+- Row 4 KILLED, clean sample (05:43Z, Critic-cert 09:54Z): SR_X(EW) −0.857 net, family mean −0.627, DSR p = 0.998, ρ = 0.776/1540 fixed-mask pairs, fetch_fail 0.0036% ([[quant-pilot-02-RESULT]] · [[critic-quant-pilot-02-KILL-certification-2026-08-01]]). Ledger flip staged (Z2).
+- Row 5 staged: [[quant-pilot-03]] LOCKED pre-reg + Critic-hardened — sign-off = the ONLY agent runway.
+- Rows 1-2 human-gated: row-1 resolves 08-07 (#19 owed before); row-2 GO/NO-GO [[tool-pilot-01-publish-checklist]] owed since 07-23.
+- FM-9 PROVEN in prod: worker TIMEOUT 09:30Z → builder ok 09:54Z.
 
-## Top priority NOW
-1. [Janitor] Scaffold inbox/, journal/sessions/, wiki/{concepts,research,value}/, projects/, .forge/skills/ — empty dirs + one-line README; don't move notes yet.
-2. [Scout] Clip López de Prado overfitting guards + Kelly criterion → wiki/research/finance/ (anti-fooling foundation for money).
-3. [Quant] Seed wiki/value/ledger.md with 3 ranked hypotheses from Life Arc Stage 1 — ideas only, no capital.
+## Priority NOW
+1. [Human] Row-5 sign-off → EXECUTE [[quant-pilot-03]].
+2. [Human] Row-2 publish GO/NO-GO; #19 call before 08-07.
 
 ## Open risks
-- Runner unproven: LOG shows exit127 (`claude` not on cron PATH) + exit1 (not logged in) — fix or the swarm silently dies.
-- No revenue hypothesis tested yet.
+- Three human decisions owed.
+- $0 revenue; evidence-buying only.

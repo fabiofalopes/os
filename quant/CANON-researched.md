@@ -1,0 +1,3033 @@
+---
+tags: [quant, canon, research, papers, deep-research]
+date: 2026-07-23
+status: researched — adversarially verified (3-vote per claim)
+source: deep-research workflow wf_6b6298b8 (107 agents, 943 tool uses)
+---
+
+# CANON (researched) — Essential Finance/Trading Papers
+
+> Adversarially-verified tiered map. Each entry survived 3-vote verification.
+> **Merge target:** [[CANON]] — cartographer to reconcile with the skeleton, verify, and add [[wikilinks]] to existing paper notes.
+
+## Summary
+
+The verified evidence supports a tiered canon of finance/trading papers organized around two axes: (1) historical foundations still in daily production use, and (2) the modern replication-critical lens that tells practitioners which backtest-heavy claims to trust. Tier 1 (non-negotiable) is anchored by Black-Scholes (1973, the most practically consequential quant paper, in daily options-desk use), Heston (1993, closed-form stochastic-vol pricing and the workhorse smile/skew calibration model), Engle-Granger (1987, cointegration plus the two-step hedge-ratio estimator that powers pairs/stat-arb), Jegadeesh-Titman (1993, cross-sectional momentum as deployed by AQR), Almgren-Chriss (2000, the permanent/temporary impact decomposition and cost-vs-risk execution tradeoff underlying modern execution algos), and the Fama-French 1993/2015 factor models. Tier 2/3 is dominated by the trust-but-verify literature that is essential precisely because so much published alpha is spurious: Harvey-Liu-Zhu (t>3.0 bar for new factors), McLean-Pontiff (26% out-of-sample / 58% post-publication anomaly decay), the Bailey/Lopez de Prado cluster (PBO via CSCV and the Deflated Sharpe Ratio), Gu-Kelly-Xiu (ML beats linear methods; trees/NNs best), and the Hambly-Xu-Yang RL-in-finance survey. The clearest follow-the-success signal is that practitioner reading lists independently canonize the same execution, factor, and options papers the citation record elevates. The strongest practical takeaway: treat any backtest that does not disclose its number of trials as a likely false positive, and discount headline anomaly returns by roughly half before sizing capital.
+
+## Tier 1 — Non-negotiable canon
+
+### STATISTICAL ARBITRAGE / MEAN REVERSION
+
+Engle & Granger (1987), 'Co-Integration and Error Correction: Representation, Estimation, and Testing,' Econometrica 55(2):251-276, DOI 10.2307/1913236, is the mathematical foundation of pairs trading and stat-arb mean reversion. It (a) formally defines cointegration (I(1) series whose linear combination is I(0)/stationary), (b) proves the Granger representation theorem linking MA/AR/error-correction forms (the basis for modeling mean-reverting spread dynamics via VECM), and (c) gives the simple asymptotically efficient two-step estimator whose step-1 OLS beta IS the hedge ratio and spread = y - beta*x.
+
+**Confidence:** high · **Verification:** 3-0 x3
+
+> Merges claims 0, 1, 2 (all 3-0, primary source). Verbatim abstract confirms the cointegration definition, the representation theorem ('connects the moving average, autoregressive, and error correction representations'), and the two-step estimator. Engle/Granger shared the 2003 Nobel for this. Still in production use; canonical in practitioner texts (Vidyamurthy, Pairs Trading, 2004). Implement today: estimate bivariate hedge ratios via the EG two-step (OLS + ADF residual test); use Johansen/Kalman for multivariate/dynamic cases (EG handles one cointegrating vector and has finite-sample bias). Caveat: distance-method pairs trading (Gatev-Goetzmann-Rouwenhorst 2006) also exists, so cointegration is the principal but not sole foundation.
+
+Sources: [1](https://doi.org/10.2307/1913236)
+
+### MOMENTUM
+
+Jegadeesh & Titman (1993), 'Returns to Buying Winners and Selling Losers,' Journal of Finance 48(1):65-91, DOI 10.1111/j.1540-6261.1993.tb04702.x, establishes cross-sectional momentum as a real, profitable anomaly (buy past winners, sell past losers over 3-12 month horizons) and is the foundation of the momentum factor deployed by AQR and systematic managers.
+
+**Confidence:** high · **Verification:** 3-0
+
+> Claim 3 (3-0, primary). Abstract is near-verbatim. One of the most robust/replicated anomalies: international (Rouwenhorst 1998), cross-asset (Asness-Moskowitz-Pedersen 2013 'Value and Momentum Everywhere'), two centuries of data (Geczy-Samonov); Fama-French excluded it from the 5-factor model precisely because it is a distinct robust anomaly. Claim 23 confirms a practitioner canon list ranks it as non-negotiable. Implement today: 12-1 month cross-sectional momentum as a core factor. Replication caveats (qualify magnitude/tail-risk, not existence): momentum crashes (Daniel-Moskowitz 2016), small-cap transaction-cost erosion, some post-1990s return decay.
+
+Sources: [1](https://doi.org/10.1111/j.1540-6261.1993.tb04702.x) [2](https://waylandz.com/quant-book-en/ArXiv-Papers/)
+
+### DERIVATIVES & VOLATILITY
+
+Heston (1993), 'A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options,' Review of Financial Studies 6(2):327-343, DOI 10.1093/rfs/6.2.327, is the foundational and most-deployed stochastic-volatility model, delivering a characteristic-function/Fourier pricing formula for random (CIR mean-reverting) variance that enables fast calibration to the implied-vol smile/skew, in contrast to constant-vol Black-Scholes.
+
+**Confidence:** high · **Verification:** 3-0 x2
+
+> Merges claims 4 and 5 (both 3-0, primary). Title confirms the closed-form stochastic-vol contribution; price is delivered via Fourier inversion of the characteristic function (semi-closed-form, which the claim's 'analytical/characteristic-function' hedge captures). The characteristic-function form enables FFT/Carr-Madan pricing and hence fast smile/skew calibration - the reason Heston became the equity/FX desk workhorse. Implement today: Heston as the baseline stochastic-vol calibrator. Caveat (fit-quality, not refutation): poor short-dated ATM skew fit (sqrt behavior).
+
+Sources: [1](https://doi.org/10.1093/rfs/6.2.327)
+
+### DERIVATIVES BASELINE
+
+Black-Scholes (1973) is ranked by practitioner canon as the single most practically consequential quant-finance paper, in daily use on options desks (and as the quoting convention even for desks running local-vol/stochastic-vol/SABR).
+
+**Confidence:** medium · **Verification:** 3-0
+
+> Claim 24 (3-0). The source is a commercial, uncited career-prep BLOG, so confidence is capped at medium for the ranking itself, but the substantive point is uncontroversial domain knowledge: Black-Scholes won the 1997 Nobel (Merton/Scholes), options are universally quoted in BS implied-vol terms, and all Greeks derive from it. The blog hedges 'by almost any measure' rather than an absolute 'single most.' Implement today: BS as the baseline/quoting convention; do not cite the blog as sole authority.
+
+Sources: [1](https://everythingquant.com/guides/most-influential-papers-history/)
+
+### OPTIMAL EXECUTION & MARKET IMPACT
+
+Almgren & Chriss (2000/2001), 'Optimal Execution of Portfolio Transactions,' Journal of Risk 3(2):1-39 (correct DOI 10.21314/jor.2001.041), is the standard practitioner framework for optimal execution. It decomposes price impact into permanent g(v) and temporary h(v) components and shows optimal trajectories balance trading slowly (minimize impact) against trading fast (reduce volatility/timing risk), forming a risk-aversion-parameterized efficient frontier.
+
+**Confidence:** high · **Verification:** 3-0 x3
+
+> Merges claims 19, 20, 22 (all 3-0). ~1,194 Crossref citations; canonical baseline that extensions (Obizhaeva-Wang, Gatheral) build on; backbone of IS/TWAP/VWAP adaptive execution algos; still in production. Claim 22 confirms a practitioner reading list canonizes both AC 2000 and Almgren (2003) 'A Closed-Form Solution for Optimal Execution' as must-read. CITATION BLEMISH: the originally cited DOI 10.21314/JOR.2000.041 returns 404; the correct DOI is 10.21314/jor.2001.041 (one-digit year typo; conventionally cited as 2000). Implement today: AC mean-variance execution frontier as the starting point for any execution algo.
+
+Sources: [1](https://doi.org/10.21314/jor.2001.041) [2](https://waylandz.com/quant-book-en/ArXiv-Papers/)
+
+### ASSET PRICING & FACTORS
+
+Fama & French 1993 three-factor ('Common Risk Factors in Returns on Stocks and Bonds,' JFE) and 2015 five-factor ('A Five-Factor Asset Pricing Model,' JFE) are non-negotiable factor-model canon.
+
+**Confidence:** high · **Verification:** 3-0
+
+> Claim 23 (3-0). Confirmed verbatim in a practitioner canon list's 'Factor Investing and Asset Pricing' table; all attributions factually correct. FF1993 has tens of thousands of citations; FF2015 is the standard five-factor extension. NOTE: this finding rests on a practitioner reading-list (blog) source plus overwhelming domain consensus; the primary DOIs for FF1993/FF2015 were not themselves adversarially verified in this batch (see caveats).
+
+Sources: [1](https://waylandz.com/quant-book-en/ArXiv-Papers/)
+
+## Tier 3 — Modern frontier
+
+### General
+
+TIER 2/3 - FACTOR ZOO / MULTIPLE TESTING: Harvey, Liu & Zhu (2016), '... and the Cross-Section of Expected Returns,' Review of Financial Studies 29(1):5-68, DOI 10.1093/rfs/hhv059, argues that hundreds of published return-predicting factors (they document 316) constitute a severe data-mining/multiple-testing problem, so the conventional t-stat threshold (~2.0) is too low and a new factor should clear t > 3.0 to be treated as real.
+
+**Confidence:** high · **Verification:** 3-0 x2
+
+> Merges claims 6 and 7 (both 3-0, primary top-3 journal). Verbatim abstract: 'Hundreds of papers and factors attempt to explain the cross-section of expected returns' and 'Given this extensive data mining, it does not make sense to use the usual criteria for establishing significance,' recommending t > 3.0. This is the operational 'famous-but-overrated factor' filter: it is the standard citation for discounting the long tail of published factors. Implement today: require t > 3.0 (and economic rationale) before admitting any new factor.
+
+Sources: [1](https://academic.oup.com/rfs/article-abstract/29/1/5/1843824)
+
+### General
+
+TIER 2/3 - ANOMALY DECAY: McLean & Pontiff (2016), 'Does Academic Research Destroy Stock Return Predictability?', Journal of Finance 71(1):5-32, DOI 10.1111/jofi.12365, shows that across 97 cross-sectional predictors, portfolio returns fall 26% out-of-sample and 58% post-publication; the incremental 32-point post-publication decline is attributed to publication-informed trading (arbitrage), not statistical bias alone.
+
+**Confidence:** high · **Verification:** 3-0 x2
+
+> Merges claims 8 and 9 (both 3-0, primary). Verbatim abstract: 'Portfolio returns are 26% lower out-of-sample and 58% lower post-publication' and 'The postpublication decline exceeds the out-of-sample decline by 32%, which we attribute to publication-informed trading.' 58-26 = 32 pp exactly. Nuance: these are cross-sectional averages; the 26% OOS figure is framed as an upper-bound data-mining estimate; meaningful predictability persists OOS. NOT Hou-Xue-Zhang 'Replicating Anomalies' (JF 2020, 452 anomalies). Implement today: haircut published anomaly returns ~50%+ before sizing; expect further decay once a signal is widely known.
+
+Sources: [1](https://onlinelibrary.wiley.com/doi/abs/10.1111/jofi.12365)
+
+### General
+
+TIER 2/3 - BACKTEST OVERFITTING (PBO): Bailey, Borwein, Lopez de Prado & Zhu, 'The Probability of Backtest Overfitting' / 'Pseudo-Mathematics and Financial Charlatanism,' SSRN 2326253 (Notices of the AMS 61(5):458-471, 2014; J. of Computational Finance 20(4), DOI 10.21314/jcf.2016.322), shows standard holdout controls are unreliable for backtests because they ignore the number of trials tested, and proposes estimating the Probability of Backtest Overfitting (PBO) via Combinatorially Symmetric Cross-Validation (CSCV). PBO = the probability that the in-sample-optimal configuration underperforms the median of the N configurations out-of-sample.
+
+**Confidence:** high · **Verification:** 3-0 x3
+
+> Merges claims 10, 11, 12 (all 3-0, primary, verified against the PDF). Verbatim: holdout 'does not take into account the number of trials attempted'; PBO is 'the probability that this strategy with optimal performance IS ranks below the median OOS'; and 'Backtests published in academic or practitioners' publications almost never declare the number of trials ... it is highly probable that their findings constitute false positives.' This is the core skeptical argument for discounting backtest-heavy 'breakthrough' trading papers. Minor gloss: 'directly computable' needs the full N-configuration matrix + CSCV, and PBO carries a standard error.
+
+Sources: [1](https://papers.ssrn.com/sol3/Papers.cfm?abstract_id=2326253)
+
+### General
+
+TIER 2/3 - DEFLATED SHARPE RATIO: Bailey & Lopez de Prado, 'The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality,' Journal of Portfolio Management (2014), SSRN 2460551, corrects the reported Sharpe ratio for selection bias under multiple testing and non-normally distributed returns; the number of trials is the critical missing input, a backtest that does not control for the search extent is 'worthless regardless of reported performance,' and selection bias plus overfitting makes investors allocate to strategies that systematically lose money out-of-sample.
+
+**Confidence:** high · **Verification:** 3-0 x3
+
+> Merges claims 13, 14, 15 (all 3-0, primary PDF verified via pypdf). Verbatim: DSR 'corrects for two leading sources of performance inflation: Selection bias under multiple testing and non-Normally distributed returns'; a backtest is 'worthless if the researcher has not controlled for the extent of the search'; and 'selection bias combined with backtest overfitting misleads investors into allocating capital to strategies that will systematically lose money.' Reinforced by White's Reality Check (2000) and Hansen's SPA (2005). Counting nuance: some framings count three sources vs two (selection bias being the consequence of multiple testing). Implement today: always report DSR with the trial count; treat undisclosed-trial backtests as likely false positives.
+
+Sources: [1](http://www.davidhbailey.com/dhbpapers/deflated-sharpe.pdf)
+
+### MODERN ML IN TRADING
+
+Gu, Kelly & Xiu (2020), 'Empirical Asset Pricing via Machine Learning,' Review of Financial Studies 33(5):2223-2273, DOI 10.1093/rfs/hhaa009, demonstrates large economic gains from ML return forecasts (in some cases doubling the performance of leading regression-based strategies), with tree-based methods and neural networks the best performers, outperforming linear specifications (OLS/LASSO/ridge).
+
+**Confidence:** high · **Verification:** 3-0 x2
+
+> Merges claims 16 and 17 (both 3-0, primary top-3 journal, ~3000+ citations). Near-verbatim abstract, and the claim preserves the crucial 'in some cases' hedge. This is the standard ML-asset-pricing reference. Replication caveats (qualify generalizability, not the finding): the 'doubling' is Sharpe gains in specific sample/universe configs; absolute OOS R-squared is modest (~0.4% monthly); gains concentrate in large caps and a few variables/interactions; follow-ups (Chen-Pelger-Zhu 2024) show architecture/feature sensitivity and post-publication alpha decay plus transaction-cost sensitivity. Implement today: tree ensembles / NNs as the default nonlinear signal model, with realistic cost and decay assumptions.
+
+Sources: [1](https://doi.org/10.1093/rfs/hhaa009)
+
+### RL IN TRADING (frontier map)
+
+Hambly, Xu & Yang, 'Recent Advances in Reinforcement Learning in Finance' (arXiv:2112.04553; published in Mathematical Finance), identifies optimal execution, portfolio optimization, option pricing and hedging, market making, smart order routing, and robo-advising as the core finance application areas for RL.
+
+**Confidence:** high · **Verification:** 3-0
+
+> Claim 18 (3-0, primary, verified against the arXiv abstract). Verbatim match of the application-area list. This is a descriptive claim about a specific survey's scope; it is the best-verified entry point for the 'modern ML/RL frontier' category. Note: it maps WHERE RL is being applied, not which RL results replicate out-of-sample - the latter remains the open replication question (see caveats).
+
+Sources: [1](https://arxiv.org/abs/2112.04553)
+
+### General
+
+PRACTITIONER CANON SIGNAL ('follow the success'): Independent practitioner-oriented quant reading lists canonize the same papers the citation record elevates - Almgren-Chriss (2000) and Almgren (2003) for optimal execution, Fama-French 1993/2015 plus Jegadeesh-Titman 1993 for factors/momentum, and Black-Scholes (1973) as the most practically consequential paper - corroborating their Tier 1 status.
+
+**Confidence:** medium · **Verification:** 3-0 x3
+
+> Merges claims 22, 23, 24 (all 3-0). Both are practitioner BLOG reading lists, so confidence is medium for the ranking claims, but they usefully triangulate 'what practitioners actually cite' against the primary-paper citation counts. The waylandz list explicitly labels a 'Must-Read Classics' section as 'foundational works in quantitative trading research.' Caveat: these are secondary/blog sources and should not be cited as sole authority; their value is as a practitioner-sentiment signal, not as primary evidence.
+
+Sources: [1](https://waylandz.com/quant-book-en/ArXiv-Papers/) [2](https://everythingquant.com/guides/most-influential-papers-history/)
+
+## Open questions
+
+- Which papers anchor the unverified Tier-1 categories - portfolio allocation (Markowitz 1952, Kelly 1956, Black-Litterman 1992, risk parity / Bridgewater), CAPM (Sharpe 1964), market microstructure (Kyle 1985, Glosten-Milgrom 1985, Avellaneda-Stoikov 2008, order-flow toxicity / VPIN), and risk management (Jorion VaR, drawdown/tail risk) - and do they survive the same adversarial verification?
+- For the modern ML/RL frontier, which specific results actually hold up out-of-sample after costs (deep hedging - Buehler et al. 2019; RL execution; Gu-Kelly-Xiu signals), versus which suffer the McLean-Pontiff-style post-publication decay documented for traditional anomalies?
+- What is the precise practitioner deployment evidence (beyond reading-list canonization and citation counts) that Renaissance/DE Shaw/Optiver-style firms use these specific papers - e.g., Avellaneda-Stoikov for market making at Optiver-type firms - given that proprietary firms rarely cite publicly?
+- Should local volatility (Dupire 1994), SABR (Hagan et al. 2002), and the rough-volatility literature (Gatheral-Jaisson-Rosenbaum 2018) be added to the derivatives Tier 2 alongside Heston, and how do they compare on calibration stability and production use?
+
+## Caveats
+
+- S
+- o
+- u
+- r
+- c
+- e
+-  
+- q
+- u
+- a
+- l
+- i
+- t
+- y
+-  
+- a
+- n
+- d
+-  
+- m
+- e
+- t
+- h
+- o
+- d
+- :
+-  
+- (
+- 1
+- )
+-  
+- M
+- o
+- s
+- t
+-  
+- p
+- r
+- i
+- m
+- a
+- r
+- y
+-  
+- c
+- l
+- a
+- i
+- m
+- s
+-  
+- w
+- e
+- r
+- e
+-  
+- v
+- e
+- r
+- i
+- f
+- i
+- e
+- d
+-  
+- a
+- g
+- a
+- i
+- n
+- s
+- t
+-  
+- D
+- O
+- I
+- /
+- C
+- r
+- o
+- s
+- s
+- R
+- e
+- f
+-  
+- m
+- e
+- t
+- a
+- d
+- a
+- t
+- a
+-  
+- a
+- n
+- d
+-  
+- v
+- e
+- r
+- b
+- a
+- t
+- i
+- m
+-  
+- a
+- b
+- s
+- t
+- r
+- a
+- c
+- t
+- s
+-  
+- r
+- a
+- t
+- h
+- e
+- r
+-  
+- t
+- h
+- a
+- n
+-  
+- f
+- r
+- e
+- s
+- h
+- l
+- y
+-  
+- f
+- e
+- t
+- c
+- h
+- e
+- d
+-  
+- f
+- u
+- l
+- l
+-  
+- t
+- e
+- x
+- t
+- s
+- ,
+-  
+- b
+- e
+- c
+- a
+- u
+- s
+- e
+-  
+- t
+- h
+- e
+-  
+- W
+- e
+- b
+- S
+- e
+- a
+- r
+- c
+- h
+-  
+- t
+- o
+- o
+- l
+-  
+- f
+- a
+- i
+- l
+- e
+- d
+-  
+- w
+- i
+- t
+- h
+-  
+- p
+- e
+- r
+- s
+- i
+- s
+- t
+- e
+- n
+- t
+-  
+- A
+- P
+- I
+-  
+- e
+- r
+- r
+- o
+- r
+- s
+-  
+- a
+- n
+- d
+-  
+- s
+- e
+- v
+- e
+- r
+- a
+- l
+-  
+- p
+- a
+- y
+- w
+- a
+- l
+- l
+- e
+- d
+-  
+- p
+- a
+- g
+- e
+- s
+-  
+- (
+- W
+- i
+- l
+- e
+- y
+-  
+- 4
+- 0
+- 2
+- /
+- 4
+- 0
+- 3
+- ,
+-  
+- O
+- U
+- P
+- )
+-  
+- r
+- e
+- t
+- u
+- r
+- n
+- e
+- d
+-  
+- t
+- r
+- u
+- n
+- c
+- a
+- t
+- e
+- d
+-  
+- b
+- o
+- d
+- i
+- e
+- s
+- .
+-  
+- V
+- e
+- r
+- d
+- i
+- c
+- t
+- s
+-  
+- t
+- h
+- e
+- r
+- e
+- f
+- o
+- r
+- e
+-  
+- r
+- e
+- s
+- t
+-  
+- o
+- n
+-  
+- c
+- o
+- n
+- f
+- i
+- r
+- m
+- e
+- d
+-  
+- c
+- i
+- t
+- a
+- t
+- i
+- o
+- n
+-  
+- m
+- e
+- t
+- a
+- d
+- a
+- t
+- a
+-  
+- p
+- l
+- u
+- s
+-  
+- e
+- s
+- t
+- a
+- b
+- l
+- i
+- s
+- h
+- e
+- d
+-  
+- d
+- o
+- m
+- a
+- i
+- n
+-  
+- c
+- o
+- n
+- s
+- e
+- n
+- s
+- u
+- s
+- .
+-  
+- (
+- 2
+- )
+-  
+- T
+- w
+- o
+-  
+- f
+- i
+- n
+- d
+- i
+- n
+- g
+- s
+-  
+- l
+- e
+- a
+- n
+-  
+- o
+- n
+-  
+- p
+- r
+- a
+- c
+- t
+- i
+- t
+- i
+- o
+- n
+- e
+- r
+-  
+- B
+- L
+- O
+- G
+-  
+- r
+- e
+- a
+- d
+- i
+- n
+- g
+-  
+- l
+- i
+- s
+- t
+- s
+-  
+- (
+- w
+- a
+- y
+- l
+- a
+- n
+- d
+- z
+- .
+- c
+- o
+- m
+- ,
+-  
+- e
+- v
+- e
+- r
+- y
+- t
+- h
+- i
+- n
+- g
+- q
+- u
+- a
+- n
+- t
+- .
+- c
+- o
+- m
+- )
+-  
+- -
+-  
+- f
+- i
+- n
+- e
+-  
+- a
+- s
+-  
+- a
+-  
+- '
+- w
+- h
+- a
+- t
+-  
+- p
+- r
+- a
+- c
+- t
+- i
+- t
+- i
+- o
+- n
+- e
+- r
+- s
+-  
+- c
+- i
+- t
+- e
+- '
+-  
+- s
+- i
+- g
+- n
+- a
+- l
+-  
+- b
+- u
+- t
+-  
+- n
+- o
+- t
+-  
+- a
+- u
+- t
+- h
+- o
+- r
+- i
+- t
+- a
+- t
+- i
+- v
+- e
+-  
+- o
+- n
+-  
+- t
+- h
+- e
+- i
+- r
+-  
+- o
+- w
+- n
+- ;
+-  
+- t
+- h
+- e
+-  
+- B
+- l
+- a
+- c
+- k
+- -
+- S
+- c
+- h
+- o
+- l
+- e
+- s
+-  
+- r
+- a
+- n
+- k
+- i
+- n
+- g
+-  
+- i
+- s
+-  
+- m
+- e
+- d
+- i
+- u
+- m
+-  
+- c
+- o
+- n
+- f
+- i
+- d
+- e
+- n
+- c
+- e
+-  
+- f
+- o
+- r
+-  
+- t
+- h
+- i
+- s
+-  
+- r
+- e
+- a
+- s
+- o
+- n
+- .
+-  
+- (
+- 3
+- )
+-  
+- C
+- i
+- t
+- a
+- t
+- i
+- o
+- n
+-  
+- b
+- l
+- e
+- m
+- i
+- s
+- h
+- :
+-  
+- t
+- h
+- e
+-  
+- A
+- l
+- m
+- g
+- r
+- e
+- n
+- -
+- C
+- h
+- r
+- i
+- s
+- s
+-  
+- D
+- O
+- I
+-  
+- w
+- a
+- s
+-  
+- o
+- r
+- i
+- g
+- i
+- n
+- a
+- l
+- l
+- y
+-  
+- g
+- i
+- v
+- e
+- n
+-  
+- a
+- s
+-  
+- 1
+- 0
+- .
+- 2
+- 1
+- 3
+- 1
+- 4
+- /
+- J
+- O
+- R
+- .
+- 2
+- 0
+- 0
+- 0
+- .
+- 0
+- 4
+- 1
+-  
+- (
+- 4
+- 0
+- 4
+- )
+- ;
+-  
+- t
+- h
+- e
+-  
+- c
+- o
+- r
+- r
+- e
+- c
+- t
+-  
+- D
+- O
+- I
+-  
+- i
+- s
+-  
+- 1
+- 0
+- .
+- 2
+- 1
+- 3
+- 1
+- 4
+- /
+- j
+- o
+- r
+- .
+- 2
+- 0
+- 0
+- 1
+- .
+- 0
+- 4
+- 1
+-  
+- (
+- p
+- a
+- p
+- e
+- r
+-  
+- c
+- o
+- n
+- v
+- e
+- n
+- t
+- i
+- o
+- n
+- a
+- l
+- l
+- y
+-  
+- c
+- i
+- t
+- e
+- d
+-  
+- a
+- s
+-  
+- 2
+- 0
+- 0
+- 0
+- )
+- .
+- 
+
+- 
+
+- C
+- o
+- v
+- e
+- r
+- a
+- g
+- e
+-  
+- g
+- a
+- p
+- s
+-  
+- v
+- s
+-  
+- t
+- h
+- e
+-  
+- r
+- e
+- s
+- e
+- a
+- r
+- c
+- h
+-  
+- q
+- u
+- e
+- s
+- t
+- i
+- o
+- n
+- :
+-  
+- t
+- h
+- e
+-  
+- a
+- d
+- v
+- e
+- r
+- s
+- a
+- r
+- i
+- a
+- l
+-  
+- v
+- e
+- r
+- i
+- f
+- i
+- c
+- a
+- t
+- i
+- o
+- n
+-  
+- b
+- a
+- t
+- c
+- h
+-  
+- c
+- o
+- n
+- f
+- i
+- r
+- m
+- e
+- d
+-  
+- s
+- t
+- r
+- o
+- n
+- g
+-  
+- c
+- l
+- a
+- i
+- m
+- s
+-  
+- f
+- o
+- r
+-  
+- s
+- t
+- a
+- t
+- -
+- a
+- r
+- b
+- /
+- c
+- o
+- i
+- n
+- t
+- e
+- g
+- r
+- a
+- t
+- i
+- o
+- n
+- ,
+-  
+- m
+- o
+- m
+- e
+- n
+- t
+- u
+- m
+- ,
+-  
+- d
+- e
+- r
+- i
+- v
+- a
+- t
+- i
+- v
+- e
+- s
+-  
+- (
+- H
+- e
+- s
+- t
+- o
+- n
+- ,
+-  
+- B
+- l
+- a
+- c
+- k
+- -
+- S
+- c
+- h
+- o
+- l
+- e
+- s
+- )
+- ,
+-  
+- o
+- p
+- t
+- i
+- m
+- a
+- l
+-  
+- e
+- x
+- e
+- c
+- u
+- t
+- i
+- o
+- n
+- ,
+-  
+- f
+- a
+- c
+- t
+- o
+- r
+-  
+- m
+- o
+- d
+- e
+- l
+- s
+- ,
+-  
+- t
+- h
+- e
+-  
+- r
+- e
+- p
+- l
+- i
+- c
+- a
+- t
+- i
+- o
+- n
+- -
+- c
+- r
+- i
+- s
+- i
+- s
+-  
+- l
+- i
+- t
+- e
+- r
+- a
+- t
+- u
+- r
+- e
+- ,
+-  
+- M
+- L
+- ,
+-  
+- a
+- n
+- d
+-  
+- R
+- L
+-  
+- -
+-  
+- b
+- u
+- t
+-  
+- d
+- i
+- d
+-  
+- N
+- O
+- T
+-  
+- p
+- r
+- o
+- d
+- u
+- c
+- e
+-  
+- s
+- u
+- r
+- v
+- i
+- v
+- i
+- n
+- g
+-  
+- v
+- e
+- r
+- i
+- f
+- i
+- e
+- d
+-  
+- c
+- l
+- a
+- i
+- m
+- s
+-  
+- f
+- o
+- r
+-  
+- s
+- e
+- v
+- e
+- r
+- a
+- l
+-  
+- r
+- e
+- q
+- u
+- e
+- s
+- t
+- e
+- d
+-  
+- T
+- i
+- e
+- r
+- -
+- 1
+-  
+- c
+- a
+- t
+- e
+- g
+- o
+- r
+- i
+- e
+- s
+- :
+-  
+- p
+- o
+- r
+- t
+- f
+- o
+- l
+- i
+- o
+-  
+- t
+- h
+- e
+- o
+- r
+- y
+- /
+- a
+- l
+- l
+- o
+- c
+- a
+- t
+- i
+- o
+- n
+-  
+- (
+- M
+- a
+- r
+- k
+- o
+- w
+- i
+- t
+- z
+- ,
+-  
+- K
+- e
+- l
+- l
+- y
+-  
+- c
+- r
+- i
+- t
+- e
+- r
+- i
+- o
+- n
+- ,
+-  
+- B
+- l
+- a
+- c
+- k
+- -
+- L
+- i
+- t
+- t
+- e
+- r
+- m
+- a
+- n
+- ,
+-  
+- r
+- i
+- s
+- k
+-  
+- p
+- a
+- r
+- i
+- t
+- y
+- )
+- ,
+-  
+- C
+- A
+- P
+- M
+- ,
+-  
+- m
+- a
+- r
+- k
+- e
+- t
+-  
+- m
+- i
+- c
+- r
+- o
+- s
+- t
+- r
+- u
+- c
+- t
+- u
+- r
+- e
+- /
+- m
+- a
+- r
+- k
+- e
+- t
+- -
+- m
+- a
+- k
+- i
+- n
+- g
+-  
+- (
+- K
+- y
+- l
+- e
+- ,
+-  
+- G
+- l
+- o
+- s
+- t
+- e
+- n
+- -
+- M
+- i
+- l
+- g
+- r
+- o
+- m
+- ,
+-  
+- A
+- v
+- e
+- l
+- l
+- a
+- n
+- e
+- d
+- a
+- -
+- S
+- t
+- o
+- i
+- k
+- o
+- v
+- ,
+-  
+- o
+- r
+- d
+- e
+- r
+- -
+- f
+- l
+- o
+- w
+-  
+- t
+- o
+- x
+- i
+- c
+- i
+- t
+- y
+-  
+- /
+-  
+- K
+- y
+- l
+- e
+- '
+- s
+-  
+- l
+- a
+- m
+- b
+- d
+- a
+- )
+- ,
+-  
+- r
+- i
+- s
+- k
+-  
+- m
+- a
+- n
+- a
+- g
+- e
+- m
+- e
+- n
+- t
+-  
+- (
+- J
+- o
+- r
+- i
+- o
+- n
+-  
+- V
+- a
+- R
+- ,
+-  
+- d
+- r
+- a
+- w
+- d
+- o
+- w
+- n
+-  
+- c
+- o
+- n
+- t
+- r
+- o
+- l
+- ,
+-  
+- t
+- a
+- i
+- l
+-  
+- r
+- i
+- s
+- k
+- )
+- ,
+-  
+- a
+- n
+- d
+-  
+- s
+- p
+- e
+- c
+- i
+- f
+- i
+- c
+-  
+- f
+- r
+- o
+- n
+- t
+- i
+- e
+- r
+-  
+- i
+- t
+- e
+- m
+- s
+-  
+- (
+- d
+- e
+- e
+- p
+-  
+- h
+- e
+- d
+- g
+- i
+- n
+- g
+- ,
+-  
+- R
+- L
+-  
+- e
+- x
+- e
+- c
+- u
+- t
+- i
+- o
+- n
+-  
+- o
+- u
+- t
+- -
+- o
+- f
+- -
+- s
+- a
+- m
+- p
+- l
+- e
+- ,
+-  
+- l
+- o
+- c
+- a
+- l
+-  
+- v
+- o
+- l
+- a
+- t
+- i
+- l
+- i
+- t
+- y
+-  
+- /
+-  
+- D
+- u
+- p
+- i
+- r
+- e
+- ,
+-  
+- S
+- A
+- B
+- R
+- )
+- .
+-  
+- T
+- h
+- e
+- s
+- e
+-  
+- s
+- h
+- o
+- u
+- l
+- d
+-  
+- b
+- e
+-  
+- t
+- r
+- e
+- a
+- t
+- e
+- d
+-  
+- a
+- s
+-  
+- g
+- a
+- p
+- s
+-  
+- t
+- o
+-  
+- f
+- i
+- l
+- l
+-  
+- i
+- n
+-  
+- a
+-  
+- f
+- o
+- l
+- l
+- o
+- w
+- -
+- u
+- p
+-  
+- v
+- e
+- r
+- i
+- f
+- i
+- c
+- a
+- t
+- i
+- o
+- n
+-  
+- r
+- o
+- u
+- n
+- d
+- ,
+-  
+- n
+- o
+- t
+-  
+- a
+- s
+-  
+- p
+- a
+- p
+- e
+- r
+- s
+-  
+- t
+- h
+- a
+- t
+-  
+- w
+- e
+- r
+- e
+-  
+- e
+- v
+- a
+- l
+- u
+- a
+- t
+- e
+- d
+-  
+- a
+- n
+- d
+-  
+- r
+- e
+- j
+- e
+- c
+- t
+- e
+- d
+- .
+- 
+
+- 
+
+- T
+- i
+- m
+- e
+- -
+- s
+- e
+- n
+- s
+- i
+- t
+- i
+- v
+- i
+- t
+- y
+- :
+-  
+- f
+- o
+- u
+- n
+- d
+- a
+- t
+- i
+- o
+- n
+- a
+- l
+-  
+- r
+- e
+- s
+- u
+- l
+- t
+- s
+-  
+- (
+- c
+- o
+- i
+- n
+- t
+- e
+- g
+- r
+- a
+- t
+- i
+- o
+- n
+- ,
+-  
+- B
+- l
+- a
+- c
+- k
+- -
+- S
+- c
+- h
+- o
+- l
+- e
+- s
+- ,
+-  
+- H
+- e
+- s
+- t
+- o
+- n
+- ,
+-  
+- A
+- l
+- m
+- g
+- r
+- e
+- n
+- -
+- C
+- h
+- r
+- i
+- s
+- s
+- ,
+-  
+- F
+- a
+- m
+- a
+- -
+- F
+- r
+- e
+- n
+- c
+- h
+- ,
+-  
+- m
+- o
+- m
+- e
+- n
+- t
+- u
+- m
+- )
+-  
+- a
+- r
+- e
+-  
+- s
+- t
+- a
+- b
+- l
+- e
+- /
+- h
+- i
+- s
+- t
+- o
+- r
+- i
+- c
+- a
+- l
+-  
+- a
+- n
+- d
+-  
+- n
+- o
+- t
+-  
+- t
+- i
+- m
+- e
+- -
+- s
+- e
+- n
+- s
+- i
+- t
+- i
+- v
+- e
+- .
+-  
+- T
+- h
+- e
+-  
+- r
+- e
+- p
+- l
+- i
+- c
+- a
+- t
+- i
+- o
+- n
+- -
+- c
+- r
+- i
+- s
+- i
+- s
+-  
+- n
+- u
+- m
+- b
+- e
+- r
+- s
+-  
+- (
+- H
+- a
+- r
+- v
+- e
+- y
+- -
+- L
+- i
+- u
+- -
+- Z
+- h
+- u
+-  
+- t
+- >
+- 3
+- .
+- 0
+- ,
+-  
+- M
+- c
+- L
+- e
+- a
+- n
+- -
+- P
+- o
+- n
+- t
+- i
+- f
+- f
+-  
+- 2
+- 6
+- %
+- /
+- 5
+- 8
+- %
+- )
+-  
+- d
+- e
+- s
+- c
+- r
+- i
+- b
+- e
+-  
+- f
+- i
+- x
+- e
+- d
+-  
+- p
+- u
+- b
+- l
+- i
+- s
+- h
+- e
+- d
+-  
+- f
+- i
+- n
+- d
+- i
+- n
+- g
+- s
+-  
+- b
+- u
+- t
+-  
+- t
+- h
+- e
+- i
+- r
+-  
+- s
+- p
+- i
+- r
+- i
+- t
+-  
+- (
+- f
+- a
+- c
+- t
+- o
+- r
+-  
+- c
+- o
+- u
+- n
+- t
+- ,
+-  
+- a
+- n
+- o
+- m
+- a
+- l
+- y
+-  
+- d
+- e
+- c
+- a
+- y
+- )
+-  
+- h
+- a
+- s
+-  
+- o
+- n
+- l
+- y
+-  
+- i
+- n
+- t
+- e
+- n
+- s
+- i
+- f
+- i
+- e
+- d
+-  
+- s
+- i
+- n
+- c
+- e
+-  
+- p
+- u
+- b
+- l
+- i
+- c
+- a
+- t
+- i
+- o
+- n
+- .
+-  
+- M
+- L
+- /
+- R
+- L
+-  
+- c
+- l
+- a
+- i
+- m
+- s
+-  
+- (
+- G
+- u
+- -
+- K
+- e
+- l
+- l
+- y
+- -
+- X
+- i
+- u
+-  
+- 2
+- 0
+- 2
+- 0
+- ;
+-  
+- H
+- a
+- m
+- b
+- l
+- y
+-  
+- e
+- t
+-  
+- a
+- l
+- .
+-  
+- 2
+- 0
+- 2
+- 1
+- )
+-  
+- a
+- r
+- e
+-  
+- t
+- h
+- e
+-  
+- m
+- o
+- s
+- t
+-  
+- t
+- i
+- m
+- e
+- -
+- s
+- e
+- n
+- s
+- i
+- t
+- i
+- v
+- e
+- :
+-  
+- p
+- o
+- s
+- t
+- -
+- p
+- u
+- b
+- l
+- i
+- c
+- a
+- t
+- i
+- o
+- n
+-  
+- a
+- l
+- p
+- h
+- a
+-  
+- d
+- e
+- c
+- a
+- y
+-  
+- a
+- n
+- d
+-  
+- t
+- r
+- a
+- n
+- s
+- a
+- c
+- t
+- i
+- o
+- n
+- -
+- c
+- o
+- s
+- t
+-  
+- e
+- r
+- o
+- s
+- i
+- o
+- n
+-  
+- m
+- e
+- a
+- n
+-  
+- t
+- h
+- e
+-  
+- h
+- e
+- a
+- d
+- l
+- i
+- n
+- e
+-  
+- '
+- d
+- o
+- u
+- b
+- l
+- i
+- n
+- g
+- '
+-  
+- f
+- i
+- g
+- u
+- r
+- e
+- s
+-  
+- s
+- h
+- o
+- u
+- l
+- d
+-  
+- n
+- o
+- t
+-  
+- b
+- e
+-  
+- r
+- e
+- a
+- d
+-  
+- a
+- s
+-  
+- g
+- u
+- a
+- r
+- a
+- n
+- t
+- e
+- e
+- d
+-  
+- l
+- i
+- v
+- e
+- -
+- t
+- r
+- a
+- d
+- i
+- n
+- g
+-  
+- r
+- e
+- t
+- u
+- r
+- n
+- s
+- ,
+-  
+- a
+- n
+- d
+-  
+- t
+- h
+- e
+-  
+- R
+- L
+-  
+- f
+- i
+- e
+- l
+- d
+-  
+- m
+- o
+- v
+- e
+- s
+-  
+- f
+- a
+- s
+- t
+- .
+- 
+
+- 
+
+- O
+- v
+- e
+- r
+- r
+- a
+- t
+- e
+- d
+-  
+- v
+- s
+-  
+- u
+- n
+- d
+- e
+- r
+- -
+- c
+- i
+- t
+- e
+- d
+-  
+- f
+- l
+- a
+- g
+- s
+-  
+- s
+- u
+- p
+- p
+- o
+- r
+- t
+- e
+- d
+-  
+- b
+- y
+-  
+- t
+- h
+- e
+-  
+- e
+- v
+- i
+- d
+- e
+- n
+- c
+- e
+- :
+-  
+- t
+- h
+- e
+-  
+- H
+- a
+- r
+- v
+- e
+- y
+- -
+- L
+- i
+- u
+- -
+- Z
+- h
+- u
+-  
+- a
+- n
+- d
+-  
+- M
+- c
+- L
+- e
+- a
+- n
+- -
+- P
+- o
+- n
+- t
+- i
+- f
+- f
+-  
+- f
+- i
+- n
+- d
+- i
+- n
+- g
+- s
+-  
+- j
+- o
+- i
+- n
+- t
+- l
+- y
+-  
+- i
+- m
+- p
+- l
+- y
+-  
+- t
+- h
+- a
+- t
+-  
+- t
+- h
+- e
+-  
+- l
+- o
+- n
+- g
+-  
+- t
+- a
+- i
+- l
+-  
+- o
+- f
+-  
+- p
+- u
+- b
+- l
+- i
+- s
+- h
+- e
+- d
+-  
+- s
+- i
+- n
+- g
+- l
+- e
+- -
+- f
+- a
+- c
+- t
+- o
+- r
+-  
+- '
+- a
+- n
+- o
+- m
+- a
+- l
+- i
+- e
+- s
+- '
+-  
+- i
+- s
+-  
+- l
+- a
+- r
+- g
+- e
+- l
+- y
+-  
+- o
+- v
+- e
+- r
+- r
+- a
+- t
+- e
+- d
+-  
+- (
+- d
+- a
+- t
+- a
+- -
+- m
+- i
+- n
+- e
+- d
+- ,
+-  
+- d
+- e
+- c
+- a
+- y
+- i
+- n
+- g
+-  
+- ~
+- 5
+- 0
+- %
+- +
+-  
+- O
+- O
+- S
+- )
+- ,
+-  
+- w
+- h
+- i
+- l
+- e
+-  
+- t
+- h
+- e
+-  
+- B
+- a
+- i
+- l
+- e
+- y
+- /
+- L
+- o
+- p
+- e
+- z
+-  
+- d
+- e
+-  
+- P
+- r
+- a
+- d
+- o
+-  
+- P
+- B
+- O
+-  
+- a
+- n
+- d
+-  
+- D
+- e
+- f
+- l
+- a
+- t
+- e
+- d
+-  
+- S
+- h
+- a
+- r
+- p
+- e
+-  
+- R
+- a
+- t
+- i
+- o
+-  
+- c
+- l
+- u
+- s
+- t
+- e
+- r
+-  
+- i
+- s
+-  
+- t
+- h
+- e
+-  
+- u
+- n
+- d
+- e
+- r
+- -
+- a
+- p
+- p
+- r
+- e
+- c
+- i
+- a
+- t
+- e
+- d
+- -
+- b
+- y
+- -
+- o
+- u
+- t
+- s
+- i
+- d
+- e
+- r
+- s
+-  
+- p
+- r
+- a
+- c
+- t
+- i
+- t
+- i
+- o
+- n
+- e
+- r
+-  
+- f
+- a
+- v
+- o
+- r
+- i
+- t
+- e
+-  
+- t
+- h
+- a
+- t
+-  
+- s
+- h
+- o
+- u
+- l
+- d
+-  
+- g
+- a
+- t
+- e
+-  
+- e
+- v
+- e
+- r
+- y
+-  
+- b
+- a
+- c
+- k
+- t
+- e
+- s
+- t
+- .
+-  
+- T
+- h
+- e
+-  
+- e
+- v
+- i
+- d
+- e
+- n
+- c
+- e
+-  
+- d
+- o
+- e
+- s
+-  
+- n
+- o
+- t
+-  
+- s
+- u
+- p
+- p
+- o
+- r
+- t
+-  
+- c
+- a
+- l
+- l
+- i
+- n
+- g
+-  
+- a
+- n
+- y
+-  
+- T
+- i
+- e
+- r
+- -
+- 1
+-  
+- f
+- o
+- u
+- n
+- d
+- a
+- t
+- i
+- o
+- n
+-  
+- (
+- B
+- l
+- a
+- c
+- k
+- -
+- S
+- c
+- h
+- o
+- l
+- e
+- s
+- ,
+-  
+- H
+- e
+- s
+- t
+- o
+- n
+- ,
+-  
+- E
+- n
+- g
+- l
+- e
+- -
+- G
+- r
+- a
+- n
+- g
+- e
+- r
+- ,
+-  
+- A
+- l
+- m
+- g
+- r
+- e
+- n
+- -
+- C
+- h
+- r
+- i
+- s
+- s
+- ,
+-  
+- F
+- a
+- m
+- a
+- -
+- F
+- r
+- e
+- n
+- c
+- h
+- ,
+-  
+- m
+- o
+- m
+- e
+- n
+- t
+- u
+- m
+- )
+-  
+- o
+- v
+- e
+- r
+- r
+- a
+- t
+- e
+- d
+-  
+- -
+-  
+- t
+- h
+- e
+- s
+- e
+-  
+- r
+- e
+- m
+- a
+- i
+- n
+-  
+- i
+- n
+-  
+- d
+- a
+- i
+- l
+- y
+-  
+- p
+- r
+- o
+- d
+- u
+- c
+- t
+- i
+- o
+- n
+-  
+- u
+- s
+- e
+- .
+
+## Research stats
+
+```json
+{
+  "angles": 5,
+  "sourcesFetched": 25,
+  "claimsExtracted": 71,
+  "claimsVerified": 25,
+  "confirmed": 25,
+  "killed": 0,
+  "unverified": 0,
+  "afterSynthesis": 13,
+  "urlDupes": 1,
+  "budgetDropped": 3,
+  "agentCalls": 107
+}
+```

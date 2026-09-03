@@ -6,7 +6,6 @@ related:
   - "[[Daily Cron Sessions — Swarm Harness Master Plan]]"
   - "[[Skills Harvest — What's Here & What To Do Differently]]"
 ---
-
 # Sources — Curated Seed Library
 
 > The Scout's reading list, pre-evaluated. Each entry: **what it is → what it gives the harness → priority**. ✓ = fetched & verified this session. `to-verify` = URL/id from memory, confirm before deep-clip. This is the "fetch amazing sources, curate knowledge" queue.
@@ -57,6 +56,20 @@ This is how the mind "keeps harnessing itself." Highest priority.
 | ***Thinking in Bets* (Annie Duke)** | Decision quality ≠ outcome quality. Stops result-driven self-deception. | ★★☆ |
 | **Papers with Code (SOTA leaderboards)** | Objective "where is the edge right now" per task. Scout tracks deltas. | ★★☆ |
 | **huggingface.co/papers + arXiv q-fin / cs.AI daily** | Fresh-firehose of SOTA; the Scout's daily intake. | ★★☆ |
+
+## E. arXiv sweep 2026-07-21 — LLM trading-agent evaluation cluster (q-fin + cs.MA)
+Follow-ups to [[the-alpha-illusion]] / TradingAgents lineage. 3 clipped → `wiki/research/trading/`; rest queued.
+
+| Source | What it gives us | Pri |
+|---|---|---|
+| **KTD-Fin — From Knowing to Doing** ✓ (arXiv:2605.28359) | Empirical confirmation of confound #1: data-side masking + Barra attribution; 10 LLMs on CSI300 → returns ≈ market/style exposure, no persistent selection alpha. Clipped → [[ktd-fin]]. | ★★★ |
+| **Beyond Agent Architecture** ✓ (arXiv:2606.08285) | 30-study execution-realism audit (confound #2); 7-dimension evidence matrix = ready clip checklist. Clipped → [[beyond-agent-architecture]]. | ★★ |
+| **TradeLens — Pay for Their Own Intelligence** ✓ (arXiv:2607.10286, cs.MA) | Viability = intelligence-to-profit conversion; trace-grounded cost/profit attribution. The Life-Arc "cover-own-cost" gate as a metric. Clipped → [[tradelens-pay-for-intelligence]]. | ★★ |
+| **CLQT** (arXiv:2606.29771) | Closed-loop, cost-aware, strategy-consistent benchmark; diagnosis-not-ranking; hash-chain audit trail + live-broker post-cutoff track; role-committee vs single-orchestrator as variable (direct TradingAgents lineage). Full-read candidate. | ★★☆ |
+| **FinBench** (arXiv:2607.16229) | Time-gated calibration + proper scoring rules (confidence–competence gap → negative growth under bet-sizing). Spec paper; pilot = 1 day/3 tickers/33 forecasts — thin evidence. | ★☆☆ |
+| **PortBench** (arXiv:2605.27887) / **StakeBench** (arXiv:2605.26074) | Correlation-aware full-pipeline PM benchmark / market-commitment-grounded language eval. Benchmark cluster context. | ★☆☆ |
+| **Market Regime Council** (arXiv:2605.24490) / **MadEvolve** (arXiv:2605.23007) | Regime-aware credit assignment in multi-agent LLM systems / evolutionary LLM trading-system optimization. TradingAgents lineage, architecture-side. | ★☆☆ |
+| **AI Trading: Evaluating LLMs for Technical Analysis** (arXiv:2607.15414) | **Noise exemplar, do not clip** — single-author simulated backtest claiming GPT-4 Turbo + FinGPT beat S&P "under the tested conditions"; no cutoff disclosure, simulated execution = textbook P1/P5 failure per [[the-alpha-illusion]]. Keep as the pattern the filter exists to catch. | — |
 
 ---
 

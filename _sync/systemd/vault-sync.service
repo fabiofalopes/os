@@ -1,0 +1,6 @@
+[Unit]
+Description=Vault GitHub sync (pull/commit/push)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/flock -n /tmp/vault-sync.lock bash /home/fabio/obsidian-vault-kali/_sync/vault-sync.sh run
