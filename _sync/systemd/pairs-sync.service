@@ -1,0 +1,6 @@
+[Unit]
+Description=Vault mirror pairs sync (rclone bisync, anti-resurrection set)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/flock -n /tmp/vault-pairs.lock bash /home/fabio/obsidian-vault-kali/_sync/pairs-sync.sh run

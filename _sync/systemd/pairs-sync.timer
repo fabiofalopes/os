@@ -1,0 +1,9 @@
+[Unit]
+Description=Vault mirror pairs sync every 10 min (offset from GitHub sync)
+
+[Timer]
+OnBootSec=7min
+OnUnitActiveSec=10min
+
+[Install]
+WantedBy=timers.target
