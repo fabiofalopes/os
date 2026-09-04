@@ -12,6 +12,10 @@ views:
       - file.name
       - file.folder
       - file.mtime
+      - file.ctime
+      - created
+      - file.path
+      - file.fullname
   - type: table
     name: Inbox
     filters:
