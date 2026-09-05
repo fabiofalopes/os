@@ -110,6 +110,8 @@ status: living — Curator maintains this
 
 ## Session Records & Plans (transient)
 - [[alibaba-token-plan-20-07-2026]] — Clipping of the Alibaba ModelStudio Pro token-plan console (active, 30 days remaining).
+- [[tidal-setup-2026-09-03]] — TidalCycles install + vim/tmux engine v2 (Codeberg tidal-1.10.3, SuperDirt 1.7.4 headless, BootTidal/BootSuperDirt pair).
+- [[tidal-headless-rig-2026-09-05]] — Headless rig closed loop: xvfb sclang + Scarlett-via-PipeWire-JACK + `tup`/`tstat`/`tdown` single-owner boot, ghost-57120 killed, smoke test green.
 
 ## Imports (mirrored / copied in)
 - `wiki/import/` — FIVE live two-way mirrors (bisync, 10-min timer, `.env`-class excluded, secret-gated before every push): [[learning-path]]+trading research (`research-notes/`), `agent-wealth/` (REVENUE-IDEAS, STRATEGIES — agentkit code + .env filtered out), `breaking-claude/` (campaign vault), `foundry/` (vaultcraft instance), `hub-notes/` (provider-bridge, modelos-endpoint). Edits sync both ways.
