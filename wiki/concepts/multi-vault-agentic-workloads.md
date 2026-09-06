@@ -36,6 +36,8 @@ Rule: **miners write ledgers; curators read ledgers.** Publication downstream = 
 
 **Ingestion gate (shipped 2026-09-06, `_harness/ingest/gate.sh`):** fetched content passes a local bulk gate BEFORE any agent reads it — sha256+mime inventory, executable/binary rejection, injection-heuristic patterns, optional LLM classifier tier (`--llm`, local models via :8705), optional ClamAV when installed, `--quarantine` to move non-clean files; every verdict = one atomic line in `_harness/ingest/verdicts.log` (the learnings ledger each foundry run feeds — how vaultcraft improves over time). Verified on 16 real Clippings: 16 clean, 0 FP after pattern fix.
 
+**Batch mode (`_harness/batch/batch.sh`, v0 2026-09-06):** the repo-map pattern at scale — give 100 repos + a purpose (`batch.sh new <id> --purpose … --repos …`) and get a per-repo state machine (QUEUED→FETCHED→GATED→TRIAGED→STAGED→MINING→DONE, + BLOCKED/DIRTY) with ONE clean view (`batch.sh status`): progress bar, grouped states, and a **⚠️ INTERVENE** section = exactly where the human acts. Every transition and every human gate (`batch.sh gate … --why`) appends to the batch `trace.md` — the append-only behavioral record agents learn from (recipes/methods/preferences emerge as traces accumulate). `stage` emits triage jobs into the queue (fetch → gate.sh → alpha verdict). First live batch: `graph-stack-patterns` (3 repos from the research smoke-test).
+
 ## 3 · The loop we are actually running
 
 ```
