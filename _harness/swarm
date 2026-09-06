@@ -15,12 +15,12 @@ FLAG="$FLAGDIR/forge-runner"
 MARK="# DISABLED"
 
 arm_line() {  # arm_line <needle> — uncomment exactly one disabled forge line
-  crontab -l | sed "s|^$MARK \(.*${1}\)$|\1|" | crontab -
+  crontab -l | sed "s|^$MARK \(.*${1}.*\)$|\1|" | crontab -
 }
 disarm_line() {
-  crontab -l | sed "s|^\([^#].*${1}\)$|$MARK \1|" | crontab -
+  crontab -l | sed "s|^\([^#].*${1}.*\)$|$MARK \1|" | crontab -
 }
-is_armed() { crontab -l 2>/dev/null | grep -v '^#' | grep -qF "_harness/runner.sh"; }
+is_armed() { crontab -l 2>/dev/null | grep -v '^#' | grep -qF "_harness/${1:-runner.sh}"; }
 
 backup_crontab() { crontab -l > "$HARNESS/state/crontab.bak.$(date +%Y%m%d-%H%M%S)" 2>/dev/null; }
 

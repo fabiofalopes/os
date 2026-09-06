@@ -51,6 +51,8 @@ foundry runs (look · find · distill)
 
 Colony behavior is irrelevant to correctness because each loop step has its own falsifier: seeds die on rubric, queue jobs die on no-PRODUCED-line, roles die on kill criteria (Cartographer: 2 cycles 0 applied). **More science than speculation** = every threshold in this fleet carries its own kill condition, ratified by measured reviews, not vibes.
 
+**The perpetual-loop principle:** "perpetual" describes the ENGINE, never the jobs. The engine runs forever (search/distill become metabolism — the human stops doing them manually); every run inside it is bounded and terminal (STOP criteria, kill criteria, curation passes that close chapters). The human's residual role is exactly three acts: **set the intent** (batch purpose, queue), **decide at gates** (⚠️ INTERVENE, phone gates), **read the results** (curation). A perpetual loop without terminators is a token furnace; terminators without a perpetual engine are a queue that never moves. You need both, and you have both.
+
 ## 4 · Efficiency targets for the loop (specialized AND general)
 
 1. **Context discipline** — agents read ledgers/graph/RAG top-k, never raw trees (the token rule from [[agentic-graph-brain]] L3).
