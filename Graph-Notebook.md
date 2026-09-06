@@ -253,7 +253,7 @@ tag:#quant -path:inbox
 
 ## Plugin Lab — the four microscopes (installed 2026-09-03)
 
-*Global Graph = truth · `Map.canvas` = story · Cell 0 = live physics · these four = the microscopes.*
+*Global Graph = truth · `Map.canvas` = story · Cell 0 = live physics · these four = the microscopes.* **LLM/quota audit of all four:** [[graph-stack-llm-surfaces]].
 
 ### InfraNodus AI Graph View (`infranodus-graph-view` v0.10.0)
 
