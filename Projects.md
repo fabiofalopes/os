@@ -28,6 +28,7 @@ date: 2026-09-02
 | breaking-claude (vault) | `/home/fabio/breaking-claude/vault` | **MIRRORED** → `wiki/import/breaking-claude/` (1M; the 1.4G artifacts stay out) |
 | agent-knowledge | `/home/fabio/agent-knowledge` | **EXCLUDED from repo** — tree saturated with live secrets (Groq/HF/LiteLLM/Coinbase/Lusófona). Pair OFF; never sync infra-config folders without a secret audit. |
 | foundry | `/home/fabio/foundry` | **MIRRORED** → `wiki/import/foundry/` — vaultcraft foundry instance (00-manifest DECISIONS, 10-canon, 90-sessions) |
+| tidal | `/home/fabio/tidal` | **TidalCycles foundry** — constitution (rubric ≥6/8, seeds immutable, provenance), 23 seeds, 7 concept hubs, `knowledge/repo-map.md` = 30-repo mining index (⬜ open: vroomvroom deep study, looper eval, JP 100-one-liners batch, Tier 2/3). Canonical home of `~/.config/nvim/knowledge` (symlink). Headless rig per `[[FOUNDRY]]` there. |
 | hub notes | `/home/fabio/shared-local/hub/notes` | **MIRRORED** → `wiki/import/hub-notes/` — provider-bridge-architecture, modelos-endpoint, upb fixes |
 | tartarus | `/home/fabio/projects/tartarus` | Fork of opencode (branch `2.0`), binary `~/.local/bin/tartarus` v0.0.0-2.0-202609030411 |
 
