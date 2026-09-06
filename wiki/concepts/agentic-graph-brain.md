@@ -93,7 +93,7 @@ Today's session (2026-09-06) revealed the system has **five dimensions of change
 | **Automation** | when it runs, who does it | `queue.md` + runner roles | flock, MAX_SESSIONS, PRODUCED-line proof | tokens without artifacts |
 | **Memory** | what persists across sessions | MEMORY/journal/edges.json/OpenMemory | Curator (builder lane), Critic for declarative | rot / contradiction |
 
-**Config↔research coupling (the maintenance contract):** plugin updates rewrite `main.js` → findings notes go stale. Therefore every finding carries the plugin version it audited (see [[graph-stack-llm-surfaces]]); a version bump observed in `manifest.json` = re-audit trigger for that plugin's row. Research findings justify config changes; config changes invalidate research. Neither is done alone.
+**Config↔research coupling (the maintenance contract — attempt-triggered, never calendar-triggered):** plugin updates rewrite `main.js` → findings notes go stale. But research on a schedule is dust — research never just because. Instead: every findings note carries the plugin versions it audited (see [[graph-stack-llm-surfaces]]), and any session/job about to **rely** on a finding runs a 1-line version check first (manifest vs. stamp). Mismatch = research trigger fires *then* — justified by the attempt that needs it. Model: `~/.config/nvim/knowledge/` — every note cites the attempts it grew from (`seen in: [[011-drop-build]]…`); knowledge exists because of use, not curriculum.
 
 ## Why this compounds
 
