@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+# ── swarm — human control surface for the Forge wave engine ──
+# Verbs:
+#   swarm status   — armed? flags? health? queue? last wave? (read-only)
+#   swarm fire     — ONE manual wave now (detached; flock makes it overlap-safe)
+#   swarm arm      — enable the 3 forge crontab lines (15-min cadence: runner+health+oracle)
+#   swarm disarm   — disable them (ROLLBACK for arm)
+# Deliberately does NOT edit runner.sh / worker.sh / config.env (PRE-CHANGE CHECKLIST scope).
+# Crontab changes are line-comment flips only; backup written to state/ before every change.
+set -uo pipefail
+HARNESS="$HOME/obsidian-vault-kali/_harness"
+VAULT="$HOME/obsidian-vault-kali"
+FLAGDIR="$HOME/.config/cronctl/enabled"
+FLAG="$FLAGDIR/forge-runner"
+MARK="# DISABLED"
+
+arm_line() {  # arm_line <needle> — uncomment exactly one disabled forge line
+  crontab -l | sed "s|^$MARK \(.*${1}\)$|\1|" | crontab -
+}
+disarm_line() {
+  crontab -l | sed "s|^\([^#].*${1}\)$|$MARK \1|" | crontab -
+}
+is_armed() { crontab -l 2>/dev/null | grep -v '^#' | grep -qF "_harness/runner.sh"; }
+
+backup_crontab() { crontab -l > "$HARNESS/state/crontab.bak.$(date +%Y%m%d-%H%M%S)" 2>/dev/null; }
+
+case "${1:-status}" in
+  status)
+    echo "═══ SWARM STATUS $(date -u '+%Y-%m-%dT%H:%M:%SZ') ═══"
+    if is_armed; then echo "cron:      ARMED (*/15 tick)"; else echo "cron:      DISARMED — no ticks fire"; fi
+    [[ -f "$FLAG" ]] && echo "flag:      open ($FLAG)" || echo "flag:      CLOSED — runner exits 0 even if cron fires"
+    echo
+    bash "$HARNESS/health.sh" 2>&1
+    echo
+    echo "last wave artifacts:"
+    ls -t "$HARNESS"/state/worker-*.out 2>/dev/null | head -1 | xargs -r ls -la | awk '{print "  newest worker out:", $6, $7, $8, $9}'
+    cat "$HARNESS/state/wave" 2>/dev/null | xargs -r echo "  wave counter:"
+    echo "last 3 engine LOG lines:"
+    grep -E '^\- [0-9-]+ [0-9:]+Z? \| [0-9]+s \|' "$VAULT/LOG.md" 2>/dev/null | tail -3 | sed 's/^/  /'
+    ;;
+  fire)
+    [[ -f "$FLAG" ]] || { echo "REFUSED: flag closed ($FLAG missing) — open it first"; exit 1; }
+    backup_crontab
+    echo "firing ONE wave (detached)…"
+    setsid nohup bash "$HARNESS/runner.sh" >> "$HARNESS/state/fire.log" 2>&1 &
+    echo "  pid $! — watch: tail -f $VAULT/LOG.md  (or: swarm status)"
+    sleep 3; tail -2 "$HARNESS/state/fire.log" 2>/dev/null | sed 's/^/  /'
+    ;;
+  arm)
+    backup_crontab
+    for needle in "runner.sh" "health.sh" "oracle.sh"; do
+      if is_armed "$needle"; then echo "  already armed: $needle"; else arm_line "$needle"; echo "  armed: $needle"; fi
+    done
+    echo "cadence: */15 (see $HARNESS/schedule.md for the rationale + MAX_SESSIONS_PER_DAY=90 cap)"
+    echo "rollback: swarm disarm"
+    ;;
+  disarm)
+    backup_crontab
+    for needle in "runner.sh" "health.sh" "oracle.sh"; do
+      if is_armed "$needle"; then disarm_line "$needle"; echo "  disarmed: $needle"; else echo "  already disarmed: $needle"; fi
+    done
+    ;;
+  *) echo "usage: swarm {status|fire|arm|disarm}"; exit 2 ;;
+esac
