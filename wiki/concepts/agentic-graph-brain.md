@@ -81,6 +81,20 @@ Flow: working → episodic (Scribe) → associative+semantic (Cartographer/Curat
 
 Kill criterion for the whole thesis (Test Don't Wonder): if after 2 weekly cycles the applied-proposals rate is 0 and gaps don't shrink → the graph brain is theater; kill Cartographer, keep L1 (free regardless).
 
+## The work dimensions (what kind of thing changes)
+
+Today's session (2026-09-06) revealed the system has **five dimensions of change**, each with its own zone, loop, artifact type, gate, and death mode. A good session traverses them in order: *question → evidence → verdict (research) → policy (config) → build (live coding) → schedule (automation) → write-back (memory).*
+
+| Dimension | Question | Zone | Gate | Dies by |
+|---|---|---|---|---|
+| **Config/control** | who/what may call what, keys, quotas | policy notes + `.obsidian` (agent read-only) + patch scripts | human (Z4) | leak / vendor lock-in |
+| **Live coding** | code living with data, rendering state | Graph-Notebook cells + `_harness/graph/` | run-twice-diff-empty; PRE-CHANGE CHECKLIST for `_harness` | non-determinism / silent breakage |
+| **Research** | what is true, with receipts | `wiki/research/` findings + open-question backlog | Critic / Test-Don't-Wonder | stale verdict (see coupling below) |
+| **Automation** | when it runs, who does it | `queue.md` + runner roles | flock, MAX_SESSIONS, PRODUCED-line proof | tokens without artifacts |
+| **Memory** | what persists across sessions | MEMORY/journal/edges.json/OpenMemory | Curator (builder lane), Critic for declarative | rot / contradiction |
+
+**Config↔research coupling (the maintenance contract):** plugin updates rewrite `main.js` → findings notes go stale. Therefore every finding carries the plugin version it audited (see [[graph-stack-llm-surfaces]]); a version bump observed in `manifest.json` = re-audit trigger for that plugin's row. Research findings justify config changes; config changes invalidate research. Neither is done alone.
+
 ## Why this compounds
 
 Each cycle: edges.json → gaps → proposals → applied links → denser graph → better RAG recall + better agent context → better proposals. The vault's structure *is* the memory, and every agent session makes the next one cheaper (more associative hits, less full-text reading). That's the "child brain" thesis of the Master Plan, finally wired into the graph.
