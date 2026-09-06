@@ -1,6 +1,6 @@
 # 🔮 The Oracle
 
-> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-06 20:12 UTC by the engine.*
+> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-06 20:27 UTC by the engine.*
 
 
 ## 🎯 Verdict & Arc — read this first
