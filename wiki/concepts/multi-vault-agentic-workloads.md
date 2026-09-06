@@ -34,6 +34,8 @@ Every agentic workload consumes **datasets, not trees**. Per-vault, one atomic, 
 
 Rule: **miners write ledgers; curators read ledgers.** Publication downstream = curation over ledger rows (rubric/filter/Critic), never re-mining. This is what "compile the datasets first" means operationally.
 
+**Ingestion gate (shipped 2026-09-06, `_harness/ingest/gate.sh`):** fetched content passes a local bulk gate BEFORE any agent reads it — sha256+mime inventory, executable/binary rejection, injection-heuristic patterns, optional LLM classifier tier (`--llm`, local models via :8705), optional ClamAV when installed, `--quarantine` to move non-clean files; every verdict = one atomic line in `_harness/ingest/verdicts.log` (the learnings ledger each foundry run feeds — how vaultcraft improves over time). Verified on 16 real Clippings: 16 clean, 0 FP after pattern fix.
+
 ## 3 · The loop we are actually running
 
 ```
@@ -56,6 +58,8 @@ Colony behavior is irrelevant to correctness because each loop step has its own 
 5. **Bounded runs** — stop criteria in every prompt (the tidal solo: 5 seeds or 2 consecutive rubric rejections).
 
 ## 5 · Pickup list (next session starts here)
+
+> **DESIGN FREEZE v1 — 2026-09-06.** The three architecture notes (audit · [[agentic-graph-brain]] · this one) are canon v1. No new definitions until the first curation pass ships. Execution only: fire, gate, mine, distill, measure.
 
 - [ ] **Tidal solo run in flight** — check tmux `0:3.3` / `~/tidal` trace + ledger; harvest results into the ledgers-if-omitted.
 - [ ] Obsidian queue (in order): `[Smith]` graph-index.py → `[Cartographer]` trial → `[Scribe]` foundry-pattern distil → `[Scout]` repo-map sweep (merges with tidal's executed work — no re-staging of done items).

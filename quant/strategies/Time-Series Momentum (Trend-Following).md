@@ -24,7 +24,7 @@ For each liquid asset, go long if its trailing 12-month (skip last month) excess
 ## Expected edge & decay
 - **Edge:** behavioral underreaction to news + herding; crisis alpha (positive in drawdowns / rate-of-change regimes).
 - **Magnitude:** crypto TSMOM Sharpe historically ~1.0–1.5; equity index TSMOM ~0.4–0.6.
-- **Decay:** moderate. Crowding compresses equity TSMOM; crypto less efficient but decaying as derivatives mature. Whipsaw in choppy/range-bound regimes is the main PnL leak.
+- **Decay:** moderate. Crowding compresses equity TSMOM; crypto less efficient but decaying as derivatives mature. Whipsaw inA  choppy/range-bound regimes is the main PnL leak.
 
 ## Data needed (FREE)
 - Crypto: daily OHLCV for top ~20 liquid perps/spot via **ccxt** (Binance/Coinbase). Funding optional.
