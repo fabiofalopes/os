@@ -6,7 +6,7 @@ tags:
   - meta
 date: 2026-09-02
 ---
-
+	
 # Dashboard — Latest Edits
 
 > No-scroll command center. Pin this note (`Ctrl/Cmd+P → Pin`), set as Homepage. Each table is capped (`LIMIT 10–20`) — click a link to jump, use the **Ba3ses** views below for sort/filter without scrolling.
