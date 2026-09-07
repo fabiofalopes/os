@@ -36,6 +36,7 @@ status: living — Curator maintains this
 - [[Agent Loop Skill — Iterate-Until Pattern]] — Design proposal (not yet a SKILL.md) for the bounded iterate-until agentic loop: success check, attempt cap, retry strategy.
 - [[Sources — Curated Seed Library]] — Scout's pre-evaluated reading list (self-improving agents, SkillOpt, SEAL); the fetch-and-curate queue.
 
+- [[checkable-systems-beat-blacklists]] — Z2 concept synthesis (2026-09-07): the STE100 finding generalized — nameable→checkable→enforced beats blacklists in agent behavior too; receipts from the ytobs v2 session (guard refusal, fallback chain, honesty markers).
 ## AI/ML Research — self-improving agents (`wiki/research/ai-ml/`)
 - [[SEAL — Self-Adapting Language Models]] — arXiv:2506.10943 (MIT). Model writes self-edits → SFT → persistent weight updates; RL rewards downstream performance. The generate→measure→keep north star we realize in text via SkillOpt.
 - [[Voyager — Open-Ended Embodied Agent]] — arXiv:2305.16291. Auto-curriculum + executable skill library + env-feedback refinement; the blueprint for our growing `.forge/skills/` loop.
@@ -118,6 +119,7 @@ status: living — Curator maintains this
 - `agent-knowledge` — **permanently excluded** (secret-saturated; see [[Projects]]). Local only at `~/agent-knowledge/`.
 - [[cecil-taylor-unit-structures]] · [[miles-davis-kind-of-blue]] · [[quincy-jones-walking-in-space]] — music essays, copied in from `~/` strays (2026-09-03).
 
+- [[The-cure-for-AI-slop-is-a-1986-aircraft-manual]] — ytobs digest (Ege Vusal Chelebi, 2026-07-24): ASD-STE100 skill+linter cuts AI slop 50-74% vs ~0% for word blacklists; fixes form, not substance.
 ## Harness Config (`_harness/`)
 - [[_sync/README]] — Mirror & sync engine (`_sync/`): GitHub layer (`vault-sync.sh`) + Ordo-style rclone-bisync folder pairs (`pairs-sync.sh`, robust anti-resurrection flags, human-only `--resync`) + the agent write-back contract.
 - [[queue]] — Session queue: runner picks the top unchecked job each tick; role-tagged, order = priority.
