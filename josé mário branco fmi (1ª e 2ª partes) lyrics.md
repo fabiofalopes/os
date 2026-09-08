@@ -283,7 +283,7 @@ Estas coisas até já nem querem dizer nada
 Ismos para aqui, ismos para acolá
 
 As palavras é só bolinhas de sabão  
-Parole parole parole e o Zé é que se lixa  
+Parole parolearole e o Zé é q pue se lixa  
 Cá o pintas é sempre o mexilhão  
 Eu quero lá saber deste paleio vou mas é ao futebol  
 Pronto
@@ -607,7 +607,7 @@ No ventre das canções, sabedoria
 
 ## Sources
 
-Lyric texts — [Arquivo José Mário Branco (FCSH/NOVA): letra de "FMI"](https://arquivojosemariobranco.fcsh.unl.pt/content/letra-da-cancao-fmi) · [Genius: FMI (1ª & 2ª Partes)](https://genius.com/Jose-mario-branco-fmi-1a-and-2a-partes-lyrics) · [Genius: FMI — Single tracklist](https://genius.com/albums/Jose-mario-branco/Fmi-single) · [letras.com](https://www.letras.com/jose-mario-branco/1315720/) ([EN translation](https://www.letras.com/jose-mario-branco/1315720/english.html)) · [Cifra Club](https://www.cifraclub.com.br/jose-mario-branco/1315720/letra/) · [ilDeposito.org](https://www.ildeposito.org/canti/fmi)
+Lyric texts — [Arquivo José Mário Branco (FCSH/NOVA): letra de "FMI"](https://arquivojosemariobranco.fcsh.unl.pt/content/letra-da-cancao-fmi) · [Genius: FMI (1ª & 2ª Partes)](https://genius.com/Jose-mario-branco-fmi-1a-and-2a-partes-lyrics) · [Genius: FMI [Single] tracklist](https://genius.com/albums/Jose-mario-branco/Fmi-single) · [letras.com](https://www.letras.com/jose-mario-branco/1315720/) ([EN translation](https://www.letras.com/jose-mario-branco/1315720/english.html)) · [Cifra Club](https://www.cifraclub.com.br/jose-mario-branco/1315720/letra/) · [ilDeposito.org](https://www.ildeposito.org/canti/fmi)
 
 Video (durations as listed in the clip):
 
