@@ -283,7 +283,7 @@ Estas coisas até já nem querem dizer nada
 Ismos para aqui, ismos para acolá
 
 As palavras é só bolinhas de sabão  
-Parole parolearole e o Zé é q pue se lixa  
+Parole parole parole e o Zé é que se lixa  
 Cá o pintas é sempre o mexilhão  
 Eu quero lá saber deste paleio vou mas é ao futebol  
 Pronto
