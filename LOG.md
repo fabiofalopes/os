@@ -1935,3 +1935,4 @@
 - 2026-09-09 2026-09-09T08:15:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-09 09:30Z (75m), wave skipped, jobs preserved
 - 2026-09-09 2026-09-09T08:30:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-09 09:30Z (60m), wave skipped, jobs preserved
 - 2026-09-09 2026-09-09T08:45:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-09 09:30Z (45m), wave skipped, jobs preserved
+- 2026-09-09 2026-09-09T09:00:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-09 09:30Z (30m), wave skipped, jobs preserved
