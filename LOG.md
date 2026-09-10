@@ -2204,3 +2204,37 @@
 - 2026-09-10 2026-09-10T13:37:35Z | 434s | exit1 | alibaba-token-plan/qwen3.8-max-preview | [Scribe] DISTIL THE TIDAL FOUNDRY (`~/tidal` — canonical home of `~/.config/nvim/knowledge` via symlink): read INDEX.md, WHY.md, VALIDATE.md, knowledge/ (incl. repo-map), docs/ — then write ONE note `wiki/concepts/foundry-pattern.md`: the transferable pattern (constitution w/ hard rules · rubric-gate ≥6/8 · seed immutability · seen-in receipts · repo-map alpha triage + trap warnings), each element with its tidal evidence and whether it's proven/one-off/stale — **holes marked, not hidden**. Do NOT copy tidal content into the vault (no forks — canonical stays at ~/tidal, hub row exists in Projects). Verify every claim against the files; anything unverifiable → marked STALE. PRODUCED: one wiki note + LOG line. | API Error: 502 Provider returned 503. This is a server-side issue, usually temporary — try again in a moment. If it persists, check your inference gateway (localhost:8705).
 - 2026-09-10 2026-09-10T13:45:02Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 14:07Z (22m), wave skipped, jobs preserved
 - 2026-09-10 2026-09-10T14:00:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 14:07Z (7m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T14:15:01Z | 0s | GATEWAY_RESUMED | (breaker) | (dispatch resumed) | gateway hold expired — hold file cleared
+- 2026-09-10 2026-09-10T14:15:20Z | 0s | GATEWAY_HOLD | (breaker) | (dispatch paused) | active probe got HTTP 502 from gateway — holding 3600s (flap 2 in window — escalated, oracle alerted)
+- 2026-09-10 2026-09-10T14:15:20Z | 0s | SKIP(GATEWAY) | (probe) | (no job attempted) | active probe got 5xx from http://localhost:8705 — hold latched, wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T14:30:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 15:15Z (45m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T14:45:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 15:15Z (30m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T15:00:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 15:15Z (15m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T15:15:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 15:15Z (0m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T15:30:01Z | 0s | GATEWAY_RESUMED | (breaker) | (dispatch resumed) | gateway hold expired — hold file cleared
+- 2026-09-10 2026-09-10T15:30:09Z | 0s | GATEWAY_HOLD | (breaker) | (dispatch paused) | active probe got HTTP 502 from gateway — holding 7200s (flap 3 in window — escalated, oracle alerted)
+- 2026-09-10 2026-09-10T15:30:09Z | 0s | SKIP(GATEWAY) | (probe) | (no job attempted) | active probe got 5xx from http://localhost:8705 — hold latched, wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T15:45:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 17:30Z (105m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T16:00:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 17:30Z (90m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T16:15:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 17:30Z (75m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T16:30:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 17:30Z (60m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T16:45:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 17:30Z (45m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T17:00:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 17:30Z (30m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T17:15:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 17:30Z (15m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T17:30:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 17:30Z (0m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T17:45:01Z | 0s | GATEWAY_RESUMED | (breaker) | (dispatch resumed) | gateway hold expired — hold file cleared
+- 2026-09-10 2026-09-10T17:45:11Z | 0s | GATEWAY_HOLD | (breaker) | (dispatch paused) | active probe got HTTP 502 from gateway — holding 7200s (flap 4 in window — escalated, oracle alerted)
+- 2026-09-10 2026-09-10T17:45:11Z | 0s | SKIP(GATEWAY) | (probe) | (no job attempted) | active probe got 5xx from http://localhost:8705 — hold latched, wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T18:00:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 19:45Z (105m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T18:15:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 19:45Z (90m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T18:30:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 19:45Z (75m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T18:45:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 19:45Z (60m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T19:00:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 19:45Z (45m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T19:15:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 19:45Z (30m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T19:30:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 19:45Z (15m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T19:45:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 19:45Z (0m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T20:00:01Z | 0s | GATEWAY_RESUMED | (breaker) | (dispatch resumed) | gateway hold expired — hold file cleared
+- 2026-09-10 2026-09-10T20:00:11Z | 0s | GATEWAY_HOLD | (breaker) | (dispatch paused) | active probe got HTTP 502 from gateway — holding 7200s (flap 5 in window — escalated, oracle alerted)
+- 2026-09-10 2026-09-10T20:00:11Z | 0s | SKIP(GATEWAY) | (probe) | (no job attempted) | active probe got 5xx from http://localhost:8705 — hold latched, wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T20:15:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 22:00Z (105m), wave skipped, jobs preserved
+- 2026-09-10 2026-09-10T20:30:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-10 22:00Z (90m), wave skipped, jobs preserved
