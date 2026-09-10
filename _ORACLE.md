@@ -1,6 +1,6 @@
 # 🔮 The Oracle
 
-> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-10 13:27 UTC by the engine.*
+> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-10 13:42 UTC by the engine.*
 
 
 ## 🎯 Verdict & Arc — read this first
@@ -18,8 +18,8 @@
 **The call (owed BEFORE 08-07 — 5 days out):** the row-1 **#19 void/exclude** decision, paired with the staged capture-bug fix. The smoke resolved #19 (verifiable now via `&closed=true`) — the "pulled market" diagnosis was the closed-markets bug's first symptom, so the call is **moot if the fix is approved** (recommendation: approve fix + score #19 resolved-YES). Without the fix the pipeline exits 2 on verdict day and row 1 gets no score. → [[quant-forecast-pilot01-preverdict-smoke-2026-08-01]]
 
 ## 🟦 Pulse — CAPPED
-- **Today:** Success rate (did its job): 0/36 = 0%   [36 real sessions, 54 infra fails apart]
-- SUCCESS 0   EMPTY 0   FAIL 36   | INFRA 54 (harness, excluded)
+- **Today:** Success rate (did its job): 0/38 = 0%   [38 real sessions, 57 infra fails apart]
+- SUCCESS 0   EMPTY 0   FAIL 38   | INFRA 57 (harness, excluded)
 - **Queue:** 7 pending
 
 ## Trend (7 days)
@@ -31,7 +31,7 @@ date        runs  success  empty  fail  infra  rate_pct
 2026-09-07  65    0        0      65    76     0
 2026-09-08  52    0        0      52    42     0
 2026-09-09  46    0        0      46    57     0
-2026-09-10  36    0        0      36    54     0
+2026-09-10  38    0        0      38    57     0
 ```
 
 ## Recently forged
