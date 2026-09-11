@@ -14,7 +14,7 @@ related:
 
 # Vaultcraft Map — Book ↔ OS Bridge
 
-> The "gimmick" made explicit. **vaultcraft is the book** (theory, 13 principles, methods). **`os` is the first foundry** (this vault + its machinery, live). This note pins every current zone to a vaultcraft section so "reorganizing" stops polluting content and the machinery layer becomes findable canon.
+> The "gimmick" made explicit. **vaultcraft is the book** (theory, 13 principles, methods). **`os` is the harness** (machinery, live) — foundry status gated on naming an artifact contract + verify command (FOUNDRY-SPEC v1.0.1 §3). Reclassified 2026-09-10 · human gate: ☑ ratified (burst "continue", veto-by-number protocol). This note pins every current zone to a vaultcraft section so "reorganizing" stops polluting content and the machinery layer becomes findable canon.
 
 ## The spine (8 sections, from `vaultcraft` Sep 1)
 
@@ -67,3 +67,7 @@ Previously scattered across `_harness/config.env`, `_sync/pairs.conf`, `~/.ssh/c
 1. Keep `_meta/` as the only home for "reorganizing" proposals — don't let meta leak into `wiki/`.
 2. When 60-machinery grows (new adapter/hook/MCP), add one row here + one sentence in [[OS]].
 3. Vaultcraft book stays upstream (`fabiofalopes/vaultcraft`); this map is the only coupling point — the book never imports `os` internals.
+
+## DECISIONS
+
+- **2026-09-10 — `os` reclassified first-foundry → harness, pending contract.** WHY: gap-table audit (foundry-lock session): `os` runs cron/swarm/sync machinery but declares no runtime command, no artifact contract, no verify command — the three executables FOUNDRY-SPEC §3 requires of any foundry. The book's claim must match the measured table; upgrading by wording would be grade inflation. Reversibility: high — declare the three contracts and re-run classification (would then likely classify runtime or skeleton on merit). Upgrade paths: (a) name `os`'s artifact + verifying command; (b) spin `wiki/value/` + ledger out as `value-foundry` with its own contracts, `os` as its harness. Gate: ☑ ratified 2026-09-10 (veto-by-number, no veto).
