@@ -88,6 +88,7 @@ status: living — Curator maintains this
 - [[40-EXPERIMENT]] — "Full of bots, they say": honest demonstration protocol (receipt #1 = this session's broken-and-repaired tooling); phases, metrics, rails, kill-switch, post-log.
 - [[50-HARNESS]] — Live stack map: twikit+patches, CDP cookie harvest, runbook; debts (venv patches, shared-browser UX, credentials nowhere durable → Vaultwarden TODO).
 - [[70-LOOP]] — Pre-stage content factory protocol: RESEARCH→DEEPEN→IDEATE→STRUCTURE→SIMULATE; broadcast-only; human gate único. Iteração #1 corrida 2026-09-12.
+- [[80-ORCHESTRATION]] — Stage tmux `foundry` (orchestrator + workers pi paralelos + gate); quotas free/POP e runbook de retoma. Ciclo #1: R2 ✅ 9 receipts, R1/R3 bloqueados.
 - `knowledge/` — notas vivas por pilar (P1 modelo PT ✅, P2 hipocrisia ✅, P3/P4 stubs TO-VERIFY)
 - `ideas/IDEAS.md` — reservatório cru append-only (18 ideias taggadas)
 - `bucket/QUEUE.md` — staged B1–B3 + SIMULAÇÃO semana 1 (não postado, à espera de gate)
