@@ -2457,3 +2457,4 @@
 - 2026-09-12 2026-09-12T06:45:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-12 07:07Z (22m), wave skipped, jobs preserved
 - 2026-09-12T06:47:57Z | pi-session | [Ocaso-Epico] Pre-stage LOOP v1 construído + iteração #1 corrida: knowledge/ (P1+P2 aprofundados, P3/P4 stubs), ideas/ (18), bucket/ (B1-B3 staged + SIMULAÇÃO semana 1). Interaction lock mantido. Nada postado — gate humano pendente. Docs: ocaso-epico/70-LOOP.md
 - 2026-09-12 2026-09-12T07:00:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-12 07:07Z (7m), wave skipped, jobs preserved
+- 2026-09-12 2026-09-12T07:15:01Z | 0s | GATEWAY_RESUMED | (breaker) | (dispatch resumed) | gateway hold expired — hold file cleared
