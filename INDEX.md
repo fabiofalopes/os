@@ -80,6 +80,14 @@ status: living — Curator maintains this
 - [[curriculum-draft]] — 4-stage curriculum with per-resource detail + verdicts; companion to the ledger.
 - [[wayback-recovery]] — Wayback recovery of algotradecamp.com + moondev.com (12 captures, 2022–2026): full bootcamp curriculum reconstructed from sales pages (32-day 2025 list + 2022 6-week agenda + 7 algos); moondev free layer = Hyperliquid Data-Layer API docs + fee calculators + anti-hype manifesto (substantive); 100day = off-mission MMO scheme (hype); 2008 blog = prior owner (unrelated).
 
+### Ocaso Epico — X foundry for PT drug-policy pragmatism (`ocaso-epico/`, @ocaso_epico)
+- [[00-CHARTER]] — Mission v0: evidence-first agentic voice for PT cannabis regulation pragmatism; not propaganda, not a fake human; foundry loop definition; origin lore of the handle.
+- [[10-ARCHETYPE]] — "The Entitled Reader" persona spec: voice rules, signature moves (Mito/Realidade, Arquivo da Hipocrisia), anti-gimmick list (human-flagged).
+- [[20-CONTENT-ONTOLOGY]] — Pillars P1–P5, formats, PT-first language, human-gated editorial workflow, cadence discipline, weekly ontology loop.
+- [[30-SOURCES]] — Claim-discipline source library: every published number needs a receipt; seed entries all TO-VERIFY (Lei 30/2000, SICAD/EMCDDA, Hughes&Stevens/Laqueur, Bernays, China Tobacco, Casal Ventoso, bunk-drug harms).
+- [[40-EXPERIMENT]] — "Full of bots, they say": honest demonstration protocol (receipt #1 = this session's broken-and-repaired tooling); phases, metrics, rails, kill-switch, post-log.
+- [[50-HARNESS]] — Live stack map: twikit+patches, CDP cookie harvest, runbook; debts (venv patches, shared-browser UX, credentials nowhere durable → Vaultwarden TODO).
+
 ## AI Tooling & Proxy Setups (this RPi)
 - [[Claude Code Proxy Pattern — Master Reference]] — Canonical pattern: local proxy translating Anthropic Messages API to any OpenAI-compatible provider.
 - [[Claude Code Proxy Pattern — Ollama Cloud]] — Proxy instance routing Claude Code → Universal Provider Bridge → ollama.com/v1.
