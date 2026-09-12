@@ -2560,3 +2560,4 @@
 - 2026-09-12 2026-09-12T17:45:19Z | 0s | SKIP(GATEWAY) | (probe) | (no job attempted) | active probe got 5xx from http://localhost:8705 — hold latched, wave skipped, jobs preserved
 - 2026-09-12 2026-09-12T18:00:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-12 18:45Z (45m), wave skipped, jobs preserved
 - 2026-09-12 2026-09-12T18:15:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-12 18:45Z (30m), wave skipped, jobs preserved
+- 2026-09-12 2026-09-12T18:30:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-12 18:45Z (15m), wave skipped, jobs preserved
