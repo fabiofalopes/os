@@ -71,3 +71,21 @@ status: APPEND-ONLY — ideias são baratas, posts são caros
 - história resumida do açúcar, do álcool e do tabaco: primeiro proíbem. depois taxam. depois vendem eles. aposta? [série]
 - ninguém morre porque sim. morre do que vem dentro quando ninguém responde por nada. e isso é opção nossa desde 2001. [curiosidade]
 
+
+## RONDA 4 — anti-slop (2026-09-12)
+
+> Checklist anti-slop desta ronda (fica como regra de redação):
+> — proibido punchline simétrica / aforismo com laço
+> — proibido "pergunta honesta:", "coisa engraçada:", "spoiler:"
+> — substantivos concretos > conceitos (A Bola > "jornal desportivo")
+> — nem toda a linha tem de ser engraçada. algumas só observam e param.
+> — desigual no comprimento e no esforço. mesquinharia conta como verdade.
+
+- a erva vem-me embrulhada em página desportiva. em 2026. temos 5g no telemóvel e o meu dealer embala em A Bola
+- já vi a polícia a pesar. nunca vi ninguém a medir "10 dias de consumo". nem quem escreveu a lei
+- no Continente leio o rótulo das azeitonas. disto venho às cegas há 15 anos
+- o CDT fica num prédio sem sinalética. não é coincidência, é design
+- a minha avó chamava-lhe uma coisa pior e oferecia o vinho
+- toda a gente sabe quem vende. a polícia sabe. o da junta sabe. vamos todos fingir que é segredo de estado
+- o que me chateia não é nem a lei nem a erva. é pagar 12€ por uma coisa que em Madrid custa 6 e em Amesterdão tem etiqueta
+- 25 anos a descriminalizar a pessoa. ninguém perguntou à pessoa
