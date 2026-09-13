@@ -122,4 +122,4 @@
 ## Batch graph-stack-patterns — staged triage (2026-09-06, per batch mode v0)
 
 ## Batch graph-stack-patterns — staged triage (2026-09-06, per batch mode v0)
-- [ ] [Scout] BATCH graph-stack-patterns TRIAGE: green-dalii/obsidian-llm-wiki — fetch (git clone --depth 1 to /tmp/batch-graph-stack-patterns), `bash /home/fabio/obsidian-vault-kali/_harness/ingest/gate.sh <dir> --llm`, then triage for the batch purpose (read manifest.md frontmatter): 3-line alpha verdict (mine/skip/map-only) + expected yield. `batch.sh set graph-stack-patterns green-dalii/obsidian-llm-wiki TRIAGED 'verdict'`. No mining in this session. PRODUCED: trace.md lines.
+- [!] [Scout] BATCH graph-stack-patterns TRIAGE: green-dalii/obsidian-llm-wiki — fetch (git clone --depth 1 to /tmp/batch-graph-stack-patterns), `bash /home/fabio/obsidian-vault-kali/_harness/ingest/gate.sh <dir> --llm`, then triage for the batch purpose (read manifest.md frontmatter): 3-line alpha verdict (mine/skip/map-only) + expected yield. `batch.sh set graph-stack-patterns green-dalii/obsidian-llm-wiki TRIAGED 'verdict'`. No mining in this session. PRODUCED: trace.md lines.
