@@ -50,3 +50,24 @@ status: APPEND-ONLY — ideias são baratas, posts são caros
 
 > Próximo passo: humano marca as 3-5 que têm o seu jeito (ou reescreve à sua
 > maneira — é essa a matéria-prima valiosa). Depois STRUCTURE só nas escolhidas.
+
+## RONDA 3 — registo C/B afinado (2026-09-12) — hooks plantados
+
+> Regras extraídas da calibração: falado + observação concreta, lowercase,
+> sem "mano" nem cringe, pontuação a respirar. Cada linha planta UM gancho:
+> [curiosidade] loop aberto · [pergunta] engagement direto · [ref] coisa que
+> toda a gente reconhece · [série] tease de continuação.
+
+- coisa engraçada: é das únicas coisas que compras sem saber o que vem lá dentro. e a confiança é toda tua. [curiosidade]
+- o mesmo Estado que te multa por um baseado tem o supermercado ao lado com 40 metros de bebida. ninguém acha estranho? [ref + pergunta]
+- pergunta honesta para quem é contra: o que é que mudava na tua rua se isto passasse a ter rótulo e lote? [pergunta]
+- sempre que alguém diz "mas e os miúdos", eu lembro-me que um miúdo arrasta mais ao dealer do que ao Continente. [ref]
+- a lei fala em "10 dias de consumo". alguém sabe medir isso? porque quem escreveu a lei também não sabia. [curiosidade]
+- há uma razão para Portugal ser citado no estrangeiro todo por uma lei que cá dentro ninguém sabe explicar. fica para amanhã. [série]
+- em 1929 uma empresa pagou mulheres para fumarem na rua e os jornais chamaram-lhe liberdade. até hoje ninguém superou aquilo. sim, é disto que vou falar. [ref + série]
+- dizem que é a droga mais perigosa do mercado. e ainda assim chega à mão sem recibo, sem rótulo, sem quem responda por ela. que confiança nesta economia. [curiosidade]
+- quantos conhecem alguém que já esteve numa comissão de dissuasão? pois. ninguém sabe sequer onde fica. [pergunta]
+- o Casal Ventoso fechou. a esquina onde isso acontecia... ficou. [ref]
+- história resumida do açúcar, do álcool e do tabaco: primeiro proíbem. depois taxam. depois vendem eles. aposta? [série]
+- ninguém morre porque sim. morre do que vem dentro quando ninguém responde por nada. e isso é opção nossa desde 2001. [curiosidade]
+
