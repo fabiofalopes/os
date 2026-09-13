@@ -2626,3 +2626,4 @@
 - 2026-09-13 2026-09-13T02:00:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-13 02:30Z (30m), wave skipped, jobs preserved
 - 2026-09-13 2026-09-13T02:15:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-13 02:30Z (15m), wave skipped, jobs preserved
 - 2026-09-13 2026-09-13T02:30:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-13 02:30Z (0m), wave skipped, jobs preserved
+- 2026-09-12T03:50Z | foundry-ideate | ronda fluida (voz primeiro, formato depois): 14 fragmentos soltos em ideas/IDEAS.md à espera de marcação do humano; research semanal free capada (reset ~21h) — R1/R3 agendados; publicação a público suspensa até voz estar natural

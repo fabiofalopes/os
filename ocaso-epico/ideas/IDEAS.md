@@ -26,3 +26,27 @@ status: APPEND-ONLY — ideias são baratas, posts são caros
 - [P4/dado] Uma estatística SICAD forte por semana, com fonte e link — o hábito que constrói credibilidade. [BLOCKED: harvest SICAD]
 - [P1+P5/letra-pequena] Série "letra pequena da lei": cada post destaca UMA expressão do diploma (ex.: "constituem contra-ordenação") e explica-a em 2 linhas. Formato recorrente, branding jurídico.
 - [P2/ecotempo] Notícia do dia (qualquer psychedelics/cannabis/PT) + resposta canónica do arquivo. Formato reativo a ondas. [CONDICIONAL: quando houver onda]
+
+## RONDA FLUIDA (2026-09-12 ~03:45) — voz primeiro, formato depois
+
+> Diagnóstico do humano: os drafts staged estão "muito forçados" — soam a
+> esqueleto MITO/REALIDADE, não a pessoa. Regra desta ronda: nada de formatos,
+> nada de receitas, só o jeito como se fala. Fragmentos valiam posts.
+
+- 25 anos depois, a esquina é a mesma. Só mudou o nome do autocarro que lá passa.
+- Ninguém sai de uma comissão de dissuasão a sentir-se descriminalizado. Sai com papelada e uma marca no bolso.
+- Há sempre o turista que leu num fórum que em Portugal "pode fumar à vontade". Nós sabemos como acaba — multa e uma história para contar.
+- O Estado ganha dinheiro ao tabaco ao balcão e perde tempo com a erva no tribunal. Ninguém acha piada a esta frase em São Bento.
+- Eu não quero erva grátis, quero erva com etiqueta. É a mesma coisa que peço ao leite.
+- O que vende mais hereges não é a erva, é a ideia de que alguém está a ganhar por cima de ti.
+- Descriminalizaram-me a mim e esqueceram-se do gajo que me vende. Isso chama-se meio emprego.
+- Se amanhã vendessem erva no talho, metade disto acabava. A outra metade é que é o problema de verdade.
+- Há bairros onde a polícia conhece todos pelo nome e não leva nenhum a lado nenhum. Isso é política também — só que não tem lei.
+- Os meus pais tinham o Casal Ventoso no telejornal. Eu tenho o même. Qual dos dois era pior?
+- A gravata que proíbe fuma charutos. Ninguém pergunta nada ao charuto.
+- Legal não é "liberabem". Legal é: queres comprar? Toma lá factura e uma pena por ires acima do limite.
+- Primeiro proíbem, depois taxam, depois vendem eles. Vai procurar história do açúcar, do álcool, do tabaco. Sempre a mesma telenovela.
+- Ninguém morre de erva. Morre do que vem dentro dela quando ninguém responde por ela.
+
+> Próximo passo: humano marca as 3-5 que têm o seu jeito (ou reescreve à sua
+> maneira — é essa a matéria-prima valiosa). Depois STRUCTURE só nas escolhidas.
