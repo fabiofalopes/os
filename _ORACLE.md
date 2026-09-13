@@ -1,6 +1,6 @@
 # 🔮 The Oracle
 
-> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-13 04:42 UTC by the engine.*
+> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-13 04:57 UTC by the engine.*
 
 
 ## 🎯 Verdict & Arc — read this first
@@ -20,7 +20,7 @@
 ## 🔴 Pulse — FAILING
 - **Today:** Success rate (did its job): 0/24 = 0%   [24 real sessions, 6 infra fails apart]
 - SUCCESS 0   EMPTY 0   FAIL 24   | INFRA 6 (harness, excluded)
-- **Queue:** 2 pending · 5 quarantined ⚠
+- **Queue:** 1 pending · 6 quarantined ⚠
 
 ## Trend (7 days)
 ```
@@ -47,6 +47,7 @@ date        runs  success  empty  fail  infra  rate_pct
 - [!] [Scribe] DISTIL THE TIDAL FOUNDRY (`~/tidal` — canonical home of `~/.config/nvim/knowledge` via symlink): read INDEX.md, WHY.md, VALIDATE.md, knowledge/ (incl. repo-map), docs/ — then write ONE note `wiki/concepts/foundry-pattern.md`: the transferable pattern (constitution w/ hard rules · rubric-gate ≥6/8 · seed immutability · seen-in receipts · repo-map alpha triage + trap warnings), each element with its tidal evidence and whether it's proven/one-off/stale — **holes marked, not hidden**. Do NOT copy tidal content into the vault (no forks — canonical stays at ~/tidal, hub row exists in Projects). Verify every claim against the files; anything unverifiable → marked STALE. PRODUCED: one wiki note + LOG line.
 - [!] [Scout] DEEP-RESEARCH TRIAL (precondition: gateway probe green — Lusófona estava 503; se down, defer limpo): pick ONE question com driver real (ex.: "LLM-wiki patterns relevant to our graph stack" — leads já no note §Leads). Run `bash _harness/research/websearch.sh` + `papers.sh` (máx 8 fontes total), defuddle top-3 URLs, `bash _harness/ingest/gate.sh` no staging, destilar UMA nota `wiki/research/ai-ml/` com receipts (url/arxiv-id por claim) + veredicto ★★★ ou DOWNGRADE. STOP: 1 nota, veredicto obrigatório. PRODUCED: 1 nota + INDEX row + LOG.
 - [!] [Quant] APPLY THE ROW-1 CLOSED-MARKET FETCH FIX (precondition-gated — self-executes on human GO): PRECONDITION — ☐ GO checked at wiki/value/forecast-pilot-01-fix-checklist.md AND [[critic-forecast-closedmarket-fix-review-2026-08-02]] endorses the fix. Not met → print PRODUCED: DEFERRED and exit (the FM-8 hold re-checks hourly at ~0 tokens; the job waits for the human, never quarantines). Met → apply the staged + Critic-approved two-stage `&closed=true` fallback to fetch() in BOTH ~/Projects/forecast-scorer/fetch_resolutions.py and score_forecast_pilot01.py EXACTLY as tested in [[quant-forecast-pilot01-preverdict-smoke-2026-08-01]] §2 (with any Critic amendments); `bash -n` clean on both; re-smoke end-to-end (expect #19 resolved-YES, 0 fetch-fails, exit 0 — anything else → revert + escalate, do NOT force); frozen probabilities / integrity hashes / verdict ladder untouched; record the applied diff + smoke output + provenance in inbox/quant-forecast-fix-applied-2026-08-02.md. This is the fix that keeps row-1 verdict day (first resolution 08-07, single score ≥09-02) from exiting 2 with no score. $0, public API only.
+- [!] [Scout] BATCH graph-stack-patterns TRIAGE: green-dalii/obsidian-llm-wiki — fetch (git clone --depth 1 to /tmp/batch-graph-stack-patterns), `bash /home/fabio/obsidian-vault-kali/_harness/ingest/gate.sh <dir> --llm`, then triage for the batch purpose (read manifest.md frontmatter): 3-line alpha verdict (mine/skip/map-only) + expected yield. `batch.sh set graph-stack-patterns green-dalii/obsidian-llm-wiki TRIAGED 'verdict'`. No mining in this session. PRODUCED: trace.md lines.
 
 ---
 Go deeper → [[INDEX]] (map) · LOG.md (audit) · [[MEMORY]] (working memory)
