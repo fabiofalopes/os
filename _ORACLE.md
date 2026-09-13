@@ -1,6 +1,6 @@
 # 🔮 The Oracle
 
-> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-13 03:27 UTC by the engine.*
+> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-13 03:42 UTC by the engine.*
 
 
 ## 🎯 Verdict & Arc — read this first
@@ -18,9 +18,9 @@
 **The call (owed BEFORE 08-07 — 5 days out):** the row-1 **#19 void/exclude** decision, paired with the staged capture-bug fix. The smoke resolved #19 (verifiable now via `&closed=true`) — the "pulled market" diagnosis was the closed-markets bug's first symptom, so the call is **moot if the fix is approved** (recommendation: approve fix + score #19 resolved-YES). Without the fix the pipeline exits 2 on verdict day and row 1 gets no score. → [[quant-forecast-pilot01-preverdict-smoke-2026-08-01]]
 
 ## 🔴 Pulse — FAILING
-- **Today:** Success rate (did its job): 0/16 = 0%   [16 real sessions, 6 infra fails apart]
-- SUCCESS 0   EMPTY 0   FAIL 16   | INFRA 6 (harness, excluded)
-- **Queue:** 6 pending · 1 quarantined ⚠
+- **Today:** Success rate (did its job): 0/18 = 0%   [18 real sessions, 6 infra fails apart]
+- SUCCESS 0   EMPTY 0   FAIL 18   | INFRA 6 (harness, excluded)
+- **Queue:** 4 pending · 3 quarantined ⚠
 
 ## Trend (7 days)
 ```
@@ -31,7 +31,7 @@ date        runs  success  empty  fail  infra  rate_pct
 2026-09-10  53    0        0      53    65     0
 2026-09-11  46    0        0      46    38     0
 2026-09-12  74    0        0      74    67     0
-2026-09-13  16    0        0      16    6      0
+2026-09-13  18    0        0      18    6      0
 ```
 
 ## Recently forged
@@ -43,6 +43,8 @@ date        runs  success  empty  fail  infra  rate_pct
 
 ## ⚠ Needs attention
 - [!] [Smith] BUILD `_harness/graph/graph-index.py`: walk vault md (skip `_sync/`, `.obsidian/`, LOG.md), build wikilink graph with `networkx` (3.4.2 installed, stdlib only), run `louvain_communities` + `adamic_adar_index` (top-50 unlinked pairs) + cross-community link-scarcity gap scores; write `journal/graph/edges.json` (nodes/edges/communities/stats/gaps) + `journal/graph/gaps-$(date +%F).md` (human-readable top-10 gaps). Deterministic, $0, no LLM. Verify: run twice, diff both outputs = empty; `python3 -m py_compile` clean. PRODUCED: script + two output files + diff receipt.
+- [!] [Cartographer] TRIAL RUN (new role, per [[agentic-graph-brain]] L2): precondition — `journal/graph/edges.json` exists (job above done). Read edges.json + gaps note ONLY (no full-vault reads), make ONE call to the local LiteLLM gateway (POP fleet, cheapest model) to narrate top-3 gaps and propose ≤5 wikilink additions + 1 bridge-note title for `inbox/graph-proposals-$(date +%F).md`. DO NOT apply any links — proposals only (human/Critic gate). If gateway unreachable → clean deferral note, exit 0. PRODUCED: one inbox note + token cost line. Kill criterion reminder: 2 weekly cycles with 0 applied proposals → kill role, keep the deterministic layer.
+- [!] [Scribe] DISTIL THE TIDAL FOUNDRY (`~/tidal` — canonical home of `~/.config/nvim/knowledge` via symlink): read INDEX.md, WHY.md, VALIDATE.md, knowledge/ (incl. repo-map), docs/ — then write ONE note `wiki/concepts/foundry-pattern.md`: the transferable pattern (constitution w/ hard rules · rubric-gate ≥6/8 · seed immutability · seen-in receipts · repo-map alpha triage + trap warnings), each element with its tidal evidence and whether it's proven/one-off/stale — **holes marked, not hidden**. Do NOT copy tidal content into the vault (no forks — canonical stays at ~/tidal, hub row exists in Projects). Verify every claim against the files; anything unverifiable → marked STALE. PRODUCED: one wiki note + LOG line.
 
 ---
 Go deeper → [[INDEX]] (map) · LOG.md (audit) · [[MEMORY]] (working memory)
