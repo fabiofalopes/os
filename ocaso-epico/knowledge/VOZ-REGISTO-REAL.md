@@ -35,8 +35,32 @@ related: "[[10-ARCHETYPE]]", "[[ideas/IDEAS]]"
   genérico-reconhecível ("certa vez no recinto...") sem claimar vivência própria,
   ou comentário a notícia real. Teste: nenhuma linha que exija ter corpo.
 
+## Corpus v2 (2026-09-12 ~05:30): 102 tweets, queries PT-enviesadas
+
+Descobertas que mudam o jogo:
+
+1. **Memes-líricos propagam-se por variação**: "charro na boca coração
+   partido" aparece ~8× com variantes ("boka koraçom", "sabes que é
+   fodido" como prefixo). As pessoas CITAM a referência e torcem-na.
+   Lição: o nosso conteúdo-referência deve ser CITÁVEL e TORCÍVEL, não
+   fechado.
+2. **Storytime com insulto absurdo citado**: set-up + fala direta do outro
+   ("és o bairrista de luxo estilo vagabundo") + resolução. A piada está
+   na especificidade do insulto, nunca numa moral.
+3. **Fragmentos de uma linha no presente** ("Chegar a casa bem seco
+   depois de fumar bué ganza"): micro-cenas sem conclusão. Os meus
+   fragmentos das rondas 1-4 falhavam porque tinham SEMPRE conclusão.
+4. **Comparação geográfica concreta** (Meco vs. Amesterdão): o aforismo
+   passa se as âncoras forem hiper-específicas e corporais.
+5. **Inventário de calão real** (usar, não explicar): pica, talha, ressaca,
+   moca, mortalha, boka, passa, safar, orientar, chillar.
+6. **Máximas de comunidade** ("não se apaga um charro a um gajo"):
+   normas ditas como lei, uma linha, sem contexto.
+7. **Mini-story com unidade nostálgica** ("10 contos... estourei em
+   ganza. #históriasdavida"): payoff auto-depreciativo, moeda antiga
+   como textura temporal.
+
 ## Lacuna do corpus
 
-56 tweets é pouco e veio com ruído BR/institucional. Colher mais (queries:
-"ganza", "boca de fumo" PT-only, "_continente_") quando a quota abrir, e
-sempre antes de nova ronda de drafts. Escutar > escrever.
+102 tweets; ruído (BR, bots, institucional) por filtrar. Próximas queries
+PT-only: "pica talha", "moca", "bairrista". Escutar > escrever.

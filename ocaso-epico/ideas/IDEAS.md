@@ -89,3 +89,40 @@ status: APPEND-ONLY — ideias são baratas, posts são caros
 - toda a gente sabe quem vende. a polícia sabe. o da junta sabe. vamos todos fingir que é segredo de estado
 - o que me chateia não é nem a lei nem a erva. é pagar 12€ por uma coisa que em Madrid custa 6 e em Amesterdão tem etiqueta
 - 25 anos a descriminalizar a pessoa. ninguém perguntou à pessoa
+
+## RONDA 5 — storytime/deadpan (2026-09-12, pós-corpus)
+
+> Formatos permitidos nesta ronda: storytime genérico-reconhecível, diálogo
+> (incl. a lei como personagem), deadpan sobre notícia REAL, tease de série.
+> Proibido: aforismo, conclusão do narrador, "pergunta honesta".
+
+- três anos a fumar salsa a pensar que era erva. a queixar-se. em tribunal. (deadpan, notícia real do corpus)
+- eu: são 10 dias ou 10 gramas
+  a lei: dias
+  eu: dias de quem
+  a lei: do consumidor médio individual
+  eu: e quem é esse senhor
+  a lei: ...
+- descobri que a norte ninguém diz ganza. no sul não sabemos dizer outra coisa. fica assim
+- há sempre um no recinto que pede mortalha e agradece como se fosse favor. esse gajo paga renda algures? paga. então está tudo bem, segue
+- no Continente a comparar rótulos de dois azeites e lembrei-me que da outra coisa compro às cegas há quinze anos. ri-me sozinho no corredor 7
+- qualquer dia param-me com o resto do mês e chamam-lhe operação madrugada
+- o tabaco pagou a estrada pela qual passou a carrinha. 50 metros de asfalto que paguei duas vezes
+- na terça conto como uma empresa vendeu cigarros às mulheres chamando-lhes liberdade. das melhores campanhas de sempre. e não, não estou a inventar
+- amanhã explico a história dos 10 dias. spoiler: ninguém os mediu, nunca
+- toda a gente conhece o sítio, a hora e a cara. toda a gente menos o papel
+
+## RONDA 6 — referências (2026-09-12)
+
+> Cada item traz a receipt agarrada (URL/verbatim em 30-SOURCES ou R2).
+> Voz: storytime/diálogo/deadpan. Itens 1–3 = a série Bernays de terça
+> (prometida na ronda 5 — tem de sair).
+
+1. em 1928 o presidente da american tobacco olhou para as mulheres que não fumavam e disse que era "uma mina de ouro no quintal". frase dele. está escrita. [ref ✅ Hill verbatim]
+2. contrataram o sobrinho do freud para resolver o problema. a solução do psicanalista: um cigarro na mão de uma mulher é uma tocha de liberdade. na páscoa de 1929 pagaram a umas quantas para marchar a fumar e chamaram os fotógrafos. eles mesmos. [ref ✅ Brill + Easter Parade]
+3. resultado da brincadeira: as mulheres passaram de 5% das compradoras de cigarros para um terço. a factura chegou 30 anos depois, pontualíssima. [ref ✅ 5→33%]
+4. na alemanha podes ter 25 gramas no bolso e 50 em casa, mais três plantas. aqui tens 10 dias que ninguém sabe medir. dois países, duas réguas. [ref ✅ KCanG §3/§9]
+5. os clubes alemães têm limite de 500 sócios e dispensam 25 gramas por dia. parecem cooperativas do dão. a diferença é que têm licença e ninguém vai preso. [ref ✅ KCanG §11/§16/§19]
+6. em malta as associações cultivam do zero até à entrega e só podem dar flor seca aos sócios. senão disto era a nossa misericórdia, mas com outro produto. [ref ✅ ARUC]
+7. então os 10 dias (prometido ontem): a lei diz "consumo médio individual durante 10 dias". não diz quanto pesa. não diz quem é o médio. e se passares da régua muda de tribunal. pronto, era isto. [ref ✅ Art. 2.º]
+8. há quem diga que o milagre português é mito bem contado. e têm pontos, alguns bons. esta semana ponho os dois lados na mesa, com os papéis. comecem a aquecer. [tease P4, sem receipt — é promessa, não claim]
