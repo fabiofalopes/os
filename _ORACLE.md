@@ -1,6 +1,6 @@
 # 🔮 The Oracle
 
-> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-14 22:12 UTC by the engine.*
+> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-14 22:27 UTC by the engine.*
 
 
 ## 🎯 Verdict & Arc — read this first
@@ -17,11 +17,9 @@
 
 **The call (owed BEFORE 08-07 — 5 days out):** the row-1 **#19 void/exclude** decision, paired with the staged capture-bug fix. The smoke resolved #19 (verifiable now via `&closed=true`) — the "pulled market" diagnosis was the closed-markets bug's first symptom, so the call is **moot if the fix is approved** (recommendation: approve fix + score #19 resolved-YES). Without the fix the pipeline exits 2 on verdict day and row 1 gets no score. → [[quant-forecast-pilot01-preverdict-smoke-2026-08-01]]
 
-**⚠ Gateway flap:** 7 holds in 6h — upstream egress degraded, engine auto-holding (FM-7 surface, self-heals). GATEWAY_HOLD lines in LOG.md.
-
 ## 🔴 Pulse — FAILING
-- **Today:** Success rate (did its job): 0/13 = 0%   [13 real sessions, 0 infra fails apart]
-- SUCCESS 0   EMPTY 0   FAIL 13   | INFRA 0 (harness, excluded)
+- **Today:** Success rate (did its job): 0/14 = 0%   [14 real sessions, 0 infra fails apart]
+- SUCCESS 0   EMPTY 0   FAIL 14   | INFRA 0 (harness, excluded)
 - **Queue:** 1 pending · 6 quarantined ⚠
 
 ## Trend (7 days)
@@ -33,7 +31,7 @@ date        runs  success  empty  fail  infra  rate_pct
 2026-09-11  46    0        0      46    38     0
 2026-09-12  74    0        0      74    67     0
 2026-09-13  24    0        0      24    6      0
-2026-09-14  13    0        0      13    0      0
+2026-09-14  14    0        0      14    0      0
 ```
 
 ## Recently forged
