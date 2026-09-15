@@ -1,0 +1,471 @@
+---
+title: "adobe/skills: Adobe Skills for Agents"
+source: "https://github.com/adobe/skills"
+author:
+published:
+created: 2026-09-15
+description: "Adobe Skills for Agents. Contribute to adobe/skills development by creating an account on GitHub."
+tags:
+  - "clippings"
+---
+## Adobe Skills for AI Coding Agents
+
+Repository of Adobe skills for AI coding agents.
+
+## Installation
+
+### Claude Code Plugins
+
+```
+/plugin marketplace add adobe/skills
+/plugin install adobe-analytics@adobe-skills
+/plugin install adobe-cja@adobe-skills
+/plugin install aem-design@adobe-skills
+/plugin install aem-edge-delivery-services@adobe-skills
+/plugin install aem-project-management@adobe-skills
+/plugin install app-builder@adobe-skills
+/plugin install aem-cloud-service@adobe-skills
+/plugin install aem-6-5-lts@adobe-skills
+/plugin install workfront@adobe-skills
+/plugin install commerce-app-management@adobe-skills
+/plugin install commerce-app-migration@adobe-skills
+/plugin install commerce-app-review@adobe-skills
+```
+
+### Vercel Skills (npx skills)
+
+```
+npx skills add adobe/skills --all
+```
+
+### upskill (GitHub CLI Extension)
+
+```
+gh extension install ai-ecoverse/gh-upskill
+gh upskill adobe/skills --all
+```
+
+### Cursor (preview)
+
+The `app-builder` plugin includes a Cursor-native manifest at `plugins/app-builder/.cursor-plugin/plugin.json` as the pilot for Cursor distribution. Other plugins will gain Cursor support once the pattern is validated. To install locally for development:
+
+```
+mkdir -p ~/.cursor/plugins/local/app-builder
+cp -R plugins/app-builder/. ~/.cursor/plugins/local/app-builder/
+# Then in Cursor: Cmd+Shift+P → Developer: Reload Window
+```
+
+Verify the plugin loaded via **Cursor Settings → Plugins** (it should appear with the App Builder skills, including the grouped `appbuilder-workfront` suite). The skills are also visible in **Settings → Rules** under "Agent Decides".
+
+## Available Skills
+
+### For Business
+
+#### Analytics
+
+Practitioner-focused skills for Adobe's analytics products — KPI monitoring, funnel and dimension analysis, segment comparison, and stakeholder readouts. Each product has a dedicated plugin and a dedicated MCP server. Requests require IMS auth headers (`Authorization`, `x-gw-ims-org-id`, `x-gw-ims-user-id`); an OAuth proxy may inject these.
+
+##### Adobe Analytics
+
+Available via the [`adobe-analytics`](https://github.com/adobe/skills/blob/main/plugins/adobe-analytics/README.md) plugin. Talks to the AA MCP server at `https://aa-mcp.adobe.io/mcp`.
+
+```
+/plugin install adobe-analytics@adobe-skills
+```
+
+| Skill | Description |
+| --- | --- |
+| `aa-kpi-pulse` | KPI digest with period-over-period change and top mover callout   • `How are our KPIs looking this week?`   • `Compare last month's KPIs to the same month last year` |
+| `aa-top-movers-watchlist` | Ranks dimension items by biggest gain or loss for a metric   • `Top gaining and declining pages this week`   • `Which marketing channels grew or shrank most this month?` |
+| `aa-conversion-funnel-analysis` | Step-by-step fallout analysis across a multi-step conversion funnel   • `Analyze our checkout funnel`   • `Where do mobile users drop off in the signup flow?` |
+| `aa-segment-performance-comparator` | Side-by-side KPI comparison across two or more audience segments   • `Compare mobile vs desktop performance`   • `How do US visitors compare to UK visitors on key KPIs?` |
+| `aa-executive-briefing` | Narrative performance summary ready for leadership or QBR   • `Write last week's performance briefing for leadership`   • `Draft a monthly business review for the board` |
+
+See the [`adobe-analytics`](https://github.com/adobe/skills/blob/main/plugins/adobe-analytics/README.md) doc for the full plugin description, MCP server template, and skill index.
+
+##### Customer Journey Analytics
+
+Available via the [`adobe-cja`](https://github.com/adobe/skills/blob/main/plugins/adobe-cja/README.md) plugin. Talks to the CJA MCP server at `https://cja-mcp.adobe.io/mcp`.
+
+```
+/plugin install adobe-cja@adobe-skills
+```
+
+| Skill | Description |
+| --- | --- |
+| `cja-kpi-pulse` | KPI digest with period-over-period change, trend direction, and dimension breakdown   • `How are our KPIs looking this week?`   • `Compare last month's KPIs to the same month last year` |
+| `cja-top-movers-watchlist` | Ranks dimension items by biggest gain or loss for a metric   • `Top gaining and declining pages this week`   • `Which marketing channels grew or shrank most this month?` |
+| `cja-funnel-health-check` | Step-by-step fallout analysis across a multi-step conversion funnel   • `Check the health of our purchase funnel`   • `Where do users drop off in our onboarding journey?` |
+| `cja-dimension-analysis` | Cardinality, distribution, trends, anomalies, and data quality for a dimension   • `Analyze the Page Name dimension`   • `Audit our Marketing Channel values — any spelling variations or duplicates?` |
+| `cja-segment-performance-comparator` | Side-by-side KPI comparison across two or more audience segments   • `Compare mobile vs desktop performance`   • `How do US visitors compare to UK visitors on key KPIs?` |
+| `cja-executive-briefing` | Narrative performance summary ready for leadership or QBR   • `Write last week's performance briefing for leadership`   • `Draft a monthly business review for the board` |
+
+See the [`adobe-cja`](https://github.com/adobe/skills/blob/main/plugins/adobe-cja/README.md) doc for the full plugin description, MCP server template, and skill index.
+
+#### Workfront
+
+Solution-architecture guidance for Adobe Workfront Planning (WFP, also called Maestro). Available via the [`workfront`](https://github.com/adobe/skills/blob/main/plugins/workfront/skills/wf-planning-solution-architect/README.md) plugin. No MCP server required; public Adobe documentation is searched and fetched live from Experience League at answer time.
+
+```
+/plugin install workfront@adobe-skills
+```
+
+| Skill | Description |
+| --- | --- |
+| `wf-planning-solution-architect` | Workspace and record-type design, connections and hierarchies, formula fields, tier limits, and API behavior for Workfront Planning   • `Design a Planning workspace for our marketing team`   • `A customer wants us to raise the 500 connected records limit`   • `Is the CASE function supported in Planning formulas?` |
+
+See the [`wf-planning-solution-architect`](https://github.com/adobe/skills/blob/main/plugins/workfront/skills/wf-planning-solution-architect/README.md) doc for the routing model, reference layout, and documentation search script.
+
+#### Adobe Experience Manager
+
+##### Designing with aem-design
+
+Design-phase skills that run *before* implementation. Produces static HTML and JSON artifacts under `aem-design/` — EDS-independent; no dev server or AEM instance required.
+
+| Skill | Description |
+| --- | --- |
+| `aem-design` | Navigator — assesses `aem-design/` state and recommends the next design stage |
+| `brand` | Extracts a brand profile (`brand-profile.json`) and visual brand board from a URL, PDF, or conversation |
+| `briefings` | Captures page intent, audience, key messages, CTAs, and (optionally) final copy under `aem-design/briefings/` |
+| `wireframes` | Produces grey structural wireframes from briefings (section order, hierarchy, spatial relationships) — optional stage |
+| `prototype` | Produces branded, high-fidelity static HTML prototypes that iterate in the browser until approved |
+
+##### Developing with Edge Delivery Services
+
+| Skill | Description |
+| --- | --- |
+| `aem-cli` | Install, run, and configure the Adobe AEM CLI (`aem up` local dev server, `.env` /TLS/proxy setup, `aem import`, `aem content` da.live sync, troubleshooting); migrate from `@adobe/helix-cli` |
+| `create-site` | Start a brand-new site from scratch: GitHub repo from boilerplate, aem-code-sync, initial DA content (nav, footer, homepage), and live URL handoff |
+| `content-driven-development` | Orchestrates the CDD workflow for all code changes |
+| `analyze-and-plan` | Analyze requirements and define acceptance criteria |
+| `building-blocks` | Implement blocks and core functionality |
+| `testing-blocks` | Browser testing and validation |
+| `content-modeling` | Design author-friendly content models |
+| `code-review` | Self-review and PR review |
+
+##### Discovering Blocks
+
+| Skill | Description |
+| --- | --- |
+| `block-inventory` | Survey available blocks in project and Block Collection |
+| `block-collection-and-party` | Search reference implementations |
+| `docs-search` | Search aem.live documentation |
+| `find-test-content` | Find existing content for testing |
+
+##### Migrating Content
+
+| Skill | Description |
+| --- | --- |
+| `page-import` | Import webpages into canonical EDS block format (orchestrator) |
+| `scrape-webpage` | Scrape and analyze webpage content |
+| `identify-page-structure` | Analyze page sections |
+| `page-decomposition` | Analyze content sequences |
+| `authoring-analysis` | Determine authoring approach |
+| `generate-import-html` | Generate structured HTML |
+| `preview-import` | Preview imported content |
+| `snowflake` | Static-to-EDS overlay conversion — preserves original DOM byte-for-byte (alternative path to `page-import` for AI-generated/static pages) |
+| `figma-to-content` | Turn a Figma design into an EDS content page in DA — resolves each section to an existing block, a new isolated block, or default content (annotation-first, else inferred), then deploys via the DA Source API |
+
+##### Content & Platform Reference
+
+| Skill | Description |
+| --- | --- |
+| `da-content` | Reference for DA + EDS content rules: block HTML format, metadata, media handling, DA Source API contract, and silent-failure rules |
+
+##### Managing Projects
+
+Handover documentation and PDF guides generation for AEM Edge Delivery Services projects. Available via the `aem-project-management` plugin.
+
+| Skill | Description |
+| --- | --- |
+| `handover` | Orchestrates project documentation generation |
+| `authoring` | Generate comprehensive authoring guide for content authors |
+| `development` | Generate technical documentation for developers |
+| `admin` | Generate admin guide for site administrators |
+| `whitepaper` | Create professional PDF whitepapers from Markdown |
+| `auth` | Authenticate with AEM Config Service API |
+
+##### AEM as a Cloud Service
+
+All AEM as a Cloud Service skills — component development, Dispatcher, workflows, code assessment, migration, content distribution, RDE, and project bootstrap. Available via the [`aem-cloud-service`](https://github.com/adobe/skills/blob/main/plugins/aem/cloud-service/README.md) plugin.
+
+```
+/plugin install aem-cloud-service@adobe-skills
+```
+
+| Skill | Description |
+| --- | --- |
+| `create-component` | Create complete AEM components: definition, dialog XML, HTL template, Sling Model, unit tests, clientlibs, and optional servlet |
+| `ensure-agents-md` | Bootstrap skill — auto-generates `AGENTS.md` and `CLAUDE.md` from `pom.xml` when missing, tailored to the project's modules and add-ons |
+| `dispatcher` | Config authoring, technical advisory, incident response, performance tuning, security hardening, and lifecycle orchestration for the Dispatcher. Requires Dispatcher MCP (`AEM_DEPLOYMENT_MODE=cloud`) |
+| `aem-workflow` | Workflow model design, process step development, launcher configuration, triggering, debugging stuck/failed workflows, and incident triaging for the Granite Workflow Engine |
+| `code-assessment` | Detect and fix AEM CS code-quality issues locally — Sling Model patterns, deprecated APIs, scheduler, replication, resource listeners, unbounded queries, outbound call timeouts, and more. Verifies with `mvn compile` |
+| `migration` | Migrate legacy AEM (6.x, AMS, on-prem) to AEM CS using BPA/CAM data — scheduler, replication, event handlers, HTL lint, dialog migration, template modernization, OSGi config. Delegates refactors to `code-assessment` |
+| `content-distribution` | Programmatic content publishing via the Replication API and distribution event monitoring via Sling Distribution events |
+| `aem-rde` *(beta)* | Expert assistance for `aio aem rde` — deploy, inspect, log-tail, snapshot, and troubleshoot Rapid Development Environments |
+
+See the [`aem-cloud-service` plugin README](https://github.com/adobe/skills/blob/main/plugins/aem/cloud-service/README.md) for sub-skill details and MCP requirements.
+
+##### AEM 6.5 LTS
+
+All AEM 6.5 LTS and Adobe Managed Services (AMS) skills — Dispatcher, workflows, replication, and project bootstrap. Available via the [`aem-6-5-lts`](https://github.com/adobe/skills/blob/main/plugins/aem/6.5-lts/README.md) plugin.
+
+```
+/plugin install aem-6-5-lts@adobe-skills
+```
+
+| Skill | Description |
+| --- | --- |
+| `ensure-agents-md` | Bootstrap skill — auto-generates `AGENTS.md` and `CLAUDE.md` for AEM 6.5 LTS projects when missing |
+| `dispatcher` | Config authoring, technical advisory, incident response, performance tuning, and security hardening for AEM 6.5 LTS and AMS. Requires Dispatcher MCP (`AEM_DEPLOYMENT_MODE=ams`) |
+| `aem-workflow` | Workflow model design, development, triggering, launchers, debugging, and triaging — with JMX, Felix Console, and direct log access for 6.5 LTS/AMS |
+| `aem-replication` | Replication agent configuration, content activation/deactivation, Replication API usage (57 Java examples), lifecycle orchestration, and troubleshooting blocked queues and distribution failures |
+
+See the [`aem-6-5-lts` plugin README](https://github.com/adobe/skills/blob/main/plugins/aem/6.5-lts/README.md) for sub-skill details.
+
+### App Builder
+
+Development, customization, testing, and deployment skills for Adobe App Builder projects.
+
+**Skill chaining:**
+
+- **Actions path:** `appbuilder-project-init` → `appbuilder-action-scaffolder` → `appbuilder-testing` → `appbuilder-cicd-pipeline`
+- **UI path:** `appbuilder-project-init` → `appbuilder-ui-scaffolder` → `appbuilder-testing` → `appbuilder-cicd-pipeline`
+- **E2E path:** `appbuilder-ui-scaffolder` or `appbuilder-testing` → `appbuilder-e2e-testing` → `appbuilder-cicd-pipeline`
+
+| Skill | Description |
+| --- | --- |
+| `appbuilder-project-init` | Initialize App Builder projects and choose the bootstrap path; also first-time machine/CLI setup (Node 20, aio install/login, stage vs prod) |
+| `appbuilder-action-scaffolder` | Scaffold, implement, deploy, and debug Adobe Runtime actions |
+| `appbuilder-ui-scaffolder` | Generate React Spectrum UI components for ExC Shell SPAs and AEM UI Extensions |
+| `appbuilder-testing` | Generate and run Jest unit, integration, and contract tests for actions and UI components |
+| `appbuilder-e2e-testing` | Playwright browser E2E tests for ExC Shell SPAs and AEM extensions |
+| `appbuilder-cicd-pipeline` | Set up CI/CD pipelines for GitHub Actions, Azure DevOps, and GitLab CI |
+
+### App Builder — Workfront UI Extensions
+
+Skills for building customized **Workfront** UI applications on Adobe App Builder — a React/Spectrum SPA embedded through Workfront extension points, backed by Adobe I/O Runtime actions that call the Workfront / Planning / Adobe APIs. Shipped as part of the `app-builder` plugin under `plugins/app-builder/skills/appbuilder-workfront/`, as a parent umbrella skill plus three sub-skills. Machine setup and `aio app init` live in `appbuilder-project-init`.
+
+> **Usage guide:** [`plugins/app-builder/USAGE.md`](https://github.com/adobe/skills/blob/main/plugins/app-builder/USAGE.md) is the end-to-end walkthrough for driving these skills from an AI harness — set up the `aio` CLI → build a new project (or migrate existing code) → deploy → publish — with the start point, harness wiring, the questions the AI will ask, copy-paste prompts, and the gotchas to watch for.
+
+**Journey:** `appbuilder-project-init` (set up + scaffold) → `workfront-ui-extension` + `workfront-actions` (build) → `workfront-local-testing` (test) → deploy & publish. Start at the **`appbuilder-workfront`** umbrella for the end-to-end map.
+
+| Skill | Description |
+| --- | --- |
+| `appbuilder-workfront` | Umbrella / onboarding: the end-to-end roadmap and how the SPA, actions, and extension points fit; routes to the three sub-skills below |
+| `workfront-ui-extension` | Front-end SPA: extension points (Main Menu, per-object left panel, widgets), routing, shared context, `actionWebInvoke` |
+| `workfront-actions` | Runtime actions: `{data,error}` shape, IMS auth passthrough, inputs/config, CommonJS, and the Workfront Public API v21 (search/count, bulk PUT, custom `DE:` fields) |
+| `workfront-local-testing` | Preview a local (`extensionOverride`) or deployed (Extension Manager BYO) build inside Workfront; fix common "not showing" issues |
+
+### Commerce
+
+Skills that ease developing and integrating with Adobe Commerce alongside other Adobe products.
+
+#### Commerce App Management
+
+Scaffold and configure Adobe Commerce App Builder apps using the `aio-commerce-sdk`. `commerce-app-init` scaffolds a bare app with metadata only; domain skills then extend it one concern at a time.
+
+```
+/plugin install commerce-app-management@adobe-skills
+```
+
+| Skill | Description |
+| --- | --- |
+| `commerce-app-init` | Scaffold a new Commerce app with metadata |
+| `commerce-app-eventing` | Manage Commerce and external event sources |
+| `commerce-app-webhooks` | Manage webhook interception |
+| `commerce-app-business-config` | Manage custom business configuration |
+| `commerce-app-storage` | Integrate App Builder Database Storage |
+| `commerce-app-admin-ui` | Extend the Commerce Admin UI |
+
+See the [`commerce-app-management`](https://github.com/adobe/skills/blob/main/plugins/commerce/app-management/README.md) doc for the skill-chaining strategy and full skill index.
+
+#### Commerce App Migration
+
+Migrate an Adobe Commerce App Builder project started from the Integration Starter Kit or Checkout Starter Kit to an App Management project using the `aio-commerce-sdk`.
+
+```
+/plugin install commerce-app-migration@adobe-skills
+```
+
+| Skill | Description |
+| --- | --- |
+| `commerce-app-migrate` | Orchestrate the full migration from Integration or Checkout Starter Kit to App Management |
+
+See the [`commerce-app-migration`](https://github.com/adobe/skills/blob/main/plugins/commerce/app-migration/README.md) doc for the full migration workflow and documentation-cleanup recommendations.
+
+#### Commerce App Review
+
+Self-review skill for developers and partners to check an Adobe Commerce App Builder app against the submission guidelines before submitting to Adobe Exchange.
+
+```
+/plugin install commerce-app-review@adobe-skills
+```
+
+| Skill | Description |
+| --- | --- |
+| `commerce-app-review` | Reviews a local app directory against Adobe's Commerce submission guidelines and walks through each finding interactively |
+
+See the [`commerce-app-review`](https://github.com/adobe/skills/blob/main/plugins/commerce/app-review/README.md) doc for the reference library and full usage guide.
+
+### Creativity & Design
+
+#### Adobe for Creativity (for Claude desktop app only)
+
+| Skill | Description |
+| --- | --- |
+| `adobe` | A one-glance orientation to the Adobe for creativity connector |
+| `adobe-batch-edit-photos` | Apply consistent, cohesive photo adjustments across a set of images — matched tones, presets, and cinematic looks |
+| `adobe-create-pdfs-from-data` | Perform a full InDesign data merge from a `.CSV` /`.TSV` and an `.INDD` template |
+| `adobe-create-social-variations` | Produce platform-ready image and video crops for Instagram, TikTok, LinkedIn, YouTube, and other social platforms |
+| `adobe-design-from-template` | Create flyers, posters, social posts, invitations, business cards, and other visuals from Adobe Express templates |
+| `adobe-edit-quick-cut` | Turn a long video into a punchy sizzle or highlight reel using Adobe Quick Cut |
+| `adobe-retouch-portraits` | Bulk walk-away retouching for wedding and event portraits: auto-straighten, auto-tone, and auto-light across a folder |
+| `adobe-resize-photos-and-videos` | Resize images and videos to exact pixel dimensions, aspect ratios, or named sizes (4K, HD, A4) |
+
+## Repository Structure
+
+```
+plugins/
+├── adobe-analytics/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   ├── .mcp.json
+│   └── skills/
+│       ├── aa-kpi-pulse/
+│       ├── aa-top-movers-watchlist/
+│       ├── aa-conversion-funnel-analysis/
+│       ├── aa-segment-performance-comparator/
+│       └── aa-executive-briefing/
+├── adobe-cja/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   ├── .mcp.json
+│   └── skills/
+│       ├── cja-kpi-pulse/
+│       ├── cja-top-movers-watchlist/
+│       ├── cja-funnel-health-check/
+│       ├── cja-dimension-analysis/
+│       ├── cja-segment-performance-comparator/
+│       └── cja-executive-briefing/
+├── aem/
+│   ├── edge-delivery-services/
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json
+│   │   └── skills/
+│   │       ├── content-driven-development/
+│   │       ├── building-blocks/
+│   │       └── ...
+│   ├── project-management/
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json
+│   │   ├── fonts/
+│   │   ├── hooks/
+│   │   │   └── pdf-lifecycle.js
+│   │   ├── templates/
+│   │   │   └── whitepaper.typ
+│   │   └── skills/
+│   │       ├── handover/
+│   │       ├── authoring/
+│   │       ├── development/
+│   │       ├── admin/
+│   │       ├── whitepaper/
+│   │       └── auth/
+│   ├── cloud-service/
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json
+│   │   ├── README.md
+│   │   └── skills/
+│   │       ├── create-component/
+│   │       ├── ensure-agents-md/
+│   │       ├── dispatcher/
+│   │       ├── aem-workflow/
+│   │       ├── code-assessment/
+│   │       ├── migration/
+│   │       ├── content-distribution/
+│   │       └── aem-rde/
+│   └── 6.5-lts/
+│       ├── .claude-plugin/
+│       │   └── plugin.json
+│       ├── README.md
+│       └── skills/
+│           ├── ensure-agents-md/
+│           ├── dispatcher/
+│           ├── aem-workflow/
+│           └── aem-replication/
+├── app-builder/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   └── skills/
+│       ├── _shared/
+│       ├── appbuilder-project-init/     # includes first-time machine/CLI setup
+│       ├── appbuilder-action-scaffolder/
+│       ├── appbuilder-ui-scaffolder/
+│       ├── appbuilder-testing/
+│       ├── appbuilder-e2e-testing/
+│       ├── appbuilder-cicd-pipeline/
+│       └── appbuilder-workfront/         # Workfront suite: parent umbrella + 3 sub-skills
+│           ├── SKILL.md                  # umbrella / router
+│           ├── references/               # troubleshooting.md, commands.md
+│           ├── workfront-ui-extension/
+│           ├── workfront-actions/
+│           └── workfront-local-testing/
+├── commerce/
+│   ├── app-management/
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json
+│   │   └── skills/
+│   │       ├── commerce-app-init/
+│   │       ├── commerce-app-eventing/
+│   │       ├── commerce-app-webhooks/
+│   │       ├── commerce-app-business-config/
+│   │       ├── commerce-app-storage/
+│   │       └── commerce-app-admin-ui/
+│   ├── app-migration/
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json
+│   │   └── skills/
+│   │       └── commerce-app-migrate/
+│   └── app-review/
+│       ├── .claude-plugin/
+│       │   └── plugin.json
+│       └── skills/
+│           └── commerce-app-review/
+│               ├── SKILL.md
+│               ├── evals/
+│               └── references/
+├── creative-cloud/
+│   └── adobe-for-creativity/
+│       ├── .claude-plugin/
+│       │   └── plugin.json
+│       ├── skills/
+│       │   └── ...
+│       └── .mcp.json
+└── workfront/
+    ├── .claude-plugin/
+    │   └── plugin.json
+    ├── .cursor-plugin/
+    │   └── plugin.json
+    └── skills/
+        └── wf-planning-solution-architect/
+            ├── SKILL.md
+            ├── evals/
+            ├── references/
+            └── scripts/
+```
+
+## Contributing
+
+See [CONTRIBUTING.md](https://github.com/adobe/skills/blob/main/CONTRIBUTING.md) for guidelines on adding or updating skills. Join [#agentskills](https://adobe.enterprise.slack.com/archives/C0APTKDNPEY) on Adobe Slack for questions and discussion.
+
+## Resources
+
+- [agentskills.io Specification](https://agentskills.io/)
+- [Claude Code Plugins](https://code.claude.com/docs/en/discover-plugins)
+- [Vercel Skills](https://github.com/vercel-labs/skills)
+- [upskill GitHub Extension](https://github.com/ai-ecoverse/gh-upskill)
+- [#agentskills Slack Channel](https://adobe.enterprise.slack.com/archives/C0APTKDNPEY)
+
+## License
+
+Apache 2.0 — see [LICENSE](https://github.com/adobe/skills/blob/main/LICENSE) for details.
