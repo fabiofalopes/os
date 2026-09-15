@@ -133,6 +133,7 @@ status: living — Curator maintains this
 - [[cecil-taylor-unit-structures]] · [[miles-davis-kind-of-blue]] · [[quincy-jones-walking-in-space]] — music essays, copied in from `~/` strays (2026-09-03).
 
 - [[The-cure-for-AI-slop-is-a-1986-aircraft-manual]] — ytobs digest (Ege Vusal Chelebi, 2026-07-24): ASD-STE100 skill+linter cuts AI slop 50-74% vs ~0% for word blacklists; fixes form, not substance.
+- [[Youve-Likely-Been-Playing-The-Game-Of-Life-Wrong]] — ytobs digest (Veritasium, 2025-11-26): normal vs power-law worlds — infinite-variance tails, self-organized criticality, universality; know which game you're playing (consistency vs repeated intelligent bets).
 ## Harness Config (`_harness/`)
 - [[_sync/README]] — Mirror & sync engine (`_sync/`): GitHub layer (`vault-sync.sh`) + Ordo-style rclone-bisync folder pairs (`pairs-sync.sh`, robust anti-resurrection flags, human-only `--resync`) + the agent write-back contract.
 - [[queue]] — Session queue: runner picks the top unchecked job each tick; role-tagged, order = priority.
