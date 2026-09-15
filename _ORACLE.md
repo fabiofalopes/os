@@ -1,6 +1,6 @@
 # 🔮 The Oracle
 
-> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-15 00:57 UTC by the engine.*
+> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-15 01:12 UTC by the engine.*
 
 
 ## 🎯 Verdict & Arc — read this first
@@ -35,11 +35,11 @@ date        runs  success  empty  fail  infra  rate_pct
 ```
 
 ## Recently forged
+- [[Youve-Likely-Been-Playing-The-Game-Of-Life-Wrong]]
 - [[checkable-systems-beat-blacklists]]
 - [[The-cure-for-AI-slop-is-a-1986-aircraft-manual]]
 - [[obsidian-plugin-mission]]
 - [[multi-vault-agentic-workloads]]
-- [[vault-embedded-research-routines]]
 
 ## ⚠ Needs attention
 - [!] [Smith] BUILD `_harness/graph/graph-index.py`: walk vault md (skip `_sync/`, `.obsidian/`, LOG.md), build wikilink graph with `networkx` (3.4.2 installed, stdlib only), run `louvain_communities` + `adamic_adar_index` (top-50 unlinked pairs) + cross-community link-scarcity gap scores; write `journal/graph/edges.json` (nodes/edges/communities/stats/gaps) + `journal/graph/gaps-$(date +%F).md` (human-readable top-10 gaps). Deterministic, $0, no LLM. Verify: run twice, diff both outputs = empty; `python3 -m py_compile` clean. PRODUCED: script + two output files + diff receipt.
