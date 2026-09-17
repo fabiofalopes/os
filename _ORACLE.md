@@ -1,6 +1,6 @@
 # 🔮 The Oracle
 
-> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-17 04:27 UTC by the engine.*
+> One glance at the Forge — curated, not complete. The richness lives behind the links; this is the lens. *Refreshed 2026-09-17 04:57 UTC by the engine.*
 
 
 ## 🎯 Verdict & Arc — read this first
@@ -24,14 +24,8 @@
 
 ## Trend (7 days)
 ```
-date        runs  success  empty  fail  infra  rate_pct
-2026-09-11  46    0        0      46    38     0
-2026-09-12  74    0        0      74    67     0
-2026-09-13  24    0        0      24    6      0
-2026-09-14  14    0        0      14    0      0
-2026-09-15  14    0        0      14    0      0
-2026-09-16  12    0        0      12    0      0
-2026-09-17  0     0        0      0     0      0
+2026-09-17  0  0  0  0  0  0
+2026-09-17  0  0  0  0  0  0
 ```
 
 ## Recently forged
