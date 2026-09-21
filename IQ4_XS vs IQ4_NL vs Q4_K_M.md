@@ -1,6 +1,10 @@
 IQ4_XS vs IQ4_NL vs Q4_K_M ????
 
-we shall only download 1 of then maybe IQ4_XS as is smallest 
+we shall only download 1 of then maybe IQ4_XS as is smallest maybe??? 
+
+let's put that downloading on this 256 mac 
+
+
 ---
 title: "Hugging Face"
 source: "https://huggingface.co/0bserverx/RVN-Qwen3.8-Flash-Next-Abliterated-Uncensored-GGUF"
