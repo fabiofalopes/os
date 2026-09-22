@@ -4,7 +4,7 @@
 ```
 
 
-
+models, but not in a way that one over the other, but contextually one preferably over the other — in what now become a debate of furthering more how this harnesses (ultimately each so much custom made to each user/users — depends on whose audience or better the users) — that question seems to make harnesses in some way so custom, and that's why harnesses in the way we can install and use DeepSeek harness and/or Pi agent — the best examples of lean, clean, simple — what we're calling now harness starters — and ultimately something that builds something on this philosophy of models and the scaffolding of code, tools, skills, knowledge, and so on, usually wrapped, all generically, into the word "harness."
 
 
 
