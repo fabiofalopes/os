@@ -124,3 +124,15 @@ $15k machine, 2yr 24/7 duty, ~3 concurrent big-model sessions → per-token cost
   - launchd needs `WorkingDirectory` = ds4 repo (runtime .metal shader compile from cwd).
   - **Co-residency livelock**: GLM resident (178GiB mmap) + ds41f streaming concurrent = VM thrash (free pages → 67MB, ds41f prefill stalls at 0.4 t/s → deadlock). mmap'd weights are not pinnable. Run deep lane exclusively or on-demand.
   - plutil -replace on ProgramArguments indices mangles arrays — always rewrite plists wholesale.
+
+## Final optimized deployment (2026-09-26 night)
+
+| Lane | Engine | Speed | RAM |
+|---|---|---|---|
+| glm53-ds4/glm-5.3-flash | DwarfStar resident :8001 | ~19 t/s | 186 GiB |
+| ornith35/Ornith-1.5-35B-Q4_K_M | llama.cpp resident :62986 | ~95 t/s (A3B) | 28 GiB |
+| ds41f-ds4/deepseek-v4.1-flash (on-demand) | DwarfStar streaming :8002 | 8-10 t/s | ~21 GiB when up |
+
+- Router: :8706 via sync-macs.py (feeds from routes.yaml → upb CLI → macs-providers.yaml chain; routes.yaml is the SOURCE OF TRUTH — do not revert lane entries there)
+- **Root cause of all evening instability: Unsloth Studio auto-reloading models** (ghost 85GB Qwen, then a 157GB GLM) on top of our lanes → VM churn, wedged llama-server, port-bind races. Studio stack stopped (restart: /Applications/Unsloth.app). bge embeddings went with it (restartable: llama-server bge cmd in this doc's history / Studio relaunch).
+- Ornith lane: 52-95 t/s when machine quiet; nextn (MTP) tensors present — future spec-decode experiment candidate.
