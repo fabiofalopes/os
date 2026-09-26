@@ -112,3 +112,15 @@ $15k machine, 2yr 24/7 duty, ~3 concurrent big-model sessions → per-token cost
 ## Artifacts
 - Mac: `~/ds4/results/` (x1-resident.csv, x2v2/, x4/), `~/ds41f-exp.sh`, `~/ds41f-x2v2.sh`, `~/ds41f-x4.sh`
 - Models on Mac: `~/models/ds41f/` (Q2+vision), `~/ds4/gguf/` (Q4), `~/models/GLM-5.3-Flash-UD-IQ4_XS/` (llama.cpp-side, not DwarfStar-compatible)
+
+## Deployment (2026-09-26 evening) — integrated into the upb router fleet
+
+- **Standing lane**: GLM-5.3-Flash Q4_K resident — `ds4-server :8001` on studio, launchd `com.dwarfstar.glm53` (KeepAlive, cwd fix required, `mixed-prefill-quantum 1024`, 2 batched sessions). Verified via router: 11.7 t/s gen.
+- **Deep lane (on-demand)**: ds41f-q2 streaming 8GiB cache — `ds4-server :8002`, launchd `com.dwarfstar.ds41f` (NOT auto-loaded; bootstrap when needed, ready in ~60s).
+- **Router integration**: `upb/scripts/sync-macs.py` extended with glm53-ds4 + ds41f-ds4 lanes (tunneled via `macs-ds4-tunnel.service` on li, ports 18001/18002). Models: `glm53-ds4/glm-5.3-flash`, `ds41f-ds4/deepseek-v4.1-flash` via :8706.
+- **Findings (hard-won)**:
+  - macOS app firewall blocks unsigned ds4-server inbound → tunnel until `sudo socketfilterfw --add/--unblock /Users/csi/ds4/ds4-server` is run on the Mac.
+  - DwarfStar single-instance lock → per-lane `DS4_LOCK_FILE` env.
+  - launchd needs `WorkingDirectory` = ds4 repo (runtime .metal shader compile from cwd).
+  - **Co-residency livelock**: GLM resident (178GiB mmap) + ds41f streaming concurrent = VM thrash (free pages → 67MB, ds41f prefill stalls at 0.4 t/s → deadlock). mmap'd weights are not pinnable. Run deep lane exclusively or on-demand.
+  - plutil -replace on ProgramArguments indices mangles arrays — always rewrite plists wholesale.
