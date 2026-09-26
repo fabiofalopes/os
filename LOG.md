@@ -4049,3 +4049,4 @@
 - 2026-09-26 2026-09-26T02:45:09Z | 0s | GATEWAY_HOLD | (breaker) | (dispatch paused) | active probe got HTTP 502 from gateway — holding 1800s
 - 2026-09-26 2026-09-26T02:45:09Z | 0s | SKIP(GATEWAY) | (probe) | (no job attempted) | active probe got 5xx from http://localhost:8705 — hold latched, wave skipped, jobs preserved
 - 2026-09-26 2026-09-26T03:00:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-26 03:15Z (15m), wave skipped, jobs preserved
+- 2026-09-26 2026-09-26T03:15:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-26 03:15Z (0m), wave skipped, jobs preserved
