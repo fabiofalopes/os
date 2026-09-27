@@ -4192,3 +4192,4 @@
 - 2026-09-27 2026-09-27T12:00:09Z | 0s | GATEWAY_HOLD | (breaker) | (dispatch paused) | active probe got HTTP 502 from gateway — holding 7200s (flap 6 in window — escalated, oracle alerted)
 - 2026-09-27 2026-09-27T12:00:09Z | 0s | SKIP(GATEWAY) | (probe) | (no job attempted) | active probe got 5xx from http://localhost:8705 — hold latched, wave skipped, jobs preserved
 - 2026-09-27 2026-09-27T12:15:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-27 14:00Z (105m), wave skipped, jobs preserved
+- 2026-09-27 2026-09-27T12:30:01Z | 0s | SKIP(GATEWAY) | (breaker) | (no job attempted) | gateway 5xx storm — hold expires 2026-09-27 14:00Z (90m), wave skipped, jobs preserved
